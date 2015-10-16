@@ -5,7 +5,7 @@ import watch from './lib/watch';
 
 export default task('serve', () => new Promise((resolve, reject) => {
   function start() {
-    const server = cp.fork(path.join(__dirname, '../build/server.js'), {
+    const server = cp.fork(path.join(__dirname, '../core/server.js'), {
       env: Object.assign({ NODE_ENV: 'development' }, process.env),
       silent: false,
     });
@@ -23,7 +23,7 @@ export default task('serve', () => new Promise((resolve, reject) => {
   let server = start();
 
   if (global.WATCH) {
-    watch('build/server.js').then(watcher => {
+    watch('core/server.js').then(watcher => {
       watcher.on('changed', () => {
         server.kill('SIGTERM');
         server = start();

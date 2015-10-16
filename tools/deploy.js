@@ -21,7 +21,7 @@ export default task('deploy', async () => {
   }
 
   process.argv.push('release');
-  await require('./build')();
+  await require('./core')();
 
   await repo.add('--all .');
   await repo.commit('Update');

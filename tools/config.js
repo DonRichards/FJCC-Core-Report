@@ -92,7 +92,7 @@ const appConfig = merge({}, config, {
     './src/app.js',
   ],
   output: {
-    path: path.join(__dirname, '../build/public'),
+    path: path.join(__dirname, '../core/public'),
     filename: 'app.js',
   },
 
@@ -150,7 +150,7 @@ const appConfig = merge({}, config, {
 const serverConfig = merge({}, config, {
   entry: './src/server.js',
   output: {
-    path: './build',
+    path: './core',
     filename: 'server.js',
     libraryTarget: 'commonjs2',
   },
