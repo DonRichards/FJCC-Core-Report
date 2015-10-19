@@ -118,10 +118,19 @@ function done_msg {
     echo
 }
 
+function get_pull() {
+    echo "Pulling from remote to local";
+    mongo_confr='yes';
+    case $mongo_confr in
+        [yY][Ee][Ss] )  ;;
+        *) echo "Incorrect configuration, aborting..."; exit;;
+    esac
+}
+
 
 function pull {
     banner
-    get_confirmation 'pull'
+    get_pull 'pull'
     load_configs
 
     echo "Dumping Remote DB to $TMPDIR... "
