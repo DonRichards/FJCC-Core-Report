@@ -73,6 +73,7 @@ Quaility of engagment score = +2.2
 > Not all dimensions and metrics can be queried together. Only certain dimensions and metrics can be used together to create valid combinations.
 This is a condensed list of possible tracking dimensions / metrics 
 
+```
 User Dimensions
   userType                  = A boolean indicating if a user is new or returning. 
   sessionCount              = The session index for a user
@@ -138,6 +139,8 @@ Page Tracking Metrics
   pageviewsPerSession       = The average number of pages viewed during a session, including repeated views of a single page. pageviews/sessions
   avgTimeOnPage             = The average amount of time users spent viewing this page or a set of pages. timeOnPage / (pageviews - exits)
   exitRate                  = The percentage of exits from your property that occurred out of the total page views. exits / (pageviews + screenviews)
+```
+
 
 ####GA format
 ```json
