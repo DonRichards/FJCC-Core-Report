@@ -71,7 +71,7 @@ Example:
 Quaility of engagment score = +2.2
 
 ####GA format
-```
+```json
 {
    "dimension1" : "NyGqTX62o",
    "dimension2" : "Pinellas",
@@ -86,7 +86,7 @@ Quaility of engagment score = +2.2
 }
 ```
 ###Citizen format
-```
+```json
 { 
  "_id" : "1kbFaYpAj",
  "_gid" : "NyGqTX62o",
