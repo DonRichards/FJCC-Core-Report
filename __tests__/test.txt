@@ -1,0 +1,2057 @@
+
+> @ test C:\Users\Don\Documents\GitHub\FJCC-Core-Report
+> eslint src && jest
+
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\actions\authorize.js
+  14:7  error  Parsing error: Unexpected token
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\actions\index.js
+  1:1   error  "index" is defined but never used  no-unused-vars
+  4:16  error  "index" is not defined             no-undef
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\api\content.js
+   1:1   error    Expected space or tab after /* in comment        spaced-comment
+   3:9   warning  There should be no space after '{'               object-curly-spacing
+   3:15  warning  There should be no space before '}'              object-curly-spacing
+   4:9   warning  There should be no space after '{'               object-curly-spacing
+   4:17  warning  There should be no space before '}'              object-curly-spacing
+  15:3   error    Expected blank line after variable declarations  newline-after-var
+  16:25  warning  There should be no space after '{'               object-curly-spacing
+  16:53  warning  There should be no space before '}'              object-curly-spacing
+  30:5   error    Expected blank line after variable declarations  newline-after-var
+  30:38  error    Unexpected string concatenation                  prefer-template
+  31:10  error    Missing space before keyword "await"             space-before-keywords
+  32:36  error    Unexpected string concatenation                  prefer-template
+  35:10  error    Missing space before keyword "await"             space-before-keywords
+  38:51  warning  There should be no space after '{'               object-curly-spacing
+  38:69  warning  There should be no space before '}'              object-curly-spacing
+  39:7   error    Expected blank line after variable declarations  newline-after-var
+  43:5   error    Expected return with your callback function      callback-return
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\app.js
+  37:4   error  Unexpected trailing comma                  comma-dangle
+  44:1   error  Expected a function expression             func-style
+  44:1   error  Missing JSDoc comment                      require-jsdoc
+  44:16  error  Missing space before function parentheses  space-before-function-paren
+  65:1   error  Expected a function expression             func-style
+  65:1   error  Missing JSDoc comment                      require-jsdoc
+  65:13  error  Missing space before function parentheses  space-before-function-paren
+  77:14  error  Unexpected trailing comma                  comma-dangle
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\App\App.js
+   1:8   error    "React" is defined but never used          no-unused-vars
+   1:16  warning  There should be no space after '{'         object-curly-spacing
+   1:38  warning  There should be no space before '}'        object-curly-spacing
+  16:28  error    Unexpected trailing comma                  comma-dangle
+  19:9   error    Missing space before function parentheses  space-before-function-paren
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\ContactPage\ContactPage.js
+   1:8   error    "React" is defined but never used                no-unused-vars
+   1:16  warning  There should be no space after '{'               object-curly-spacing
+   1:38  warning  There should be no space before '}'              object-curly-spacing
+   9:42  error    Unexpected trailing comma                        comma-dangle
+  12:9   error    Missing space before function parentheses        space-before-function-paren
+  13:5   error    Expected blank line after variable declarations  newline-after-var
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\ContentPage\ContentPage.js
+   1:1   error    Expected space or tab after /* in comment  spaced-comment
+   3:8   error    "React" is defined but never used          no-unused-vars
+   3:16  warning  There should be no space after '{'         object-curly-spacing
+   3:38  warning  There should be no space before '}'        object-curly-spacing
+  13:28  error    Unexpected trailing comma                  comma-dangle
+  17:42  error    Unexpected trailing comma                  comma-dangle
+  20:9   error    Missing space before function parentheses  space-before-function-paren
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\ErrorPage\ErrorPage.js
+   1:1   error    Expected space or tab after /* in comment        spaced-comment
+   3:8   error    "React" is defined but never used                no-unused-vars
+   3:16  warning  There should be no space after '{'               object-curly-spacing
+   3:38  warning  There should be no space before '}'              object-curly-spacing
+  12:46  error    Unexpected trailing comma                        comma-dangle
+  15:9   error    Missing space before function parentheses        space-before-function-paren
+  16:5   error    Expected blank line after variable declarations  newline-after-var
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\Feedback\Feedback.js
+  1:8   error    "React" is defined but never used          no-unused-vars
+  1:16  warning  There should be no space after '{'         object-curly-spacing
+  1:27  warning  There should be no space before '}'        object-curly-spacing
+  8:9   error    Missing space before function parentheses  space-before-function-paren
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\Footer\Footer.js
+   1:1   error    Expected space or tab after /* in comment        spaced-comment
+   3:8   error    "React" is defined but never used                no-unused-vars
+   3:16  warning  There should be no space after '{'               object-curly-spacing
+   3:38  warning  There should be no space before '}'              object-curly-spacing
+  16:42  error    Unexpected trailing comma                        comma-dangle
+  17:18  error    Unexpected trailing comma                        comma-dangle
+  20:9   error    Missing space before function parentheses        space-before-function-paren
+  22:5   error    Expected blank line after variable declarations  newline-after-var
+  22:12  warning  There should be no space after '{'               object-curly-spacing
+  22:27  warning  There should be no space before '}'              object-curly-spacing
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\Header\Header.js
+   1:1   error    Expected space or tab after /* in comment  spaced-comment
+   3:8   error    "React" is defined but never used          no-unused-vars
+   3:16  warning  There should be no space after '{'         object-curly-spacing
+   3:27  warning  There should be no space before '}'        object-curly-spacing
+  12:9   error    Missing space before function parentheses  space-before-function-paren
+  17:51  error    Unexpected require()                       global-require
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\HomePage\HomePage.js
+   1:8   error    "React" is defined but never used                no-unused-vars
+   1:16  warning  There should be no space after '{'               object-curly-spacing
+   1:38  warning  There should be no space before '}'              object-curly-spacing
+   9:42  error    Unexpected trailing comma                        comma-dangle
+  12:9   error    Missing space before function parentheses        space-before-function-paren
+  13:5   error    Expected blank line after variable declarations  newline-after-var
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\Html\Html.js
+   1:8   error    "React" is defined but never used                  no-unused-vars
+   1:16  warning  There should be no space after '{'                 object-curly-spacing
+   1:38  warning  There should be no space before '}'                object-curly-spacing
+   2:9   warning  There should be no space after '{'                 object-curly-spacing
+   2:28  warning  There should be no space before '}'                object-curly-spacing
+  10:38  error    Unexpected trailing comma                          comma-dangle
+  15:20  error    Unexpected trailing comma                          comma-dangle
+  18:15  error    Missing space before function parentheses          space-before-function-paren
+  20:72  error    '+' should be placed at the beginning of the line  operator-linebreak
+  21:77  error    '+' should be placed at the beginning of the line  operator-linebreak
+  22:63  error    '+' should be placed at the beginning of the line  operator-linebreak
+  23:65  error    '+' should be placed at the beginning of the line  operator-linebreak
+  24:75  error    '+' should be placed at the beginning of the line  operator-linebreak
+  25:74  error    Unexpected trailing comma                          comma-dangle
+  29:9   error    Missing space before function parentheses          space-before-function-paren
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\Link\Link.js
+   1:8   error    "React" is defined but never used                                                        no-unused-vars
+   1:16  warning  There should be no space after '{'                                                       object-curly-spacing
+   1:38  warning  There should be no space before '}'                                                      object-curly-spacing
+   4:1   error    Expected a function expression                                                           func-style
+   4:1   error    Missing JSDoc comment                                                                    require-jsdoc
+   4:26  error    Missing space before function parentheses                                                space-before-function-paren
+   8:1   error    Expected a function expression                                                           func-style
+   8:1   error    Missing JSDoc comment                                                                    require-jsdoc
+   8:25  error    Missing space before function parentheses                                                space-before-function-paren
+   9:10  error    use `Boolean(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey)` instead  no-implicit-coercion
+  18:28  error    Unexpected trailing comma                                                                comma-dangle
+  21:21  error    Missing space before function parentheses                                                space-before-function-paren
+  40:7   error    Expected blank line after variable declarations                                          newline-after-var
+  47:9   error    Missing space before function parentheses                                                space-before-function-paren
+  48:5   error    Expected blank line after variable declarations                                          newline-after-var
+  48:12  warning  There should be no space after '{'                                                       object-curly-spacing
+  48:36  warning  There should be no space before '}'                                                      object-curly-spacing
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\LoginPage\LoginPage.js
+   1:8   error    "React" is defined but never used                no-unused-vars
+   1:16  warning  There should be no space after '{'               object-curly-spacing
+   1:38  warning  There should be no space before '}'              object-curly-spacing
+   9:42  error    Unexpected trailing comma                        comma-dangle
+  12:9   error    Missing space before function parentheses        space-before-function-paren
+  13:5   error    Expected blank line after variable declarations  newline-after-var
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\Navigation\Navigation.js
+   1:8   error    "React" is defined but never used          no-unused-vars
+   1:16  warning  There should be no space after '{'         object-curly-spacing
+   1:38  warning  There should be no space before '}'        object-curly-spacing
+  11:32  error    Unexpected trailing comma                  comma-dangle
+  14:9   error    Missing space before function parentheses  space-before-function-paren
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\NotFoundPage\NotFoundPage.js
+   1:8   error    "React" is defined but never used                no-unused-vars
+   1:16  warning  There should be no space after '{'               object-curly-spacing
+   1:38  warning  There should be no space before '}'              object-curly-spacing
+  10:46  error    Unexpected trailing comma                        comma-dangle
+  13:9   error    Missing space before function parentheses        space-before-function-paren
+  14:5   error    Expected blank line after variable declarations  newline-after-var
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\RegisterPage\RegisterPage.js
+   1:8   error    "React" is defined but never used                no-unused-vars
+   1:16  warning  There should be no space after '{'               object-curly-spacing
+   1:38  warning  There should be no space before '}'              object-curly-spacing
+   9:42  error    Unexpected trailing comma                        comma-dangle
+  12:9   error    Missing space before function parentheses        space-before-function-paren
+  13:5   error    Expected blank line after variable declarations  newline-after-var
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\Report\Report.js
+  1:8   error    "React" is defined but never used          no-unused-vars
+  1:16  warning  There should be no space after '{'         object-curly-spacing
+  1:27  warning  There should be no space before '}'        object-curly-spacing
+  8:9   error    Missing space before function parentheses  space-before-function-paren
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\components\TextBox\TextBox.js
+   1:8    error    "React" is defined but never used                  no-unused-vars
+   1:16   warning  There should be no space after '{'                 object-curly-spacing
+   1:38   warning  There should be no space before '}'                object-curly-spacing
+   9:31   error    Unexpected trailing comma                          comma-dangle
+  13:16   error    Unexpected trailing comma                          comma-dangle
+  16:9    error    Missing space before function parentheses          space-before-function-paren
+  19:35   error    '?' should be placed at the beginning of the line  operator-linebreak
+  20:118  error    ':' should be placed at the beginning of the line  operator-linebreak
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\config.js
+  2:34  error  Unexpected trailing comma  comma-dangle
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\core\Dispatcher.js
+  1:9   warning  There should be no space after '{'               object-curly-spacing
+  1:21  warning  There should be no space before '}'              object-curly-spacing
+  2:1   error    Expected blank line after variable declarations  newline-after-var
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\core\HttpClient.js
+   2:9   warning  There should be no space after '{'                 object-curly-spacing
+   2:20  warning  There should be no space before '}'                object-curly-spacing
+   4:1   error    Expected a function expression                     func-style
+   4:1   error    Missing JSDoc comment                              require-jsdoc
+   4:16  error    Missing space before function parentheses          space-before-function-paren
+   9:10  warning  Unexpected use of process.env                      no-process-env
+   9:40  error    '?' should be placed at the beginning of the line  operator-linebreak
+  10:15  warning  Unexpected use of process.env                      no-process-env
+  10:54  error    ':' should be placed at the beginning of the line  operator-linebreak
+  31:5   error    Unexpected trailing comma                          comma-dangle
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\core\Location.js
+  1:9   warning  There should be no space after '{'   object-curly-spacing
+  1:20  warning  There should be no space before '}'  object-curly-spacing
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\decorators\withContext.js
+   1:8   error    "React" is defined but never used                no-unused-vars
+   1:16  warning  There should be no space after '{'               object-curly-spacing
+   1:38  warning  There should be no space before '}'              object-curly-spacing
+   4:1   error    Expected a function expression                   func-style
+   4:1   error    Missing JSDoc comment                            require-jsdoc
+   4:21  error    Missing space before function parentheses        space-before-function-paren
+  12:39  error    Unexpected trailing comma                        comma-dangle
+  13:9   error    Unexpected trailing comma                        comma-dangle
+  20:48  error    Unexpected trailing comma                        comma-dangle
+  23:20  error    Missing space before function parentheses        space-before-function-paren
+  24:7   error    Expected blank line after variable declarations  newline-after-var
+  29:64  error    Unexpected trailing comma                        comma-dangle
+  33:11  error    Missing space before function parentheses        space-before-function-paren
+  34:7   error    Expected blank line after variable declarations  newline-after-var
+  34:14  warning  There should be no space after '{'               object-curly-spacing
+  34:33  warning  There should be no space before '}'              object-curly-spacing
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\decorators\withStyles.js
+   1:8   error    "React" is defined but never used                no-unused-vars
+   1:16  warning  There should be no space after '{'               object-curly-spacing
+   1:38  warning  There should be no space before '}'              object-curly-spacing
+   3:9   warning  There should be no space after '{'               object-curly-spacing
+   3:20  warning  There should be no space before '}'              object-curly-spacing
+   7:1   error    Expected a function expression                   func-style
+   7:1   error    Missing JSDoc comment                            require-jsdoc
+   7:20  error    Missing space before function parentheses        space-before-function-paren
+  11:34  error    Unexpected trailing comma                        comma-dangle
+  14:16  error    Missing space before function parentheses        space-before-function-paren
+  17:62  error    Missing space before function parentheses        space-before-function-paren
+  18:9   error    Expected blank line after variable declarations  newline-after-var
+  48:23  error    Missing space before function parentheses        space-before-function-paren
+  57:25  error    Missing space before function parentheses        space-before-function-paren
+  62:11  error    Expected blank line after variable declarations  newline-after-var
+  70:11  error    Missing space before function parentheses        space-before-function-paren
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\decorators\withViewport.js
+   1:8   error    "React" is defined but never used          no-unused-vars
+   1:16  warning  There should be no space after '{'         object-curly-spacing
+   1:27  warning  There should be no space before '}'        object-curly-spacing
+   3:9   warning  There should be no space after '{'         object-curly-spacing
+   3:20  warning  There should be no space before '}'        object-curly-spacing
+   9:1   error    Expected a function expression             func-style
+   9:1   error    Missing JSDoc comment                      require-jsdoc
+   9:28  error    Missing space before function parentheses  space-before-function-paren
+  16:1   error    Missing JSDoc comment                      require-jsdoc
+  16:1   error    Expected a function expression             func-style
+  16:22  error    Missing space before function parentheses  space-before-function-paren
+  19:16  error    Missing space before function parentheses  space-before-function-paren
+  23:96  error    Unexpected trailing comma                  comma-dangle
+  27:22  error    Missing space before function parentheses  space-before-function-paren
+  37:25  error    Missing space before function parentheses  space-before-function-paren
+  46:11  error    Missing space before function parentheses  space-before-function-paren
+  50:17  error    Missing space before function parentheses  space-before-function-paren
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\public\javascripts\active-users.js
+  1:2     error    Missing function expression name                         func-names
+  1:2     error    Missing space before keyword "function"                  space-before-keywords
+  1:10    error    Missing space before function parentheses                space-before-function-paren
+  1:11    warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:13    error    Missing space before opening brace                       space-before-blocks
+  1:13    error    Requires a space after "{"                               block-spacing
+  1:14    error    Statement inside of curly braces should be on next line  brace-style
+  1:14    error    Missing JSDoc comment                                    require-jsdoc
+  1:14    error    Expected a function expression                           func-style
+  1:23    warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:24    error    Missing space before function parentheses                space-before-function-paren
+  1:25    warning  Identifier name 's' is too short. (< 2)                  id-length
+  1:27    error    Requires a space after "{"                               block-spacing
+  1:27    error    Missing space before opening brace                       space-before-blocks
+  1:28    error    Statement inside of curly braces should be on next line  brace-style
+  1:28    error    Expected { after 'if' condition                          curly
+  1:28    error    Keyword "if" must be followed by whitespace              space-after-keywords
+  1:36    error    Missing space before keyword "return"                    space-before-keywords
+  1:55    error    Missing whitespace after semicolon                       semi-spacing
+  1:56    warning  Unexpected var, use let or const instead                 no-var
+  1:56    error    Expected blank line after variable declarations          newline-after-var
+  1:56    error    Missing space before keyword "var"                       space-before-keywords
+  1:60    warning  Identifier name 'r' is too short. (< 2)                  id-length
+  1:61    error    Infix operators must be spaced                           space-infix-ops
+  1:66    error    Infix operators must be spaced                           space-infix-ops
+  1:76    error    Missing space before value for key "exports"             key-spacing
+  1:78    error    A space is required after ','                            comma-spacing
+  1:82    error    Missing space before value for key "id"                  key-spacing
+  1:83    error    A space is required after ','                            comma-spacing
+  1:91    error    Missing space before value for key "loaded"              key-spacing
+  1:94    error    Missing whitespace after semicolon                       semi-spacing
+  1:95    error    Missing space before keyword "return"                    space-before-keywords
+  1:121   error    A space is required after ','                            comma-spacing
+  1:123   error    A space is required after ','                            comma-spacing
+  1:133   error    A space is required after ','                            comma-spacing
+  1:136   error    A space is required after ','                            comma-spacing
+  1:137   warning  Identifier name 'r' is too short. (< 2)                  id-length
+  1:145   error    Infix operators must be spaced                           space-infix-ops
+  1:148   error    A space is required after ','                            comma-spacing
+  1:158   error    Requires a space before "}"                              block-spacing
+  1:158   error    Missing semicolon                                        semi
+  1:159   warning  Unexpected var, use let or const instead                 no-var
+  1:159   error    Missing space before keyword "var"                       space-before-keywords
+  1:159   error    Expected blank line after variable declarations          newline-after-var
+  1:163   warning  Identifier name 'i' is too short. (< 2)                  id-length
+  1:164   error    Infix operators must be spaced                           space-infix-ops
+  1:167   error    Missing whitespace after semicolon                       semi-spacing
+  1:168   error    Missing space before keyword "return"                    space-before-keywords
+  1:175   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:177   warning  Identifier name 'm' is too short. (< 2)                  id-length
+  1:178   error    Infix operators must be spaced                           space-infix-ops
+  1:180   error    A space is required after ','                            comma-spacing
+  1:181   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:183   warning  Identifier name 'c' is too short. (< 2)                  id-length
+  1:184   error    Infix operators must be spaced                           space-infix-ops
+  1:186   error    A space is required after ','                            comma-spacing
+  1:187   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:189   warning  Identifier name 'p' is too short. (< 2)                  id-length
+  1:190   error    Infix operators must be spaced                           space-infix-ops
+  1:191   error    Strings must use singlequote                             quotes
+  1:193   error    A space is required after ','                            comma-spacing
+  1:198   error    Requires a space before "}"                              block-spacing
+  1:198   error    Missing semicolon                                        semi
+  1:201   error    Missing function expression name                         func-names
+  1:201   error    Missing space before keyword "function"                  space-before-keywords
+  1:209   error    Missing space before function parentheses                space-before-function-paren
+  1:210   warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:211   error    A space is required after ','                            comma-spacing
+  1:212   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:212   error    "e" is defined but never used                            no-unused-vars
+  1:214   error    Missing space before opening brace                       space-before-blocks
+  1:214   error    Requires a space after "{"                               block-spacing
+  1:215   error    Strings must use singlequote                             quotes
+  1:215   error    Statement inside of curly braces should be on next line  brace-style
+  1:227   error    Missing whitespace after semicolon                       semi-spacing
+  1:228   error    "gapi" is not defined                                    no-undef
+  1:249   error    Missing function expression name                         func-names
+  1:257   error    Missing space before function parentheses                space-before-function-paren
+  1:259   error    Requires a space after "{"                               block-spacing
+  1:259   error    Missing space before opening brace                       space-before-blocks
+  1:260   error    Statement inside of curly braces should be on next line  brace-style
+  1:260   error    "gapi" is not defined                                    no-undef
+  1:291   error    Strings must use singlequote                             quotes
+  1:304   error    A space is required after ','                            comma-spacing
+  1:306   error    Expected method shorthand                                object-shorthand
+  1:317   error    Missing function expression name                         func-names
+  1:317   error    Missing space before keyword "function"                  space-before-keywords
+  1:317   error    Missing space before value for key "initialize"          key-spacing
+  1:325   error    Missing space before function parentheses                space-before-function-paren
+  1:327   error    Requires a space after "{"                               block-spacing
+  1:327   error    Missing space before opening brace                       space-before-blocks
+  1:328   error    Statement inside of curly braces should be on next line  brace-style
+  1:344   error    Infix operators must be spaced                           space-infix-ops
+  1:346   error    Requires a space before "}"                              block-spacing
+  1:346   error    Missing semicolon                                        semi
+  1:347   error    A space is required after ','                            comma-spacing
+  1:348   error    Expected method shorthand                                object-shorthand
+  1:356   error    Missing space before value for key "execute"             key-spacing
+  1:356   error    Missing function expression name                         func-names
+  1:356   error    Missing space before keyword "function"                  space-before-keywords
+  1:364   error    Missing space before function parentheses                space-before-function-paren
+  1:366   error    Requires a space after "{"                               block-spacing
+  1:366   error    Missing space before opening brace                       space-before-blocks
+  1:367   error    Statement inside of curly braces should be on next line  brace-style
+  1:380   error    Infix operators must be spaced                           space-infix-ops
+  1:393   error    A space is required after ','                            comma-spacing
+  1:408   error    A space is required after ','                            comma-spacing
+  1:409   error    "gapi" is not defined                                    no-undef
+  1:443   error    Infix operators must be spaced                           space-infix-ops
+  1:467   error    "gapi" is not defined                                    no-undef
+  1:492   error    Strings must use singlequote                             quotes
+  1:501   error    A space is required after ','                            comma-spacing
+  1:534   error    Missing semicolon                                        semi
+  1:534   error    Requires a space before "}"                              block-spacing
+  1:535   error    A space is required after ','                            comma-spacing
+  1:536   error    Expected method shorthand                                object-shorthand
+  1:541   error    Missing function expression name                         func-names
+  1:541   error    Missing space before keyword "function"                  space-before-keywords
+  1:541   error    Missing space before value for key "stop"                key-spacing
+  1:549   error    Missing space before function parentheses                space-before-function-paren
+  1:551   error    Requires a space after "{"                               block-spacing
+  1:551   error    Missing space before opening brace                       space-before-blocks
+  1:552   error    Statement inside of curly braces should be on next line  brace-style
+  1:579   error    A space is required after ','                            comma-spacing
+  1:593   error    Infix operators must be spaced                           space-infix-ops
+  1:596   error    A space is required after ','                            comma-spacing
+  1:607   error    Strings must use singlequote                             quotes
+  1:613   error    A space is required after ','                            comma-spacing
+  1:627   error    Missing space before value for key "activeUsers"         key-spacing
+  1:645   error    Missing semicolon                                        semi
+  1:645   error    Requires a space before "}"                              block-spacing
+  1:646   error    A space is required after ','                            comma-spacing
+  1:647   error    Expected method shorthand                                object-shorthand
+  1:655   error    Missing space before value for key "render_"             key-spacing
+  1:655   error    Missing space before keyword "function"                  space-before-keywords
+  1:655   error    Missing function expression name                         func-names
+  1:663   error    Missing space before function parentheses                space-before-function-paren
+  1:665   error    Missing space before opening brace                       space-before-blocks
+  1:665   error    Requires a space after "{"                               block-spacing
+  1:666   error    Expected blank line after variable declarations          newline-after-var
+  1:666   warning  Unexpected var, use let or const instead                 no-var
+  1:666   error    Statement inside of curly braces should be on next line  brace-style
+  1:670   warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:671   error    Infix operators must be spaced                           space-infix-ops
+  1:682   error    Missing whitespace after semicolon                       semi-spacing
+  1:697   error    Infix operators must be spaced                           space-infix-ops
+  1:698   error    Expected literal to be on the right side of ==           yoda
+  1:698   error    Strings must use singlequote                             quotes
+  1:706   error    Expected '===' and instead saw '=='                      eqeqeq
+  1:706   error    Infix operators must be spaced                           space-infix-ops
+  1:726   error    Infix operators must be spaced                           space-infix-ops
+  1:775   error    A space is required after ','                            comma-spacing
+  1:800   error    Infix operators must be spaced                           space-infix-ops
+  1:801   warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:811   error    Infix operators must be spaced                           space-infix-ops
+  1:826   error    A space is required after ','                            comma-spacing
+  1:856   error    Strings must use singlequote                             quotes
+  1:870   error    Infix operators must be spaced                           space-infix-ops
+  1:887   error    Missing semicolon                                        semi
+  1:887   error    Requires a space before "}"                              block-spacing
+  1:888   error    A space is required after ','                            comma-spacing
+  1:889   error    Expected method shorthand                                object-shorthand
+  1:905   error    Missing space before value for key "getActiveUsers_"     key-spacing
+  1:905   error    Missing function expression name                         func-names
+  1:905   error    Missing space before keyword "function"                  space-before-keywords
+  1:913   error    Missing space before function parentheses                space-before-function-paren
+  1:915   error    Missing space before opening brace                       space-before-blocks
+  1:915   error    Requires a space after "{"                               block-spacing
+  1:916   error    Expected blank line after variable declarations          newline-after-var
+  1:916   warning  Unexpected var, use let or const instead                 no-var
+  1:916   error    Statement inside of curly braces should be on next line  brace-style
+  1:916   error    Split 'var' declarations into multiple statements        one-var
+  1:920   warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:921   error    Infix operators must be spaced                           space-infix-ops
+  1:932   error    A space is required after ','                            comma-spacing
+  1:933   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:934   error    Infix operators must be spaced                           space-infix-ops
+  1:938   error    Infix operators must be spaced                           space-infix-ops
+  1:940   warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:957   error    Infix operators must be spaced                           space-infix-ops
+  1:961   error    Missing whitespace after semicolon                       semi-spacing
+  1:962   error    Missing space before keyword "if"                        space-before-keywords
+  1:962   error    Expected { after 'if' condition                          curly
+  1:962   error    Keyword "if" must be followed by whitespace              space-after-keywords
+  1:973   error    Infix operators must be spaced                           space-infix-ops
+  1:975   error    Expected literal to be on the right side of >            yoda
+  1:978   error    Infix operators must be spaced                           space-infix-ops
+  1:981   error    Missing space before keyword "throw"                     space-before-keywords
+  1:997   error    Strings must use singlequote                             quotes
+  1:1036  error    Missing whitespace after semicolon                       semi-spacing
+  1:1050  error    Infix operators must be spaced                           space-infix-ops
+  1:1053  error    A space is required after ','                            comma-spacing
+  1:1054  error    "gapi" is not defined                                    no-undef
+  1:1099  error    Missing space before value for key "ids"                 key-spacing
+  1:1104  error    A space is required after ','                            comma-spacing
+  1:1113  error    Strings must use singlequote                             quotes
+  1:1113  error    Missing space before value for key "metrics"             key-spacing
+  1:1140  error    Missing function expression name                         func-names
+  1:1148  error    Missing space before function parentheses                space-before-function-paren
+  1:1149  warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:1151  error    Missing space before opening brace                       space-before-blocks
+  1:1151  error    Requires a space after "{"                               block-spacing
+  1:1152  error    Statement inside of curly braces should be on next line  brace-style
+  1:1152  warning  Unexpected var, use let or const instead                 no-var
+  1:1152  error    Expected blank line after variable declarations          newline-after-var
+  1:1152  error    Split 'var' declarations into multiple statements        one-var
+  1:1156  warning  Identifier name 'i' is too short. (< 2)                  id-length
+  1:1157  error    Infix operators must be spaced                           space-infix-ops
+  1:1172  error    Infix operators must be spaced                           space-infix-ops
+  1:1173  error    use `Number(t.rows[0][0])` instead                       no-implicit-coercion
+  1:1188  error    A space is required after ','                            comma-spacing
+  1:1189  warning  Identifier name 's' is too short. (< 2)                  id-length
+  1:1190  error    Infix operators must be spaced                           space-infix-ops
+  1:1207  error    Missing whitespace after semicolon                       semi-spacing
+  1:1218  error    Strings must use singlequote                             quotes
+  1:1227  error    A space is required after ','                            comma-spacing
+  1:1241  error    Missing space before value for key "activeUsers"         key-spacing
+  1:1259  error    A space is required after ','                            comma-spacing
+  1:1261  error    Expected '!==' and instead saw '!='                      eqeqeq
+  1:1261  error    Infix operators must be spaced                           space-infix-ops
+  1:1264  error    Infix operators must be spaced                           space-infix-ops
+  1:1283  error    Infix operators must be spaced                           space-infix-ops
+  1:1285  error    A space is required after ','                            comma-spacing
+  1:1302  error    Infix operators must be spaced                           space-infix-ops
+  1:1306  error    A space is required after ','                            comma-spacing
+  1:1321  error    Infix operators must be spaced                           space-infix-ops
+  1:1325  error    Infix operators must be spaced                           space-infix-ops
+  1:1341  error    Infix operators must be spaced                           space-infix-ops
+  1:1384  error    A space is required after ','                            comma-spacing
+  1:1388  error    Requires a space before "}"                              block-spacing
+  1:1388  error    Missing semicolon                                        semi
+  1:1401  error    Requires a space before "}"                              block-spacing
+  1:1401  error    Missing semicolon                                        semi
+  1:1402  error    A space is required after ','                            comma-spacing
+  1:1403  error    Expected method shorthand                                object-shorthand
+  1:1413  error    Missing space before value for key "onChange_"           key-spacing
+  1:1413  error    Missing function expression name                         func-names
+  1:1413  error    Missing space before keyword "function"                  space-before-keywords
+  1:1421  error    Missing space before function parentheses                space-before-function-paren
+  1:1422  warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:1424  error    Missing space before opening brace                       space-before-blocks
+  1:1424  error    Requires a space after "{"                               block-spacing
+  1:1425  error    Expected blank line after variable declarations          newline-after-var
+  1:1425  error    Statement inside of curly braces should be on next line  brace-style
+  1:1425  warning  Unexpected var, use let or const instead                 no-var
+  1:1429  warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:1430  error    Infix operators must be spaced                           space-infix-ops
+  1:1460  error    Strings must use singlequote                             quotes
+  1:1464  error    Missing whitespace after semicolon                       semi-spacing
+  1:1466  error    Infix operators must be spaced                           space-infix-ops
+  1:1469  warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:1480  error    Infix operators must be spaced                           space-infix-ops
+  1:1498  error    A space is required after ','                            comma-spacing
+  1:1509  error    Strings must use singlequote                             quotes
+  1:1517  error    A space is required after ','                            comma-spacing
+  1:1531  error    Missing space before value for key "activeUsers"         key-spacing
+  1:1547  error    A space is required after ','                            comma-spacing
+  1:1554  error    Missing space before value for key "delta"               key-spacing
+  1:1557  error    A space is required after ','                            comma-spacing
+  1:1559  error    Infix operators must be spaced                           space-infix-ops
+  1:1561  error    Infix operators must be spaced                           space-infix-ops
+  1:1572  error    Strings must use singlequote                             quotes
+  1:1582  error    A space is required after ','                            comma-spacing
+  1:1596  error    Missing space before value for key "activeUsers"         key-spacing
+  1:1612  error    A space is required after ','                            comma-spacing
+  1:1619  error    Missing space before value for key "delta"               key-spacing
+  1:1633  error    Strings must use singlequote                             quotes
+  1:1643  error    A space is required after ','                            comma-spacing
+  1:1657  error    Missing space before value for key "activeUsers"         key-spacing
+  1:1673  error    A space is required after ','                            comma-spacing
+  1:1680  error    Missing space before value for key "delta"               key-spacing
+  1:1683  error    Missing semicolon                                        semi
+  1:1683  error    Requires a space before "}"                              block-spacing
+  1:1684  error    A space is required after ','                            comma-spacing
+  1:1694  error    Missing space before value for key "template"            key-spacing
+  1:1776  error    Missing semicolon                                        semi
+  1:1776  error    Requires a space before "}"                              block-spacing
+  1:1778  error    Missing semicolon                                        semi
+  1:1778  error    Requires a space before "}"                              block-spacing
+  2:1     error    Expected space or tab after // in comment                spaced-comment
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\public\javascripts\date-range-selector.js
+  1:2     error    Missing function expression name                         func-names
+  1:2     error    Missing space before keyword "function"                  space-before-keywords
+  1:10    error    Missing space before function parentheses                space-before-function-paren
+  1:11    warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:13    error    Missing space before opening brace                       space-before-blocks
+  1:13    error    Requires a space after "{"                               block-spacing
+  1:14    error    Missing JSDoc comment                                    require-jsdoc
+  1:14    error    Statement inside of curly braces should be on next line  brace-style
+  1:14    error    Expected a function expression                           func-style
+  1:23    warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:24    error    Missing space before function parentheses                space-before-function-paren
+  1:25    warning  Identifier name 's' is too short. (< 2)                  id-length
+  1:27    error    Missing space before opening brace                       space-before-blocks
+  1:27    error    Requires a space after "{"                               block-spacing
+  1:28    error    Expected { after 'if' condition                          curly
+  1:28    error    Keyword "if" must be followed by whitespace              space-after-keywords
+  1:28    error    Statement inside of curly braces should be on next line  brace-style
+  1:36    error    Missing space before keyword "return"                    space-before-keywords
+  1:55    error    Missing whitespace after semicolon                       semi-spacing
+  1:56    warning  Unexpected var, use let or const instead                 no-var
+  1:56    error    Missing space before keyword "var"                       space-before-keywords
+  1:56    error    Expected blank line after variable declarations          newline-after-var
+  1:60    warning  Identifier name 'a' is too short. (< 2)                  id-length
+  1:61    error    Infix operators must be spaced                           space-infix-ops
+  1:66    error    Infix operators must be spaced                           space-infix-ops
+  1:76    error    Missing space before value for key "exports"             key-spacing
+  1:78    error    A space is required after ','                            comma-spacing
+  1:82    error    Missing space before value for key "id"                  key-spacing
+  1:83    error    A space is required after ','                            comma-spacing
+  1:91    error    Missing space before value for key "loaded"              key-spacing
+  1:94    error    Missing whitespace after semicolon                       semi-spacing
+  1:95    error    Missing space before keyword "return"                    space-before-keywords
+  1:121   error    A space is required after ','                            comma-spacing
+  1:123   error    A space is required after ','                            comma-spacing
+  1:133   error    A space is required after ','                            comma-spacing
+  1:136   error    A space is required after ','                            comma-spacing
+  1:137   warning  Identifier name 'a' is too short. (< 2)                  id-length
+  1:145   error    Infix operators must be spaced                           space-infix-ops
+  1:148   error    A space is required after ','                            comma-spacing
+  1:158   error    Requires a space before "}"                              block-spacing
+  1:158   error    Missing semicolon                                        semi
+  1:159   warning  Unexpected var, use let or const instead                 no-var
+  1:159   error    Expected blank line after variable declarations          newline-after-var
+  1:159   error    Missing space before keyword "var"                       space-before-keywords
+  1:163   warning  Identifier name 'i' is too short. (< 2)                  id-length
+  1:164   error    Infix operators must be spaced                           space-infix-ops
+  1:167   error    Missing whitespace after semicolon                       semi-spacing
+  1:168   error    Missing space before keyword "return"                    space-before-keywords
+  1:175   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:177   warning  Identifier name 'm' is too short. (< 2)                  id-length
+  1:178   error    Infix operators must be spaced                           space-infix-ops
+  1:180   error    A space is required after ','                            comma-spacing
+  1:181   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:183   warning  Identifier name 'c' is too short. (< 2)                  id-length
+  1:184   error    Infix operators must be spaced                           space-infix-ops
+  1:186   error    A space is required after ','                            comma-spacing
+  1:187   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:189   warning  Identifier name 'p' is too short. (< 2)                  id-length
+  1:190   error    Infix operators must be spaced                           space-infix-ops
+  1:191   error    Strings must use singlequote                             quotes
+  1:193   error    A space is required after ','                            comma-spacing
+  1:198   error    Missing semicolon                                        semi
+  1:198   error    Requires a space before "}"                              block-spacing
+  1:201   error    Missing space before keyword "function"                  space-before-keywords
+  1:201   error    Missing function expression name                         func-names
+  1:209   error    Missing space before function parentheses                space-before-function-paren
+  1:210   warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:211   error    A space is required after ','                            comma-spacing
+  1:212   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:212   error    "e" is defined but never used                            no-unused-vars
+  1:214   error    Requires a space after "{"                               block-spacing
+  1:214   error    Missing space before opening brace                       space-before-blocks
+  1:215   error    Statement inside of curly braces should be on next line  brace-style
+  1:215   error    Strings must use singlequote                             quotes
+  1:227   error    Missing whitespace after semicolon                       semi-spacing
+  1:228   error    "gapi" is not defined                                    no-undef
+  1:249   error    Missing function expression name                         func-names
+  1:257   error    Missing space before function parentheses                space-before-function-paren
+  1:259   error    Missing space before opening brace                       space-before-blocks
+  1:259   error    Requires a space after "{"                               block-spacing
+  1:260   error    Expected a function expression                           func-style
+  1:260   error    Missing JSDoc comment                                    require-jsdoc
+  1:260   error    Statement inside of curly braces should be on next line  brace-style
+  1:269   warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:270   error    Missing space before function parentheses                space-before-function-paren
+  1:271   warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:273   error    Missing space before opening brace                       space-before-blocks
+  1:273   error    Requires a space after "{"                               block-spacing
+  1:274   error    Expected { after 'if' condition                          curly
+  1:274   error    Statement inside of curly braces should be on next line  brace-style
+  1:274   error    Keyword "if" must be followed by whitespace              space-after-keywords
+  1:287   error    Missing space before keyword "return"                    space-before-keywords
+  1:295   error    Missing whitespace after semicolon                       semi-spacing
+  1:296   warning  Unexpected var, use let or const instead                 no-var
+  1:296   error    Expected blank line after variable declarations          newline-after-var
+  1:296   error    Missing space before keyword "var"                       space-before-keywords
+  1:300   warning  Identifier name 'a' is too short. (< 2)                  id-length
+  1:301   error    Infix operators must be spaced                           space-infix-ops
+  1:311   error    Missing whitespace after semicolon                       semi-spacing
+  1:312   error    Expected { after 'if' condition                          curly
+  1:312   error    Keyword "if" must be followed by whitespace              space-after-keywords
+  1:312   error    Missing space before keyword "if"                        space-before-keywords
+  1:317   error    Missing space before keyword "return"                    space-before-keywords
+  1:326   error    use `Number(a[1])` instead                               no-implicit-coercion
+  1:332   error    Missing whitespace after semicolon                       semi-spacing
+  1:333   error    Missing space before keyword "if"                        space-before-keywords
+  1:333   error    Keyword "if" must be followed by whitespace              space-after-keywords
+  1:333   error    Expected { after 'if' condition                          curly
+  1:336   error    Strings must use singlequote                             quotes
+  1:336   error    Expected literal to be on the right side of ==           yoda
+  1:343   error    Infix operators must be spaced                           space-infix-ops
+  1:343   error    Expected '===' and instead saw '=='                      eqeqeq
+  1:347   error    Missing space before keyword "return"                    space-before-keywords
+  1:358   error    Missing whitespace after semicolon                       semi-spacing
+  1:359   error    Keyword "if" must be followed by whitespace              space-after-keywords
+  1:359   error    Missing space before keyword "if"                        space-before-keywords
+  1:359   error    Expected { after 'if' condition                          curly
+  1:362   error    Expected literal to be on the right side of ==           yoda
+  1:362   error    Strings must use singlequote                             quotes
+  1:373   error    Infix operators must be spaced                           space-infix-ops
+  1:373   error    Expected '===' and instead saw '=='                      eqeqeq
+  1:377   error    Missing space before keyword "return"                    space-before-keywords
+  1:388   error    Missing whitespace after semicolon                       semi-spacing
+  1:389   error    Missing space before keyword "throw"                     space-before-keywords
+  1:405   error    Strings must use singlequote                             quotes
+  1:405   error    Unexpected string concatenation                          prefer-template
+  1:427   error    Infix operators must be spaced                           space-infix-ops
+  1:430   error    Missing semicolon                                        semi
+  1:430   error    Requires a space before "}"                              block-spacing
+  1:431   error    Missing JSDoc comment                                    require-jsdoc
+  1:431   error    Missing space before keyword "function"                  space-before-keywords
+  1:431   error    Expected a function expression                           func-style
+  1:440   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:441   error    Missing space before function parentheses                space-before-function-paren
+  1:442   warning  Identifier name 't' is too short. (< 2)                  id-length
+  1:444   error    Requires a space after "{"                               block-spacing
+  1:444   error    Missing space before opening brace                       space-before-blocks
+  1:445   error    Expected blank line after variable declarations          newline-after-var
+  1:445   warning  Unexpected var, use let or const instead                 no-var
+  1:445   error    Statement inside of curly braces should be on next line  brace-style
+  1:449   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:450   error    Infix operators must be spaced                           space-infix-ops
+  1:451   error    Missing '()' invoking a constructor                      new-parens
+  1:459   error    Missing whitespace after semicolon                       semi-spacing
+  1:481   error    Infix operators must be spaced                           space-infix-ops
+  1:484   error    Missing whitespace after semicolon                       semi-spacing
+  1:485   warning  Unexpected var, use let or const instead                 no-var
+  1:485   error    Missing space before keyword "var"                       space-before-keywords
+  1:485   error    Expected blank line after variable declarations          newline-after-var
+  1:489   warning  Identifier name 'i' is too short. (< 2)                  id-length
+  1:490   error    Infix operators must be spaced                           space-infix-ops
+  1:510   error    Infix operators must be spaced                           space-infix-ops
+  1:513   error    Missing whitespace after semicolon                       semi-spacing
+  1:515   error    Infix operators must be spaced                           space-infix-ops
+  1:516   error    Expected literal to be on the right side of ==           yoda
+  1:517   error    Expected '===' and instead saw '=='                      eqeqeq
+  1:517   error    Infix operators must be spaced                           space-infix-ops
+  1:527   error    Infix operators must be spaced                           space-infix-ops
+  1:528   error    Unexpected string concatenation                          prefer-template
+  1:528   error    Strings must use singlequote                             quotes
+  1:531   error    Infix operators must be spaced                           space-infix-ops
+  1:535   error    Missing whitespace after semicolon                       semi-spacing
+  1:536   warning  Unexpected var, use let or const instead                 no-var
+  1:536   error    Expected blank line after variable declarations          newline-after-var
+  1:536   error    Missing space before keyword "var"                       space-before-keywords
+  1:540   warning  Identifier name 's' is too short. (< 2)                  id-length
+  1:541   error    Infix operators must be spaced                           space-infix-ops
+  1:561   error    Missing whitespace after semicolon                       semi-spacing
+  1:562   error    Missing space before keyword "return"                    space-before-keywords
+  1:570   error    Infix operators must be spaced                           space-infix-ops
+  1:571   error    Expected literal to be on the right side of ==           yoda
+  1:572   error    Infix operators must be spaced                           space-infix-ops
+  1:572   error    Expected '===' and instead saw '=='                      eqeqeq
+  1:582   error    Infix operators must be spaced                           space-infix-ops
+  1:583   error    Strings must use singlequote                             quotes
+  1:583   error    Unexpected string concatenation                          prefer-template
+  1:586   error    Infix operators must be spaced                           space-infix-ops
+  1:590   error    A space is required after ','                            comma-spacing
+  1:591   error    Unexpected string concatenation                          prefer-template
+  1:606   error    Infix operators must be spaced                           space-infix-ops
+  1:607   error    Strings must use singlequote                             quotes
+  1:610   error    Infix operators must be spaced                           space-infix-ops
+  1:612   error    Infix operators must be spaced                           space-infix-ops
+  1:613   error    Strings must use singlequote                             quotes
+  1:616   error    Infix operators must be spaced                           space-infix-ops
+  1:618   error    Requires a space before "}"                              block-spacing
+  1:618   error    Missing semicolon                                        semi
+  1:619   error    Missing space before keyword "var"                       space-before-keywords
+  1:619   warning  Unexpected var, use let or const instead                 no-var
+  1:619   error    Expected blank line after variable declarations          newline-after-var
+  1:619   error    Split 'var' declarations into multiple statements        one-var
+  1:623   warning  Identifier name 'i' is too short. (< 2)                  id-length
+  1:624   error    Infix operators must be spaced                           space-infix-ops
+  1:639   error    A space is required after ','                            comma-spacing
+  1:640   warning  Identifier name 's' is too short. (< 2)                  id-length
+  1:641   error    Infix operators must be spaced                           space-infix-ops
+  1:663   error    Missing whitespace after semicolon                       semi-spacing
+  1:664   error    "gapi" is not defined                                    no-undef
+  1:695   error    Strings must use singlequote                             quotes
+  1:714   error    A space is required after ','                            comma-spacing
+  1:716   error    Expected method shorthand                                object-shorthand
+  1:724   error    Missing function expression name                         func-names
+  1:724   error    Missing space before keyword "function"                  space-before-keywords
+  1:724   error    Missing space before value for key "execute"             key-spacing
+  1:732   error    Missing space before function parentheses                space-before-function-paren
+  1:734   error    Requires a space after "{"                               block-spacing
+  1:734   error    Missing space before opening brace                       space-before-blocks
+  1:735   error    Expected blank line after variable declarations          newline-after-var
+  1:735   error    Statement inside of curly braces should be on next line  brace-style
+  1:735   warning  Unexpected var, use let or const instead                 no-var
+  1:739   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:740   error    Infix operators must be spaced                           space-infix-ops
+  1:751   error    Missing whitespace after semicolon                       semi-spacing
+  1:754   error    Strings must use singlequote                             quotes
+  1:767   error    Infix operators must be spaced                           space-infix-ops
+  1:770   error    Strings must use singlequote                             quotes
+  1:783   error    Infix operators must be spaced                           space-infix-ops
+  1:785   error    Strings must use singlequote                             quotes
+  1:795   error    A space is required after ','                            comma-spacing
+  1:798   error    Strings must use singlequote                             quotes
+  1:809   error    Infix operators must be spaced                           space-infix-ops
+  1:812   error    Strings must use singlequote                             quotes
+  1:823   error    Infix operators must be spaced                           space-infix-ops
+  1:825   error    Strings must use singlequote                             quotes
+  1:836   error    A space is required after ','                            comma-spacing
+  1:851   error    Infix operators must be spaced                           space-infix-ops
+  1:852   error    Expected literal to be on the right side of ==           yoda
+  1:852   error    Strings must use singlequote                             quotes
+  1:860   error    Infix operators must be spaced                           space-infix-ops
+  1:860   error    Expected '===' and instead saw '=='                      eqeqeq
+  1:880   error    Infix operators must be spaced                           space-infix-ops
+  1:929   error    A space is required after ','                            comma-spacing
+  1:930   warning  Identifier name 'e' is too short. (< 2)                  id-length
+  1:940   error    Infix operators must be spaced                           space-infix-ops
+  1:956   error    Infix operators must be spaced                           space-infix-ops
+  1:968   error    A space is required after ','                            comma-spacing
+  1:993   error    Infix operators must be spaced                           space-infix-ops
+  1:1007  error    Missing whitespace after semicolon                       semi-spacing
+  1:1008  error    Missing space before keyword "var"                       space-before-keywords
+  1:1008  warning  Unexpected var, use let or const instead                 no-var
+  1:1008  error    Expected blank line after variable declarations          newline-after-var
+  1:1012  warning  Identifier name 'i' is too short. (< 2)                  id-length
+  1:1013  error    Infix operators must be spaced                           space-infix-ops
+  1:1046  error    Strings must use singlequote                             quotes
+  1:1054  error    Missing whitespace after semicolon                       semi-spacing
+  1:1055  error    Missing space before keyword "return"                    space-before-keywords
+  1:1081  error    Infix operators must be spaced                           space-infix-ops
+  1:1086  error    A space is required after ','                            comma-spacing
+  1:1112  error    Infix operators must be spaced                           space-infix-ops
+  1:1117  error    Strings must use singlequote                             quotes
+  1:1131  error    A space is required after ','                            comma-spacing
+  1:1149  error    Infix operators must be spaced                           space-infix-ops
+  1:1154  error    A space is required after ','                            comma-spacing
+  1:1178  error    Infix operators must be spaced                           space-infix-ops
+  1:1183  error    Strings must use singlequote                             quotes
+  1:1195  error    A space is required after ','                            comma-spacing
+  1:1212  error    A space is required after ','                            comma-spacing
+  1:1229  error    A space is required after ','                            comma-spacing
+  1:1253  error    Infix operators must be spaced                           space-infix-ops
+  1:1278  error    A space is required after ','                            comma-spacing
+  1:1283  error    Requires a space before "}"                              block-spacing
+  1:1283  error    Missing semicolon                                        semi
+  1:1284  error    A space is required after ','                            comma-spacing
+  1:1285  error    Expected method shorthand                                object-shorthand
+  1:1294  error    Missing space before value for key "onChange"            key-spacing
+  1:1294  error    Missing function expression name                         func-names
+  1:1294  error    Missing space before keyword "function"                  space-before-keywords
+  1:1302  error    Missing space before function parentheses                space-before-function-paren
+  1:1304  error    Missing space before opening brace                       space-before-blocks
+  1:1304  error    Requires a space after "{"                               block-spacing
+  1:1305  error    Statement inside of curly braces should be on next line  brace-style
+  1:1321  error    A space is required after ','                            comma-spacing
+  1:1338  error    A space is required after ','                            comma-spacing
+  1:1349  error    Strings must use singlequote                             quotes
+  1:1357  error    A space is required after ','                            comma-spacing
+  1:1359  error    Strings must use singlequote                             quotes
+  1:1372  error    Missing space before value for key "start-date"          key-spacing
+  1:1377  error    Strings must use singlequote                             quotes
+  1:1390  error    A space is required after ','                            comma-spacing
+  1:1391  error    Strings must use singlequote                             quotes
+  1:1402  error    Missing space before value for key "end-date"            key-spacing
+  1:1407  error    Strings must use singlequote                             quotes
+  1:1420  error    Missing semicolon                                        semi
+  1:1420  error    Requires a space before "}"                              block-spacing
+  1:1421  error    A space is required after ','                            comma-spacing
+  1:1422  error    Expected method shorthand                                object-shorthand
+  1:1432  error    Missing space before value for key "setValues"           key-spacing
+  1:1432  error    Missing space before keyword "function"                  space-before-keywords
+  1:1432  error    Missing function expression name                         func-names
+  1:1440  error    Missing space before function parentheses                space-before-function-paren
+  1:1442  error    Requires a space after "{"                               block-spacing
+  1:1442  error    Missing space before opening brace                       space-before-blocks
+  1:1443  error    Statement inside of curly braces should be on next line  brace-style
+  1:1448  error    Strings must use singlequote                             quotes
+  1:1461  error    Infix operators must be spaced                           space-infix-ops
+  1:1487  error    A space is required after ','                            comma-spacing
+  1:1493  error    Strings must use singlequote                             quotes
+  1:1504  error    Infix operators must be spaced                           space-infix-ops
+  1:1528  error    Missing semicolon                                        semi
+  1:1528  error    Requires a space before "}"                              block-spacing
+  1:1529  error    A space is required after ','                            comma-spacing
+  1:1530  error    Expected method shorthand                                object-shorthand
+  1:1540  error    Missing space before value for key "setMinMax"           key-spacing
+  1:1540  error    Missing space before keyword "function"                  space-before-keywords
+  1:1540  error    Missing function expression name                         func-names
+  1:1548  error    Missing space before function parentheses                space-before-function-paren
+  1:1550  error    Missing space before opening brace                       space-before-blocks
+  1:1550  error    Requires a space after "{"                               block-spacing
+  1:1551  error    Statement inside of curly braces should be on next line  brace-style
+  1:1574  error    Infix operators must be spaced                           space-infix-ops
+  1:1598  error    A space is required after ','                            comma-spacing
+  1:1620  error    Infix operators must be spaced                           space-infix-ops
+  1:1646  error    Missing semicolon                                        semi
+  1:1646  error    Requires a space before "}"                              block-spacing
+  1:1647  error    A space is required after ','                            comma-spacing
+  1:1657  error    Missing space before value for key "template"            key-spacing
+  1:1894  error    Missing semicolon                                        semi
+  1:1894  error    Requires a space before "}"                              block-spacing
+  1:1896  error    Missing semicolon                                        semi
+  1:1896  error    Requires a space before "}"                              block-spacing
+  2:1     error    Expected space or tab after // in comment                spaced-comment
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\public\javascripts\home-page.js
+   1:2   error    Missing function expression name                         func-names
+   1:10  error    Missing space before function parentheses                space-before-function-paren
+   1:11  warning  Identifier name 'w' is too short. (< 2)                  id-length
+   1:12  error    A space is required after ','                            comma-spacing
+   1:13  warning  Identifier name 'd' is too short. (< 2)                  id-length
+   1:14  error    A space is required after ','                            comma-spacing
+   1:15  warning  Identifier name 's' is too short. (< 2)                  id-length
+   1:16  error    A space is required after ','                            comma-spacing
+   1:17  warning  Identifier name 'g' is too short. (< 2)                  id-length
+   1:18  error    A space is required after ','                            comma-spacing
+   1:21  error    A space is required after ','                            comma-spacing
+   1:25  error    Missing space before opening brace                       space-before-blocks
+   2:3   error    Assignment to function parameter 'g'                     no-param-reassign
+   2:4   error    Infix operators must be spaced                           space-infix-ops
+   2:5   warning  Identifier name 'w' is too short. (< 2)                  id-length
+   2:11  error    Infix operators must be spaced                           space-infix-ops
+   2:14  warning  Identifier name 'w' is too short. (< 2)                  id-length
+   2:20  error    Infix operators must be spaced                           space-infix-ops
+   2:24  error    Missing whitespace after semicolon                       semi-spacing
+   2:25  warning  Identifier name 'g' is too short. (< 2)                  id-length
+   2:36  error    Infix operators must be spaced                           space-infix-ops
+   2:38  warning  Identifier name 'q' is too short. (< 2)                  id-length
+   2:40  error    Missing space before value for key "q"                   key-spacing
+   2:42  error    A space is required after ','                            comma-spacing
+   2:43  error    Expected method shorthand                                object-shorthand
+   2:49  error    Missing space before keyword "function"                  space-before-keywords
+   2:49  error    Missing space before value for key "ready"               key-spacing
+   2:49  error    Missing function expression name                         func-names
+   2:57  error    Missing space before function parentheses                space-before-function-paren
+   2:58  warning  Identifier name 'f' is too short. (< 2)                  id-length
+   2:60  error    Requires a space after "{"                               block-spacing
+   2:60  error    Missing space before opening brace                       space-before-blocks
+   2:61  error    Statement inside of curly braces should be on next line  brace-style
+   2:76  error    Requires a space before "}"                              block-spacing
+   3:3   error    Assignment to function parameter 'js'                    no-param-reassign
+   3:5   error    Infix operators must be spaced                           space-infix-ops
+   3:24  error    Missing whitespace after semicolon                       semi-spacing
+   3:25  error    Assignment to function parameter 'fs'                    no-param-reassign
+   3:27  error    Infix operators must be spaced                           space-infix-ops
+   4:9   error    Infix operators must be spaced                           space-infix-ops
+   5:32  error    A space is required after ','                            comma-spacing
+   5:36  error    Missing whitespace after semicolon                       semi-spacing
+   5:46  error    Infix operators must be spaced                           space-infix-ops
+   5:47  error    Missing function expression name                         func-names
+   5:47  error    Missing space before keyword "function"                  space-before-keywords
+   5:55  error    Missing space before function parentheses                space-before-function-paren
+   5:57  error    Missing space before opening brace                       space-before-blocks
+   5:57  error    Requires a space after "{"                               block-spacing
+   5:58  error    Statement inside of curly braces should be on next line  brace-style
+   5:78  error    Requires a space before "}"                              block-spacing
+   6:9   error    A space is required after ','                            comma-spacing
+   6:18  error    A space is required after ','                            comma-spacing
+   8:1   error    "gapi" is not defined                                    no-undef
+   8:22  error    Missing function expression name                         func-names
+   8:30  error    Missing space before function parentheses                space-before-function-paren
+   9:3   error    "gapi" is not defined                                    no-undef
+  13:3   warning  Unexpected var, use let or const instead                 no-var
+  13:26  error    "gapi" is not defined                                    no-undef
+  18:3   error    Expected blank line after variable declarations          newline-after-var
+  18:3   warning  Unexpected var, use let or const instead                 no-var
+  18:23  error    "gapi" is not defined                                    no-undef
+  33:29  error    Missing function expression name                         func-names
+  33:37  error    Missing space before function parentheses                space-before-function-paren
+  34:28  error    Expected property shorthand                              object-shorthand
+  37:2   error    Block must not be padded by blank lines                  padded-blocks
+  39:1   error    Expected space or tab after // in comment                spaced-comment
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\public\javascripts\view-selector2.js
+  1:2     error    Missing function expression name                                 func-names
+  1:2     error    Missing space before keyword "function"                          space-before-keywords
+  1:10    error    Missing space before function parentheses                        space-before-function-paren
+  1:11    warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:13    error    Requires a space after "{"                                       block-spacing
+  1:13    error    Missing space before opening brace                               space-before-blocks
+  1:14    error    Expected a function expression                                   func-style
+  1:14    error    Missing JSDoc comment                                            require-jsdoc
+  1:14    error    Statement inside of curly braces should be on next line          brace-style
+  1:23    warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:24    error    Missing space before function parentheses                        space-before-function-paren
+  1:25    warning  Identifier name 'r' is too short. (< 2)                          id-length
+  1:27    error    Missing space before opening brace                               space-before-blocks
+  1:27    error    Requires a space after "{"                                       block-spacing
+  1:28    error    Keyword "if" must be followed by whitespace                      space-after-keywords
+  1:28    error    Statement inside of curly braces should be on next line          brace-style
+  1:28    error    Expected { after 'if' condition                                  curly
+  1:36    error    Missing space before keyword "return"                            space-before-keywords
+  1:55    error    Missing whitespace after semicolon                               semi-spacing
+  1:56    warning  Unexpected var, use let or const instead                         no-var
+  1:56    error    Expected blank line after variable declarations                  newline-after-var
+  1:56    error    Missing space before keyword "var"                               space-before-keywords
+  1:60    warning  Identifier name 's' is too short. (< 2)                          id-length
+  1:61    error    Infix operators must be spaced                                   space-infix-ops
+  1:66    error    Infix operators must be spaced                                   space-infix-ops
+  1:76    error    Missing space before value for key "exports"                     key-spacing
+  1:78    error    A space is required after ','                                    comma-spacing
+  1:82    error    Missing space before value for key "id"                          key-spacing
+  1:83    error    A space is required after ','                                    comma-spacing
+  1:91    error    Missing space before value for key "loaded"                      key-spacing
+  1:94    error    Missing whitespace after semicolon                               semi-spacing
+  1:95    error    Missing space before keyword "return"                            space-before-keywords
+  1:121   error    A space is required after ','                                    comma-spacing
+  1:123   error    A space is required after ','                                    comma-spacing
+  1:133   error    A space is required after ','                                    comma-spacing
+  1:136   error    A space is required after ','                                    comma-spacing
+  1:137   warning  Identifier name 's' is too short. (< 2)                          id-length
+  1:145   error    Infix operators must be spaced                                   space-infix-ops
+  1:148   error    A space is required after ','                                    comma-spacing
+  1:158   error    Requires a space before "}"                                      block-spacing
+  1:158   error    Missing semicolon                                                semi
+  1:159   warning  Unexpected var, use let or const instead                         no-var
+  1:159   error    Missing space before keyword "var"                               space-before-keywords
+  1:159   error    Expected blank line after variable declarations                  newline-after-var
+  1:163   warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:164   error    Infix operators must be spaced                                   space-infix-ops
+  1:167   error    Missing whitespace after semicolon                               semi-spacing
+  1:168   error    Missing space before keyword "return"                            space-before-keywords
+  1:175   warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:177   warning  Identifier name 'm' is too short. (< 2)                          id-length
+  1:178   error    Infix operators must be spaced                                   space-infix-ops
+  1:180   error    A space is required after ','                                    comma-spacing
+  1:181   warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:183   warning  Identifier name 'c' is too short. (< 2)                          id-length
+  1:184   error    Infix operators must be spaced                                   space-infix-ops
+  1:186   error    A space is required after ','                                    comma-spacing
+  1:187   warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:189   warning  Identifier name 'p' is too short. (< 2)                          id-length
+  1:190   error    Infix operators must be spaced                                   space-infix-ops
+  1:191   error    Strings must use singlequote                                     quotes
+  1:193   error    A space is required after ','                                    comma-spacing
+  1:198   error    Missing semicolon                                                semi
+  1:198   error    Requires a space before "}"                                      block-spacing
+  1:201   error    Missing function expression name                                 func-names
+  1:201   error    Missing space before keyword "function"                          space-before-keywords
+  1:209   error    Missing space before function parentheses                        space-before-function-paren
+  1:210   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:211   error    A space is required after ','                                    comma-spacing
+  1:212   warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:213   error    A space is required after ','                                    comma-spacing
+  1:214   warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:216   error    Missing space before opening brace                               space-before-blocks
+  1:216   error    Requires a space after "{"                                       block-spacing
+  1:217   error    Strings must use singlequote                                     quotes
+  1:217   error    Statement inside of curly braces should be on next line          brace-style
+  1:229   error    Missing whitespace after semicolon                               semi-spacing
+  1:230   error    Missing JSDoc comment                                            require-jsdoc
+  1:230   error    Missing space before keyword "function"                          space-before-keywords
+  1:230   error    Expected a function expression                                   func-style
+  1:239   warning  Identifier name 'r' is too short. (< 2)                          id-length
+  1:240   error    Missing space before function parentheses                        space-before-function-paren
+  1:241   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:243   error    Requires a space after "{"                                       block-spacing
+  1:243   error    Missing space before opening brace                               space-before-blocks
+  1:244   error    Statement inside of curly braces should be on next line          brace-style
+  1:252   error    Infix operators must be spaced                                   space-infix-ops
+  1:266   error    Infix operators must be spaced                                   space-infix-ops
+  1:270   error    Strings must use singlequote                                     quotes
+  1:280   error    Missing space before value for key "default"                     key-spacing
+  1:282   error    Requires a space before "}"                                      block-spacing
+  1:282   error    Missing semicolon                                                semi
+  1:283   error    Expected blank line after variable declarations                  newline-after-var
+  1:283   warning  Unexpected var, use let or const instead                         no-var
+  1:283   error    Missing space before keyword "var"                               space-before-keywords
+  1:283   error    Split 'var' declarations into multiple statements                one-var
+  1:287   warning  Identifier name 's' is too short. (< 2)                          id-length
+  1:288   error    Infix operators must be spaced                                   space-infix-ops
+  1:293   error    A space is required after ','                                    comma-spacing
+  1:294   warning  Identifier name 'n' is too short. (< 2)                          id-length
+  1:295   error    Infix operators must be spaced                                   space-infix-ops
+  1:300   error    Missing whitespace after semicolon                               semi-spacing
+  1:301   error    "gapi" is not defined                                            no-undef
+  1:322   error    Missing function expression name                                 func-names
+  1:330   error    Missing space before function parentheses                        space-before-function-paren
+  1:332   error    Missing space before opening brace                               space-before-blocks
+  1:332   error    Requires a space after "{"                                       block-spacing
+  1:333   error    Statement inside of curly braces should be on next line          brace-style
+  1:333   error    Expected a function expression                                   func-style
+  1:333   error    Missing JSDoc comment                                            require-jsdoc
+  1:342   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:343   error    Missing space before function parentheses                        space-before-function-paren
+  1:344   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:345   error    A space is required after ','                                    comma-spacing
+  1:346   warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:347   error    A space is required after ','                                    comma-spacing
+  1:348   warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:350   error    Requires a space after "{"                                       block-spacing
+  1:350   error    Missing space before opening brace                               space-before-blocks
+  1:351   error    Statement inside of curly braces should be on next line          brace-style
+  1:351   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:362   error    Infix operators must be spaced                                   space-infix-ops
+  1:369   error    Missing function expression name                                 func-names
+  1:377   error    Missing space before function parentheses                        space-before-function-paren
+  1:378   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:380   error    Missing space before opening brace                               space-before-blocks
+  1:380   error    Requires a space after "{"                                       block-spacing
+  1:381   error    Statement inside of curly braces should be on next line          brace-style
+  1:381   warning  Unexpected var, use let or const instead                         no-var
+  1:381   error    Expected blank line after variable declarations                  newline-after-var
+  1:385   warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:386   error    Infix operators must be spaced                                   space-infix-ops
+  1:387   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:391   error    Expected '===' and instead saw '=='                              eqeqeq
+  1:391   error    Infix operators must be spaced                                   space-infix-ops
+  1:394   error    Infix operators must be spaced                                   space-infix-ops
+  1:395   error    Strings must use singlequote                                     quotes
+  1:407   error    Strings must use singlequote                                     quotes
+  1:410   error    Missing whitespace after semicolon                               semi-spacing
+  1:411   error    Missing space before keyword "return"                            space-before-keywords
+  1:411   error    Keyword "return" must be followed by whitespace                  space-return-throw-case
+  1:417   error    Unexpected string concatenation                                  prefer-template
+  1:417   error    Strings must use singlequote                                     quotes
+  1:427   error    Infix operators must be spaced                                   space-infix-ops
+  1:429   error    Infix operators must be spaced                                   space-infix-ops
+  1:439   error    Infix operators must be spaced                                   space-infix-ops
+  1:444   error    Infix operators must be spaced                                   space-infix-ops
+  1:449   error    Infix operators must be spaced                                   space-infix-ops
+  1:456   error    Infix operators must be spaced                                   space-infix-ops
+  1:457   error    Strings must use singlequote                                     quotes
+  1:468   error    Requires a space before "}"                                      block-spacing
+  1:468   error    Missing semicolon                                                semi
+  1:476   error    Strings must use singlequote                                     quotes
+  1:479   error    Missing semicolon                                                semi
+  1:479   error    Requires a space before "}"                                      block-spacing
+  1:480   error    Missing space before keyword "function"                          space-before-keywords
+  1:480   error    Missing JSDoc comment                                            require-jsdoc
+  1:480   error    Expected a function expression                                   func-style
+  1:489   warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:490   error    Missing space before function parentheses                        space-before-function-paren
+  1:491   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:493   error    Missing space before opening brace                               space-before-blocks
+  1:493   error    Requires a space after "{"                                       block-spacing
+  1:494   error    Statement inside of curly braces should be on next line          brace-style
+  1:501   error    Do not nest ternary expressions                                  no-nested-ternary
+  1:501   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:506   error    Infix operators must be spaced                                   space-infix-ops
+  1:516   error    Infix operators must be spaced                                   space-infix-ops
+  1:523   error    Strings must use singlequote                                     quotes
+  1:523   error    Missing space before value for key "prop"                        key-spacing
+  1:531   error    A space is required after ','                                    comma-spacing
+  1:538   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:538   error    Missing space before value for key "value"                       key-spacing
+  1:546   error    Infix operators must be spaced                                   space-infix-ops
+  1:548   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:553   error    Infix operators must be spaced                                   space-infix-ops
+  1:575   error    A space is required after ','                                    comma-spacing
+  1:576   error    Strings must use singlequote                                     quotes
+  1:581   error    Do not nest ternary expressions                                  no-nested-ternary
+  1:593   error    Infix operators must be spaced                                   space-infix-ops
+  1:600   error    Missing space before value for key "prop"                        key-spacing
+  1:600   error    Strings must use singlequote                                     quotes
+  1:612   error    A space is required after ','                                    comma-spacing
+  1:619   error    Missing space before value for key "value"                       key-spacing
+  1:644   error    Infix operators must be spaced                                   space-infix-ops
+  1:651   error    Strings must use singlequote                                     quotes
+  1:651   error    Missing space before value for key "prop"                        key-spacing
+  1:662   error    A space is required after ','                                    comma-spacing
+  1:669   error    Missing space before value for key "value"                       key-spacing
+  1:688   error    Requires a space before "}"                                      block-spacing
+  1:688   error    Missing semicolon                                                semi
+  1:689   error    "gapi" is not defined                                            no-undef
+  1:720   error    Strings must use singlequote                                     quotes
+  1:735   error    A space is required after ','                                    comma-spacing
+  1:737   error    Expected method shorthand                                        object-shorthand
+  1:745   error    Missing function expression name                                 func-names
+  1:745   error    Missing space before keyword "function"                          space-before-keywords
+  1:745   error    Missing space before value for key "execute"                     key-spacing
+  1:753   error    Missing space before function parentheses                        space-before-function-paren
+  1:755   error    Requires a space after "{"                                       block-spacing
+  1:755   error    Missing space before opening brace                               space-before-blocks
+  1:756   error    Statement inside of curly braces should be on next line          brace-style
+  1:775   error    Missing function expression name                                 func-names
+  1:783   error    Missing space before function parentheses                        space-before-function-paren
+  1:785   error    Missing space before opening brace                               space-before-blocks
+  1:785   error    Requires a space after "{"                                       block-spacing
+  1:786   error    Statement inside of curly braces should be on next line          brace-style
+  1:808   error    A space is required after ','                                    comma-spacing
+  1:822   error    Infix operators must be spaced                                   space-infix-ops
+  1:839   error    A space is required after ','                                    comma-spacing
+  1:857   error    Requires a space before "}"                                      block-spacing
+  1:857   error    Missing semicolon                                                semi
+  1:870   error    A space is required after ','                                    comma-spacing
+  1:875   error    Missing semicolon                                                semi
+  1:875   error    Requires a space before "}"                                      block-spacing
+  1:876   error    A space is required after ','                                    comma-spacing
+  1:877   error    Expected method shorthand                                        object-shorthand
+  1:881   error    Missing space before value for key "set"                         key-spacing
+  1:881   error    Missing function expression name                                 func-names
+  1:881   error    Missing space before keyword "function"                          space-before-keywords
+  1:889   error    Missing space before function parentheses                        space-before-function-paren
+  1:890   warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:892   error    Requires a space after "{"                                       block-spacing
+  1:892   error    Missing space before opening brace                               space-before-blocks
+  1:893   error    Keyword "if" must be followed by whitespace                      space-after-keywords
+  1:893   error    Statement inside of curly braces should be on next line          brace-style
+  1:893   error    Expected { after 'if' condition                                  curly
+  1:896   error    use `Boolean(t.ids)` instead                                     no-implicit-coercion
+  1:903   error    Infix operators must be spaced                                   space-infix-ops
+  1:904   error    use `Boolean(t.viewId)` instead                                  no-implicit-coercion
+  1:914   error    Infix operators must be spaced                                   space-infix-ops
+  1:915   error    use `Boolean(t.propertyId)` instead                              no-implicit-coercion
+  1:929   error    Infix operators must be spaced                                   space-infix-ops
+  1:930   error    use `Boolean(t.accountId)` instead                               no-implicit-coercion
+  1:943   error    Infix operators must be spaced                                   space-infix-ops
+  1:946   error    Missing space before keyword "throw"                             space-before-keywords
+  1:1066  error    Missing whitespace after semicolon                               semi-spacing
+  1:1067  error    Missing space before keyword "if"                                space-before-keywords
+  1:1067  error    Expected { after 'if' condition                                  curly
+  1:1067  error    Keyword "if" must be followed by whitespace                      space-after-keywords
+  1:1070  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:1081  error    Infix operators must be spaced                                   space-infix-ops
+  1:1098  error    Missing space before keyword "throw"                             space-before-keywords
+  1:1114  error    Strings must use singlequote                                     quotes
+  1:1197  error    Missing whitespace after semicolon                               semi-spacing
+  1:1198  warning  Unexpected var, use let or const instead                         no-var
+  1:1198  error    Expected blank line after variable declarations                  newline-after-var
+  1:1198  error    Missing space before keyword "var"                               space-before-keywords
+  1:1202  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:1203  error    Infix operators must be spaced                                   space-infix-ops
+  1:1214  error    Missing whitespace after semicolon                               semi-spacing
+  1:1215  error    Keyword "return" must be followed by whitespace                  space-return-throw-case
+  1:1215  error    Missing space before keyword "return"                            space-before-keywords
+  1:1222  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:1227  error    Expected '!==' and instead saw '!='                              eqeqeq
+  1:1227  error    Infix operators must be spaced                                   space-infix-ops
+  1:1234  error    Infix operators must be spaced                                   space-infix-ops
+  1:1236  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:1244  error    Infix operators must be spaced                                   space-infix-ops
+  1:1244  error    Expected '!==' and instead saw '!='                              eqeqeq
+  1:1254  error    Infix operators must be spaced                                   space-infix-ops
+  1:1256  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:1268  error    Infix operators must be spaced                                   space-infix-ops
+  1:1268  error    Expected '!==' and instead saw '!='                              eqeqeq
+  1:1282  error    Infix operators must be spaced                                   space-infix-ops
+  1:1284  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:1295  error    Infix operators must be spaced                                   space-infix-ops
+  1:1295  error    Expected '!==' and instead saw '!='                              eqeqeq
+  1:1309  error    Infix operators must be spaced                                   space-infix-ops
+  1:1312  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:1317  error    Infix operators must be spaced                                   space-infix-ops
+  1:1322  error    A space is required after ','                                    comma-spacing
+  1:1323  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:1331  error    Infix operators must be spaced                                   space-infix-ops
+  1:1336  error    A space is required after ','                                    comma-spacing
+  1:1337  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:1349  error    Infix operators must be spaced                                   space-infix-ops
+  1:1354  error    A space is required after ','                                    comma-spacing
+  1:1355  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:1366  error    Infix operators must be spaced                                   space-infix-ops
+  1:1372  error    A space is required after ','                                    comma-spacing
+  1:1373  error    "gapi" is not defined                                            no-undef
+  1:1421  error    A space is required after ','                                    comma-spacing
+  1:1424  error    Requires a space before "}"                                      block-spacing
+  1:1424  error    Missing semicolon                                                semi
+  1:1425  error    A space is required after ','                                    comma-spacing
+  1:1426  error    Expected method shorthand                                        object-shorthand
+  1:1433  error    Missing space before value for key "setup_"                      key-spacing
+  1:1433  error    Missing function expression name                                 func-names
+  1:1433  error    Missing space before keyword "function"                          space-before-keywords
+  1:1441  error    Missing space before function parentheses                        space-before-function-paren
+  1:1442  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:1444  error    Requires a space after "{"                                       block-spacing
+  1:1444  error    Missing space before opening brace                               space-before-blocks
+  1:1445  error    Statement inside of curly braces should be on next line          brace-style
+  1:1445  error    Expected a function expression                                   func-style
+  1:1445  error    Missing JSDoc comment                                            require-jsdoc
+  1:1454  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:1455  error    Missing space before function parentheses                        space-before-function-paren
+  1:1457  error    Requires a space after "{"                                       block-spacing
+  1:1457  error    Missing space before opening brace                               space-before-blocks
+  1:1458  error    ["default"] is better written in dot notation                    dot-notation
+  1:1458  error    Statement inside of curly braces should be on next line          brace-style
+  1:1460  error    Strings must use singlequote                                     quotes
+  1:1482  error    Missing function expression name                                 func-names
+  1:1490  error    Missing space before function parentheses                        space-before-function-paren
+  1:1491  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:1493  error    Requires a space after "{"                                       block-spacing
+  1:1493  error    Missing space before opening brace                               space-before-blocks
+  1:1494  error    Statement inside of curly braces should be on next line          brace-style
+  1:1494  warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:1505  error    Infix operators must be spaced                                   space-infix-ops
+  1:1507  error    A space is required after ','                                    comma-spacing
+  1:1508  warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:1518  error    Infix operators must be spaced                                   space-infix-ops
+  1:1536  error    A space is required after ','                                    comma-spacing
+  1:1540  error    Requires a space before "}"                                      block-spacing
+  1:1540  error    Missing semicolon                                                semi
+  1:1541  error    A space is required after ','                                    comma-spacing
+  1:1542  error    Missing space before keyword "function"                          space-before-keywords
+  1:1542  error    Missing function expression name                                 func-names
+  1:1550  error    Missing space before function parentheses                        space-before-function-paren
+  1:1551  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:1553  error    Missing space before opening brace                               space-before-blocks
+  1:1553  error    Requires a space after "{"                                       block-spacing
+  1:1554  error    Statement inside of curly braces should be on next line          brace-style
+  1:1561  error    Strings must use singlequote                                     quotes
+  1:1568  error    A space is required after ','                                    comma-spacing
+  1:1571  error    Requires a space before "}"                                      block-spacing
+  1:1571  error    Missing semicolon                                                semi
+  1:1573  error    Requires a space before "}"                                      block-spacing
+  1:1573  error    Missing semicolon                                                semi
+  1:1574  error    Missing space before keyword "var"                               space-before-keywords
+  1:1574  error    Expected blank line after variable declarations                  newline-after-var
+  1:1574  warning  Unexpected var, use let or const instead                         no-var
+  1:1578  error    Unexpected alias 'i' for 'this'                                  consistent-this
+  1:1578  warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:1579  error    Infix operators must be spaced                                   space-infix-ops
+  1:1584  error    Missing whitespace after semicolon                               semi-spacing
+  1:1585  error    "gapi" is not defined                                            no-undef
+  1:1619  error    Infix operators must be spaced                                   space-infix-ops
+  1:1624  error    "gapi" is not defined                                            no-undef
+  1:1647  error    Strings must use singlequote                                     quotes
+  1:1656  error    A space is required after ','                                    comma-spacing
+  1:1659  error    Missing semicolon                                                semi
+  1:1659  error    Requires a space before "}"                                      block-spacing
+  1:1660  error    A space is required after ','                                    comma-spacing
+  1:1661  error    Expected method shorthand                                        object-shorthand
+  1:1677  error    Missing function expression name                                 func-names
+  1:1677  error    Missing space before value for key "updateAccounts_"             key-spacing
+  1:1677  error    Missing space before keyword "function"                          space-before-keywords
+  1:1685  error    Missing space before function parentheses                        space-before-function-paren
+  1:1687  error    Requires a space after "{"                                       block-spacing
+  1:1687  error    Missing space before opening brace                               space-before-blocks
+  1:1688  error    Split 'var' declarations into multiple statements                one-var
+  1:1688  error    Expected blank line after variable declarations                  newline-after-var
+  1:1688  error    Statement inside of curly braces should be on next line          brace-style
+  1:1688  warning  Unexpected var, use let or const instead                         no-var
+  1:1692  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:1693  error    A space is required after ','                                    comma-spacing
+  1:1694  warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:1695  error    A space is required after ','                                    comma-spacing
+  1:1696  warning  Identifier name 'r' is too short. (< 2)                          id-length
+  1:1697  error    A space is required after ','                                    comma-spacing
+  1:1698  warning  Identifier name 's' is too short. (< 2)                          id-length
+  1:1699  error    Infix operators must be spaced                                   space-infix-ops
+  1:1710  error    A space is required after ','                                    comma-spacing
+  1:1711  warning  Identifier name 'n' is too short. (< 2)                          id-length
+  1:1712  error    Infix operators must be spaced                                   space-infix-ops
+  1:1717  error    Missing whitespace after semicolon                               semi-spacing
+  1:1718  error    Missing space before keyword "if"                                space-before-keywords
+  1:1718  error    Keyword "if" must be followed by whitespace                      space-after-keywords
+  1:1718  error    Expected { after 'if' condition                                  curly
+  1:1750  error    Missing space before keyword "return"                            space-before-keywords
+  1:1767  error    Strings must use singlequote                                     quotes
+  1:1774  error    A space is required after ','                                    comma-spacing
+  1:1890  error    Missing whitespace after semicolon                               semi-spacing
+  1:1891  error    Missing space before keyword "if"                                space-before-keywords
+  1:1891  error    Expected { after 'if' condition                                  curly
+  1:1891  error    Expected { after 'else'                                          curly
+  1:1891  error    Keyword "if" must be followed by whitespace                      space-after-keywords
+  1:1896  error    Missing space before keyword "switch"                            space-before-keywords
+  1:1896  error    Keyword "switch" must be followed by whitespace                  space-after-keywords
+  1:1896  error    Expected a default case                                          default-case
+  1:1910  error    Missing space before opening brace                               space-before-blocks
+  1:1910  error    Requires a space after "{"                                       block-spacing
+  1:1911  error    Keyword "case" must be followed by whitespace                    space-return-throw-case
+  1:1915  error    Strings must use singlequote                                     quotes
+  1:1925  error    Infix operators must be spaced                                   space-infix-ops
+  1:1960  error    A space is required after ','                                    comma-spacing
+  1:1962  error    Infix operators must be spaced                                   space-infix-ops
+  1:2008  error    A space is required after ','                                    comma-spacing
+  1:2010  error    Infix operators must be spaced                                   space-infix-ops
+  1:2060  error    Missing whitespace after semicolon                               semi-spacing
+  1:2061  error    Missing space before keyword "break"                             space-before-keywords
+  1:2066  error    Missing whitespace after semicolon                               semi-spacing
+  1:2067  error    Keyword "case" must be followed by whitespace                    space-return-throw-case
+  1:2067  error    Missing space before keyword "case"                              space-before-keywords
+  1:2071  error    Strings must use singlequote                                     quotes
+  1:2085  error    Infix operators must be spaced                                   space-infix-ops
+  1:2124  error    A space is required after ','                                    comma-spacing
+  1:2126  error    Infix operators must be spaced                                   space-infix-ops
+  1:2176  error    A space is required after ','                                    comma-spacing
+  1:2178  error    Infix operators must be spaced                                   space-infix-ops
+  1:2180  error    Infix operators must be spaced                                   space-infix-ops
+  1:2189  error    Infix operators must be spaced                                   space-infix-ops
+  1:2201  error    Missing whitespace after semicolon                               semi-spacing
+  1:2202  error    Missing space before keyword "break"                             space-before-keywords
+  1:2207  error    Missing whitespace after semicolon                               semi-spacing
+  1:2208  error    Keyword "case" must be followed by whitespace                    space-return-throw-case
+  1:2208  error    Missing space before keyword "case"                              space-before-keywords
+  1:2212  error    Strings must use singlequote                                     quotes
+  1:2225  error    Infix operators must be spaced                                   space-infix-ops
+  1:2260  error    A space is required after ','                                    comma-spacing
+  1:2262  error    Infix operators must be spaced                                   space-infix-ops
+  1:2264  error    Infix operators must be spaced                                   space-infix-ops
+  1:2278  error    Infix operators must be spaced                                   space-infix-ops
+  1:2295  error    A space is required after ','                                    comma-spacing
+  1:2297  error    Infix operators must be spaced                                   space-infix-ops
+  1:2299  error    Infix operators must be spaced                                   space-infix-ops
+  1:2308  error    Infix operators must be spaced                                   space-infix-ops
+  1:2320  error    Missing semicolon                                                semi
+  1:2320  error    Requires a space before "}"                                      block-spacing
+  1:2321  error    Missing space before keyword "else"                              space-before-keywords
+  1:2327  error    Infix operators must be spaced                                   space-infix-ops
+  1:2344  error    A space is required after ','                                    comma-spacing
+  1:2346  error    Infix operators must be spaced                                   space-infix-ops
+  1:2348  error    Infix operators must be spaced                                   space-infix-ops
+  1:2362  error    Infix operators must be spaced                                   space-infix-ops
+  1:2379  error    A space is required after ','                                    comma-spacing
+  1:2381  error    Infix operators must be spaced                                   space-infix-ops
+  1:2383  error    Infix operators must be spaced                                   space-infix-ops
+  1:2392  error    Infix operators must be spaced                                   space-infix-ops
+  1:2404  error    Missing whitespace after semicolon                               semi-spacing
+  1:2406  error    Infix operators must be spaced                                   space-infix-ops
+  1:2409  error    Infix operators must be spaced                                   space-infix-ops
+  1:2412  error    Infix operators must be spaced                                   space-infix-ops
+  1:2415  error    Infix operators must be spaced                                   space-infix-ops
+  1:2415  error    Expected '!==' and instead saw '!='                              eqeqeq
+  1:2429  error    Infix operators must be spaced                                   space-infix-ops
+  1:2432  error    Infix operators must be spaced                                   space-infix-ops
+  1:2432  error    Expected '!==' and instead saw '!='                              eqeqeq
+  1:2447  error    Infix operators must be spaced                                   space-infix-ops
+  1:2450  error    Infix operators must be spaced                                   space-infix-ops
+  1:2450  error    Expected '!==' and instead saw '!='                              eqeqeq
+  1:2462  error    Infix operators must be spaced                                   space-infix-ops
+  1:2478  error    Infix operators must be spaced                                   space-infix-ops
+  1:2488  error    Missing space before value for key "account"                     key-spacing
+  1:2489  error    Infix operators must be spaced                                   space-infix-ops
+  1:2492  error    Infix operators must be spaced                                   space-infix-ops
+  1:2492  error    Expected '!==' and instead saw '!='                              eqeqeq
+  1:2506  error    A space is required after ','                                    comma-spacing
+  1:2516  error    Missing space before value for key "property"                    key-spacing
+  1:2517  error    Infix operators must be spaced                                   space-infix-ops
+  1:2520  error    Expected '!==' and instead saw '!='                              eqeqeq
+  1:2520  error    Infix operators must be spaced                                   space-infix-ops
+  1:2535  error    A space is required after ','                                    comma-spacing
+  1:2541  error    Missing space before value for key "view"                        key-spacing
+  1:2542  error    Infix operators must be spaced                                   space-infix-ops
+  1:2545  error    Expected '!==' and instead saw '!='                              eqeqeq
+  1:2545  error    Infix operators must be spaced                                   space-infix-ops
+  1:2557  error    A space is required after ','                                    comma-spacing
+  1:2570  error    Infix operators must be spaced                                   space-infix-ops
+  1:2572  error    A space is required after ','                                    comma-spacing
+  1:2588  error    Infix operators must be spaced                                   space-infix-ops
+  1:2601  error    A space is required after ','                                    comma-spacing
+  1:2615  error    Infix operators must be spaced                                   space-infix-ops
+  1:2617  error    A space is required after ','                                    comma-spacing
+  1:2628  error    Infix operators must be spaced                                   space-infix-ops
+  1:2630  error    Infix operators must be spaced                                   space-infix-ops
+  1:2639  error    A space is required after ','                                    comma-spacing
+  1:2649  error    Infix operators must be spaced                                   space-infix-ops
+  1:2651  error    A space is required after ','                                    comma-spacing
+  1:2660  error    Infix operators must be spaced                                   space-infix-ops
+  1:2662  error    Infix operators must be spaced                                   space-infix-ops
+  1:2664  error    Strings must use singlequote                                     quotes
+  1:2664  error    Unexpected string concatenation                                  prefer-template
+  1:2669  error    Infix operators must be spaced                                   space-infix-ops
+  1:2686  error    Strings must use singlequote                                     quotes
+  1:2693  error    A space is required after ','                                    comma-spacing
+  1:2704  error    Strings must use singlequote                                     quotes
+  1:2704  error    Unexpected string concatenation                                  prefer-template
+  1:2740  error    Infix operators must be spaced                                   space-infix-ops
+  1:2755  error    A space is required after ','                                    comma-spacing
+  1:2759  error    Infix operators must be spaced                                   space-infix-ops
+  1:2760  error    Strings must use singlequote                                     quotes
+  1:2765  error    Infix operators must be spaced                                   space-infix-ops
+  1:2775  error    Requires a space before "}"                                      block-spacing
+  1:2775  error    Missing semicolon                                                semi
+  1:2776  error    A space is required after ','                                    comma-spacing
+  1:2777  error    Expected method shorthand                                        object-shorthand
+  1:2785  error    Missing function expression name                                 func-names
+  1:2785  error    Missing space before keyword "function"                          space-before-keywords
+  1:2785  error    Missing space before value for key "render_"                     key-spacing
+  1:2793  error    Missing space before function parentheses                        space-before-function-paren
+  1:2795  error    Requires a space after "{"                                       block-spacing
+  1:2795  error    Missing space before opening brace                               space-before-blocks
+  1:2796  error    Statement inside of curly braces should be on next line          brace-style
+  1:2796  warning  Unexpected var, use let or const instead                         no-var
+  1:2796  error    Expected blank line after variable declarations                  newline-after-var
+  1:2800  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:2801  error    Infix operators must be spaced                                   space-infix-ops
+  1:2812  error    Missing whitespace after semicolon                               semi-spacing
+  1:2827  error    Infix operators must be spaced                                   space-infix-ops
+  1:2828  error    Strings must use singlequote                                     quotes
+  1:2828  error    Expected literal to be on the right side of ==                   yoda
+  1:2836  error    Expected '===' and instead saw '=='                              eqeqeq
+  1:2836  error    Infix operators must be spaced                                   space-infix-ops
+  1:2856  error    Infix operators must be spaced                                   space-infix-ops
+  1:2905  error    A space is required after ','                                    comma-spacing
+  1:2930  error    Infix operators must be spaced                                   space-infix-ops
+  1:2931  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:2941  error    Infix operators must be spaced                                   space-infix-ops
+  1:2956  error    Missing whitespace after semicolon                               semi-spacing
+  1:2957  warning  Unexpected var, use let or const instead                         no-var
+  1:2957  error    Expected blank line after variable declarations                  newline-after-var
+  1:2957  error    Split 'var' declarations into multiple statements                one-var
+  1:2957  error    Missing space before keyword "var"                               space-before-keywords
+  1:2961  warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:2962  error    Infix operators must be spaced                                   space-infix-ops
+  1:2995  error    Strings must use singlequote                                     quotes
+  1:3004  error    A space is required after ','                                    comma-spacing
+  1:3005  warning  Identifier name 'r' is too short. (< 2)                          id-length
+  1:3006  error    Infix operators must be spaced                                   space-infix-ops
+  1:3020  error    A space is required after ','                                    comma-spacing
+  1:3021  warning  Identifier name 's' is too short. (< 2)                          id-length
+  1:3022  error    Infix operators must be spaced                                   space-infix-ops
+  1:3038  error    Infix operators must be spaced                                   space-infix-ops
+  1:3047  error    Strings must use singlequote                                     quotes
+  1:3047  error    Missing space before value for key "name"                        key-spacing
+  1:3056  error    A space is required after ','                                    comma-spacing
+  1:3060  error    Missing space before value for key "id"                          key-spacing
+  1:3060  error    Strings must use singlequote                                     quotes
+  1:3064  error    A space is required after ','                                    comma-spacing
+  1:3065  warning  Identifier name 'n' is too short. (< 2)                          id-length
+  1:3066  error    Infix operators must be spaced                                   space-infix-ops
+  1:3077  error    Infix operators must be spaced                                   space-infix-ops
+  1:3086  error    Missing space before value for key "name"                        key-spacing
+  1:3086  error    Strings must use singlequote                                     quotes
+  1:3095  error    A space is required after ','                                    comma-spacing
+  1:3099  error    Missing space before value for key "id"                          key-spacing
+  1:3099  error    Strings must use singlequote                                     quotes
+  1:3103  error    Missing whitespace after semicolon                               semi-spacing
+  1:3110  error    A space is required after ','                                    comma-spacing
+  1:3112  error    A space is required after ','                                    comma-spacing
+  1:3129  error    A space is required after ','                                    comma-spacing
+  1:3136  error    A space is required after ','                                    comma-spacing
+  1:3138  error    A space is required after ','                                    comma-spacing
+  1:3152  error    Infix operators must be spaced                                   space-infix-ops
+  1:3171  error    A space is required after ','                                    comma-spacing
+  1:3178  error    A space is required after ','                                    comma-spacing
+  1:3180  error    A space is required after ','                                    comma-spacing
+  1:3190  error    Infix operators must be spaced                                   space-infix-ops
+  1:3205  error    A space is required after ','                                    comma-spacing
+  1:3219  error    Infix operators must be spaced                                   space-infix-ops
+  1:3248  error    A space is required after ','                                    comma-spacing
+  1:3253  error    A space is required after ','                                    comma-spacing
+  1:3254  error    Strings must use singlequote                                     quotes
+  1:3266  error    A space is required after ','                                    comma-spacing
+  1:3280  error    Infix operators must be spaced                                   space-infix-ops
+  1:3309  error    A space is required after ','                                    comma-spacing
+  1:3314  error    A space is required after ','                                    comma-spacing
+  1:3315  error    Strings must use singlequote                                     quotes
+  1:3328  error    A space is required after ','                                    comma-spacing
+  1:3342  error    Infix operators must be spaced                                   space-infix-ops
+  1:3371  error    A space is required after ','                                    comma-spacing
+  1:3376  error    A space is required after ','                                    comma-spacing
+  1:3377  error    Strings must use singlequote                                     quotes
+  1:3386  error    Missing semicolon                                                semi
+  1:3386  error    Requires a space before "}"                                      block-spacing
+  1:3387  error    A space is required after ','                                    comma-spacing
+  1:3388  error    Expected method shorthand                                        object-shorthand
+  1:3398  error    Missing function expression name                                 func-names
+  1:3398  error    Missing space before value for key "onChange_"                   key-spacing
+  1:3398  error    Missing space before keyword "function"                          space-before-keywords
+  1:3406  error    Missing space before function parentheses                        space-before-function-paren
+  1:3408  error    Missing space before opening brace                               space-before-blocks
+  1:3408  error    Requires a space after "{"                                       block-spacing
+  1:3409  warning  Unexpected var, use let or const instead                         no-var
+  1:3409  error    Expected blank line after variable declarations                  newline-after-var
+  1:3409  error    Statement inside of curly braces should be on next line          brace-style
+  1:3413  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:3414  error    Infix operators must be spaced                                   space-infix-ops
+  1:3424  error    Missing space before value for key "account"                     key-spacing
+  1:3436  error    A space is required after ','                                    comma-spacing
+  1:3446  error    Missing space before value for key "property"                    key-spacing
+  1:3459  error    A space is required after ','                                    comma-spacing
+  1:3465  error    Missing space before value for key "view"                        key-spacing
+  1:3474  error    A space is required after ','                                    comma-spacing
+  1:3479  error    Missing space before value for key "ids"                         key-spacing
+  1:3488  error    Infix operators must be spaced                                   space-infix-ops
+  1:3490  error    Unexpected string concatenation                                  prefer-template
+  1:3490  error    Strings must use singlequote                                     quotes
+  1:3495  error    Infix operators must be spaced                                   space-infix-ops
+  1:3509  error    Missing whitespace after semicolon                               semi-spacing
+  1:3523  error    Infix operators must be spaced                                   space-infix-ops
+  1:3547  error    Infix operators must be spaced                                   space-infix-ops
+  1:3559  error    Strings must use singlequote                                     quotes
+  1:3574  error    A space is required after ','                                    comma-spacing
+  1:3577  error    A space is required after ','                                    comma-spacing
+  1:3600  error    Infix operators must be spaced                                   space-infix-ops
+  1:3612  error    Strings must use singlequote                                     quotes
+  1:3628  error    A space is required after ','                                    comma-spacing
+  1:3631  error    A space is required after ','                                    comma-spacing
+  1:3650  error    Infix operators must be spaced                                   space-infix-ops
+  1:3663  error    Strings must use singlequote                                     quotes
+  1:3675  error    A space is required after ','                                    comma-spacing
+  1:3678  error    A space is required after ','                                    comma-spacing
+  1:3689  error    Strings must use singlequote                                     quotes
+  1:3700  error    A space is required after ','                                    comma-spacing
+  1:3703  error    A space is required after ','                                    comma-spacing
+  1:3714  error    Strings must use singlequote                                     quotes
+  1:3722  error    A space is required after ','                                    comma-spacing
+  1:3731  error    A space is required after ','                                    comma-spacing
+  1:3745  error    Infix operators must be spaced                                   space-infix-ops
+  1:3750  error    Requires a space before "}"                                      block-spacing
+  1:3750  error    Missing semicolon                                                semi
+  1:3751  error    A space is required after ','                                    comma-spacing
+  1:3752  error    Expected method shorthand                                        object-shorthand
+  1:3766  error    Missing space before keyword "function"                          space-before-keywords
+  1:3766  error    Missing function expression name                                 func-names
+  1:3766  error    Missing space before value for key "onUserSelect_"               key-spacing
+  1:3774  error    Missing space before function parentheses                        space-before-function-paren
+  1:3775  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:3776  error    A space is required after ','                                    comma-spacing
+  1:3777  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:3779  error    Requires a space after "{"                                       block-spacing
+  1:3779  error    Missing space before opening brace                               space-before-blocks
+  1:3780  error    Expected blank line after variable declarations                  newline-after-var
+  1:3780  error    Statement inside of curly braces should be on next line          brace-style
+  1:3780  warning  Unexpected var, use let or const instead                         no-var
+  1:3784  warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:3785  error    Infix operators must be spaced                                   space-infix-ops
+  1:3788  error    Missing whitespace after semicolon                               semi-spacing
+  1:3793  error    Infix operators must be spaced                                   space-infix-ops
+  1:3801  error    A space is required after ','                                    comma-spacing
+  1:3813  error    A space is required after ','                                    comma-spacing
+  1:3828  error    Requires a space before "}"                                      block-spacing
+  1:3828  error    Missing semicolon                                                semi
+  1:3829  error    A space is required after ','                                    comma-spacing
+  1:3839  error    Missing space before value for key "template"                    key-spacing
+  1:4195  error    Missing semicolon                                                semi
+  1:4195  error    Requires a space before "}"                                      block-spacing
+  1:4197  error    Requires a space before "}"                                      block-spacing
+  1:4197  error    Missing semicolon                                                semi
+  1:4198  error    A space is required after ','                                    comma-spacing
+  1:4199  error    Missing function expression name                                 func-names
+  1:4199  error    Missing space before keyword "function"                          space-before-keywords
+  1:4207  error    Missing space before function parentheses                        space-before-function-paren
+  1:4208  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:4209  error    A space is required after ','                                    comma-spacing
+  1:4210  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:4211  error    A space is required after ','                                    comma-spacing
+  1:4212  warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:4214  error    Requires a space after "{"                                       block-spacing
+  1:4214  error    Missing space before opening brace                               space-before-blocks
+  1:4215  error    Expected a function expression                                   func-style
+  1:4215  error    Missing JSDoc comment                                            require-jsdoc
+  1:4215  error    Statement inside of curly braces should be on next line          brace-style
+  1:4224  warning  Identifier name 'r' is too short. (< 2)                          id-length
+  1:4225  error    Missing space before function parentheses                        space-before-function-paren
+  1:4227  error    Missing space before opening brace                               space-before-blocks
+  1:4227  error    Requires a space after "{"                                       block-spacing
+  1:4228  error    Expected blank line after variable declarations                  newline-after-var
+  1:4228  warning  Unexpected var, use let or const instead                         no-var
+  1:4228  error    Statement inside of curly braces should be on next line          brace-style
+  1:4232  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:4233  error    Infix operators must be spaced                                   space-infix-ops
+  1:4234  error    "gapi" is not defined                                            no-undef
+  1:4260  error    Missing space before value for key "path"                        key-spacing
+  1:4269  error    Missing function expression name                                 func-names
+  1:4277  error    Missing space before function parentheses                        space-before-function-paren
+  1:4278  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:4280  error    Requires a space after "{"                                       block-spacing
+  1:4280  error    Missing space before opening brace                               space-before-blocks
+  1:4281  error    Statement inside of curly braces should be on next line          brace-style
+  1:4289  error    Requires a space before "}"                                      block-spacing
+  1:4289  error    Missing semicolon                                                semi
+  1:4291  error    Missing whitespace after semicolon                               semi-spacing
+  1:4292  error    Missing space before keyword "return"                            space-before-keywords
+  1:4317  error    Missing function expression name                                 func-names
+  1:4325  error    Missing space before function parentheses                        space-before-function-paren
+  1:4326  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:4327  error    A space is required after ','                                    comma-spacing
+  1:4328  warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:4330  error    Requires a space after "{"                                       block-spacing
+  1:4330  error    Missing space before opening brace                               space-before-blocks
+  1:4331  warning  Unexpected var, use let or const instead                         no-var
+  1:4331  error    Expected blank line after variable declarations                  newline-after-var
+  1:4331  error    Statement inside of curly braces should be on next line          brace-style
+  1:4335  warning  Identifier name 'r' is too short. (< 2)                          id-length
+  1:4336  error    Infix operators must be spaced                                   space-infix-ops
+  1:4339  error    Missing whitespace after semicolon                               semi-spacing
+  1:4356  warning  Identifier name 's' is too short. (< 2)                          id-length
+  1:4357  error    Missing space before function parentheses                        space-before-function-paren
+  1:4358  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:4360  error    Missing space before opening brace                               space-before-blocks
+  1:4360  error    Requires a space after "{"                                       block-spacing
+  1:4361  error    Statement inside of curly braces should be on next line          brace-style
+  1:4361  warning  Unexpected var, use let or const instead                         no-var
+  1:4361  error    Expected blank line after variable declarations                  newline-after-var
+  1:4365  warning  Identifier name 'a' is too short. (< 2)                          id-length
+  1:4366  error    Infix operators must be spaced                                   space-infix-ops
+  1:4375  error    Missing whitespace after semicolon                               semi-spacing
+  1:4383  error    Infix operators must be spaced                                   space-infix-ops
+  1:4385  error    Infix operators must be spaced                                   space-infix-ops
+  1:4416  error    Strings must use singlequote                                     quotes
+  1:4512  error    A space is required after ','                                    comma-spacing
+  1:4513  warning  Identifier name 'a' is too short. (< 2)                          id-length
+  1:4525  error    Infix operators must be spaced                                   space-infix-ops
+  1:4540  error    Infix operators must be spaced                                   space-infix-ops
+  1:4556  error    Infix operators must be spaced                                   space-infix-ops
+  1:4557  error    "gapi" is not defined                                            no-undef
+  1:4583  error    Missing space before value for key "path"                        key-spacing
+  1:4584  error    A space is required after ','                                    comma-spacing
+  1:4592  error    Missing space before value for key "params"                      key-spacing
+  1:4593  error    Strings must use singlequote                                     quotes
+  1:4607  warning  Identifier name 'a' is too short. (< 2)                          id-length
+  1:4607  error    Missing space before value for key "start-index"                 key-spacing
+  1:4619  error    Infix operators must be spaced                                   space-infix-ops
+  1:4652  error    A constructor name should not start with a lowercase letter      new-cap
+  1:4657  error    Requires a space before "}"                                      block-spacing
+  1:4657  error    Missing semicolon                                                semi
+  1:4669  error    A space is required after ','                                    comma-spacing
+  1:4672  error    Missing semicolon                                                semi
+  1:4672  error    Requires a space before "}"                                      block-spacing
+  1:4674  error    Requires a space before "}"                                      block-spacing
+  1:4674  error    Missing semicolon                                                semi
+  1:4675  error    Split 'var' declarations into multiple statements                one-var
+  1:4675  warning  Unexpected var, use let or const instead                         no-var
+  1:4675  error    Expected blank line after variable declarations                  newline-after-var
+  1:4675  error    Missing space before keyword "var"                               space-before-keywords
+  1:4679  warning  Identifier name 's' is too short. (< 2)                          id-length
+  1:4680  error    A space is required after ','                                    comma-spacing
+  1:4681  warning  Identifier name 'n' is too short. (< 2)                          id-length
+  1:4682  error    Infix operators must be spaced                                   space-infix-ops
+  1:4687  error    A space is required after ','                                    comma-spacing
+  1:4688  warning  Identifier name 'o' is too short. (< 2)                          id-length
+  1:4689  error    Infix operators must be spaced                                   space-infix-ops
+  1:4690  error    Strings must use singlequote                                     quotes
+  1:4733  error    Missing whitespace after semicolon                               semi-spacing
+  1:4734  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:4743  error    Infix operators must be spaced                                   space-infix-ops
+  1:4745  error    Expected method shorthand                                        object-shorthand
+  1:4749  error    Missing function expression name                                 func-names
+  1:4749  error    Missing space before value for key "get"                         key-spacing
+  1:4749  error    Missing space before keyword "function"                          space-before-keywords
+  1:4757  error    Missing space before function parentheses                        space-before-function-paren
+  1:4758  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:4760  error    Requires a space after "{"                                       block-spacing
+  1:4760  error    Missing space before opening brace                               space-before-blocks
+  1:4761  error    Statement inside of curly braces should be on next line          brace-style
+  1:4769  error    Infix operators must be spaced                                   space-infix-ops
+  1:4773  error    Infix operators must be spaced                                   space-infix-ops
+  1:4779  error    A space is required after ','                                    comma-spacing
+  1:4781  error    Infix operators must be spaced                                   space-infix-ops
+  1:4785  error    Infix operators must be spaced                                   space-infix-ops
+  1:4790  error    Missing semicolon                                                semi
+  1:4790  error    Requires a space before "}"                                      block-spacing
+  1:4792  error    Requires a space before "}"                                      block-spacing
+  1:4792  error    Missing semicolon                                                semi
+  1:4793  error    A space is required after ','                                    comma-spacing
+  1:4794  error    Missing function expression name                                 func-names
+  1:4794  error    Missing space before keyword "function"                          space-before-keywords
+  1:4802  error    Missing space before function parentheses                        space-before-function-paren
+  1:4803  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:4804  error    A space is required after ','                                    comma-spacing
+  1:4805  error    "e" is defined but never used                                    no-unused-vars
+  1:4805  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:4807  error    Requires a space after "{"                                       block-spacing
+  1:4807  error    Missing space before opening brace                               space-before-blocks
+  1:4808  error    Statement inside of curly braces should be on next line          brace-style
+  1:4808  error    Expected a function expression                                   func-style
+  1:4808  error    Missing JSDoc comment                                            require-jsdoc
+  1:4817  warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:4818  error    Missing space before function parentheses                        space-before-function-paren
+  1:4819  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:4821  error    Missing space before opening brace                               space-before-blocks
+  1:4821  error    Requires a space after "{"                                       block-spacing
+  1:4822  error    Statement inside of curly braces should be on next line          brace-style
+  1:4836  error    Infix operators must be spaced                                   space-infix-ops
+  1:4838  error    A space is required after ','                                    comma-spacing
+  1:4858  error    Infix operators must be spaced                                   space-infix-ops
+  1:4861  error    A space is required after ','                                    comma-spacing
+  1:4876  error    Infix operators must be spaced                                   space-infix-ops
+  1:4879  error    A space is required after ','                                    comma-spacing
+  1:4898  error    Infix operators must be spaced                                   space-infix-ops
+  1:4901  error    A space is required after ','                                    comma-spacing
+  1:4925  error    Infix operators must be spaced                                   space-infix-ops
+  1:4946  error    Infix operators must be spaced                                   space-infix-ops
+  1:4949  error    A space is required after ','                                    comma-spacing
+  1:4968  error    Infix operators must be spaced                                   space-infix-ops
+  1:4984  error    Infix operators must be spaced                                   space-infix-ops
+  1:4987  error    Missing whitespace after semicolon                               semi-spacing
+  1:4988  error    Missing space before keyword "for"                               space-before-keywords
+  1:4988  error    Keyword "for" must be followed by whitespace                     space-after-keywords
+  1:4988  error    Expected { after 'for' condition                                 curly
+  1:4992  warning  Unexpected var, use let or const instead                         no-var
+  1:4996  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:4997  error    A space is required after ','                                    comma-spacing
+  1:4998  warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:4999  error    Infix operators must be spaced                                   space-infix-ops
+  1:5001  error    Missing whitespace after semicolon                               semi-spacing
+  1:5002  error    Expected a conditional expression and instead saw an assignment  no-cond-assign
+  1:5003  error    Infix operators must be spaced                                   space-infix-ops
+  1:5021  error    Missing whitespace after semicolon                               semi-spacing
+  1:5026  error    Missing space before keyword "if"                                space-before-keywords
+  1:5026  error    Keyword "if" must be followed by whitespace                      space-after-keywords
+  1:5053  error    Infix operators must be spaced                                   space-infix-ops
+  1:5060  error    Missing space before value for key "self"                        key-spacing
+  1:5062  error    A space is required after ','                                    comma-spacing
+  1:5079  error    Missing space before opening brace                               space-before-blocks
+  1:5079  error    Requires a space after "{"                                       block-spacing
+  1:5080  error    Statement inside of curly braces should be on next line          brace-style
+  1:5083  error    A space is required after ','                                    comma-spacing
+  1:5084  error    Strings must use singlequote                                     quotes
+  1:5099  error    A space is required after ','                                    comma-spacing
+  1:5100  error    Strings must use singlequote                                     quotes
+  1:5113  error    Missing whitespace after semicolon                               semi-spacing
+  1:5114  error    Expected { after 'for' condition                                 curly
+  1:5114  error    Keyword "for" must be followed by whitespace                     space-after-keywords
+  1:5114  error    Missing space before keyword "for"                               space-before-keywords
+  1:5118  warning  Unexpected var, use let or const instead                         no-var
+  1:5122  warning  Identifier name 's' is too short. (< 2)                          id-length
+  1:5123  error    A space is required after ','                                    comma-spacing
+  1:5124  warning  Identifier name 'n' is too short. (< 2)                          id-length
+  1:5125  error    Infix operators must be spaced                                   space-infix-ops
+  1:5127  error    Missing whitespace after semicolon                               semi-spacing
+  1:5128  error    Expected a conditional expression and instead saw an assignment  no-cond-assign
+  1:5129  error    Infix operators must be spaced                                   space-infix-ops
+  1:5148  error    Missing whitespace after semicolon                               semi-spacing
+  1:5153  error    Missing space before keyword "if"                                space-before-keywords
+  1:5153  error    Keyword "if" must be followed by whitespace                      space-after-keywords
+  1:5183  error    A space is required after ','                                    comma-spacing
+  1:5213  error    Infix operators must be spaced                                   space-infix-ops
+  1:5220  error    Missing space before value for key "self"                        key-spacing
+  1:5221  error    A space is required after ','                                    comma-spacing
+  1:5229  error    Missing space before value for key "parent"                      key-spacing
+  1:5231  error    A space is required after ','                                    comma-spacing
+  1:5243  error    Missing space before opening brace                               space-before-blocks
+  1:5243  error    Requires a space after "{"                                       block-spacing
+  1:5244  error    Statement inside of curly braces should be on next line          brace-style
+  1:5247  error    A space is required after ','                                    comma-spacing
+  1:5248  error    Strings must use singlequote                                     quotes
+  1:5258  error    A space is required after ','                                    comma-spacing
+  1:5259  error    Strings must use singlequote                                     quotes
+  1:5267  error    Missing whitespace after semicolon                               semi-spacing
+  1:5268  error    Expected { after 'for' condition                                 curly
+  1:5268  error    Missing space before keyword "for"                               space-before-keywords
+  1:5268  error    Keyword "for" must be followed by whitespace                     space-after-keywords
+  1:5272  warning  Unexpected var, use let or const instead                         no-var
+  1:5276  warning  Identifier name 'o' is too short. (< 2)                          id-length
+  1:5277  error    A space is required after ','                                    comma-spacing
+  1:5278  warning  Identifier name 'a' is too short. (< 2)                          id-length
+  1:5279  error    Infix operators must be spaced                                   space-infix-ops
+  1:5281  error    Missing whitespace after semicolon                               semi-spacing
+  1:5282  error    Expected a conditional expression and instead saw an assignment  no-cond-assign
+  1:5283  error    Infix operators must be spaced                                   space-infix-ops
+  1:5297  error    Missing whitespace after semicolon                               semi-spacing
+  1:5324  error    A space is required after ','                                    comma-spacing
+  1:5349  error    Infix operators must be spaced                                   space-infix-ops
+  1:5356  error    Missing space before value for key "self"                        key-spacing
+  1:5357  error    A space is required after ','                                    comma-spacing
+  1:5365  error    Missing space before value for key "parent"                      key-spacing
+  1:5366  error    A space is required after ','                                    comma-spacing
+  1:5379  error    Missing space before value for key "grandParent"                 key-spacing
+  1:5381  error    Requires a space before "}"                                      block-spacing
+  1:5381  error    Missing semicolon                                                semi
+  1:5382  error    Requires a space before "}"                                      block-spacing
+  1:5383  error    Requires a space before "}"                                      block-spacing
+  1:5384  error    Missing JSDoc comment                                            require-jsdoc
+  1:5384  error    Missing space before keyword "function"                          space-before-keywords
+  1:5384  error    Expected a function expression                                   func-style
+  1:5393  warning  Identifier name 'r' is too short. (< 2)                          id-length
+  1:5394  error    Missing space before function parentheses                        space-before-function-paren
+  1:5395  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:5396  error    A space is required after ','                                    comma-spacing
+  1:5397  warning  Identifier name 'e' is too short. (< 2)                          id-length
+  1:5398  error    A space is required after ','                                    comma-spacing
+  1:5399  warning  Identifier name 'i' is too short. (< 2)                          id-length
+  1:5401  error    Missing space before opening brace                               space-before-blocks
+  1:5401  error    Requires a space after "{"                                       block-spacing
+  1:5402  error    Statement inside of curly braces should be on next line          brace-style
+  1:5423  error    Infix operators must be spaced                                   space-infix-ops
+  1:5447  error    A space is required after ','                                    comma-spacing
+  1:5449  error    A space is required after ','                                    comma-spacing
+  1:5451  error    Expected method shorthand                                        object-shorthand
+  1:5455  error    Missing space before keyword "function"                          space-before-keywords
+  1:5455  error    Missing function expression name                                 func-names
+  1:5455  error    Missing space before value for key "get"                         key-spacing
+  1:5463  error    Missing space before function parentheses                        space-before-function-paren
+  1:5465  error    Missing space before opening brace                               space-before-blocks
+  1:5465  error    Requires a space after "{"                                       block-spacing
+  1:5466  error    Statement inside of curly braces should be on next line          brace-style
+  1:5477  error    Missing semicolon                                                semi
+  1:5477  error    Requires a space before "}"                                      block-spacing
+  1:5485  error    Infix operators must be spaced                                   space-infix-ops
+  1:5490  error    Requires a space before "}"                                      block-spacing
+  1:5490  error    Missing semicolon                                                semi
+  1:5506  error    Infix operators must be spaced                                   space-infix-ops
+  1:5507  error    Missing function expression name                                 func-names
+  1:5507  error    Missing space before keyword "function"                          space-before-keywords
+  1:5515  error    Missing space before function parentheses                        space-before-function-paren
+  1:5517  error    Requires a space after "{"                                       block-spacing
+  1:5517  error    Missing space before opening brace                               space-before-blocks
+  1:5518  error    Statement inside of curly braces should be on next line          brace-style
+  1:5539  error    Missing semicolon                                                semi
+  1:5539  error    Requires a space before "}"                                      block-spacing
+  1:5540  error    A space is required after ','                                    comma-spacing
+  1:5554  error    A space is required after ','                                    comma-spacing
+  1:5555  error    Strings must use singlequote                                     quotes
+  1:5560  error    A space is required after ','                                    comma-spacing
+  1:5561  error    Strings must use singlequote                                     quotes
+  1:5575  error    A space is required after ','                                    comma-spacing
+  1:5604  error    Infix operators must be spaced                                   space-infix-ops
+  1:5605  error    Missing space before keyword "function"                          space-before-keywords
+  1:5605  error    Missing function expression name                                 func-names
+  1:5613  error    Missing space before function parentheses                        space-before-function-paren
+  1:5615  error    Missing space before opening brace                               space-before-blocks
+  1:5615  error    Requires a space after "{"                                       block-spacing
+  1:5616  error    Statement inside of curly braces should be on next line          brace-style
+  1:5642  error    Requires a space before "}"                                      block-spacing
+  1:5642  error    Missing semicolon                                                semi
+  1:5643  error    A space is required after ','                                    comma-spacing
+  1:5657  error    A space is required after ','                                    comma-spacing
+  1:5658  error    Strings must use singlequote                                     quotes
+  1:5676  error    A space is required after ','                                    comma-spacing
+  1:5677  error    Strings must use singlequote                                     quotes
+  1:5693  error    A space is required after ','                                    comma-spacing
+  1:5717  error    Infix operators must be spaced                                   space-infix-ops
+  1:5718  error    Missing function expression name                                 func-names
+  1:5718  error    Missing space before keyword "function"                          space-before-keywords
+  1:5726  error    Missing space before function parentheses                        space-before-function-paren
+  1:5728  error    Missing space before opening brace                               space-before-blocks
+  1:5728  error    Requires a space after "{"                                       block-spacing
+  1:5729  error    Statement inside of curly braces should be on next line          brace-style
+  1:5750  error    Requires a space before "}"                                      block-spacing
+  1:5750  error    Missing semicolon                                                semi
+  1:5751  error    A space is required after ','                                    comma-spacing
+  1:5765  error    A space is required after ','                                    comma-spacing
+  1:5766  error    Strings must use singlequote                                     quotes
+  1:5779  error    A space is required after ','                                    comma-spacing
+  1:5780  error    Strings must use singlequote                                     quotes
+  1:5791  error    A space is required after ','                                    comma-spacing
+  1:5807  error    Infix operators must be spaced                                   space-infix-ops
+  1:5808  error    Missing function expression name                                 func-names
+  1:5808  error    Missing space before keyword "function"                          space-before-keywords
+  1:5816  error    Missing space before function parentheses                        space-before-function-paren
+  1:5817  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:5819  error    Requires a space after "{"                                       block-spacing
+  1:5819  error    Missing space before opening brace                               space-before-blocks
+  1:5820  error    Statement inside of curly braces should be on next line          brace-style
+  1:5820  error    Expected { after 'if' condition                                  curly
+  1:5820  error    Keyword "if" must be followed by whitespace                      space-after-keywords
+  1:5823  error    use `Boolean(t.accountId)` instead                               no-implicit-coercion
+  1:5836  error    Infix operators must be spaced                                   space-infix-ops
+  1:5837  error    use `Boolean(t.webPropertyId)` instead                           no-implicit-coercion
+  1:5854  error    Infix operators must be spaced                                   space-infix-ops
+  1:5855  error    use `Boolean(t.propertyId)` instead                              no-implicit-coercion
+  1:5869  error    Infix operators must be spaced                                   space-infix-ops
+  1:5870  error    use `Boolean(t.profileId)` instead                               no-implicit-coercion
+  1:5883  error    Infix operators must be spaced                                   space-infix-ops
+  1:5884  error    use `Boolean(t.viewId)` instead                                  no-implicit-coercion
+  1:5894  error    Infix operators must be spaced                                   space-infix-ops
+  1:5897  error    Missing space before keyword "throw"                             space-before-keywords
+  1:6043  error    Missing whitespace after semicolon                               semi-spacing
+  1:6044  error    Missing space before keyword "return"                            space-before-keywords
+  1:6067  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:6078  error    Infix operators must be spaced                                   space-infix-ops
+  1:6089  error    Infix operators must be spaced                                   space-infix-ops
+  1:6111  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:6126  error    Infix operators must be spaced                                   space-infix-ops
+  1:6141  error    Infix operators must be spaced                                   space-infix-ops
+  1:6171  error    Requires a space before "}"                                      block-spacing
+  1:6171  error    Missing semicolon                                                semi
+  1:6172  error    A space is required after ','                                    comma-spacing
+  1:6195  error    Infix operators must be spaced                                   space-infix-ops
+  1:6196  error    Missing function expression name                                 func-names
+  1:6196  error    Missing space before keyword "function"                          space-before-keywords
+  1:6204  error    Missing space before function parentheses                        space-before-function-paren
+  1:6205  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:6207  error    Requires a space after "{"                                       block-spacing
+  1:6207  error    Missing space before opening brace                               space-before-blocks
+  1:6208  error    Statement inside of curly braces should be on next line          brace-style
+  1:6236  error    Infix operators must be spaced                                   space-infix-ops
+  1:6264  error    Requires a space before "}"                                      block-spacing
+  1:6264  error    Missing semicolon                                                semi
+  1:6265  error    A space is required after ','                                    comma-spacing
+  1:6292  error    Infix operators must be spaced                                   space-infix-ops
+  1:6293  error    Missing function expression name                                 func-names
+  1:6293  error    Missing space before keyword "function"                          space-before-keywords
+  1:6301  error    Missing space before function parentheses                        space-before-function-paren
+  1:6302  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:6304  error    Requires a space after "{"                                       block-spacing
+  1:6304  error    Missing space before opening brace                               space-before-blocks
+  1:6305  error    Statement inside of curly braces should be on next line          brace-style
+  1:6338  error    Infix operators must be spaced                                   space-infix-ops
+  1:6371  error    Requires a space before "}"                                      block-spacing
+  1:6371  error    Missing semicolon                                                semi
+  1:6372  error    A space is required after ','                                    comma-spacing
+  1:6386  error    A space is required after ','                                    comma-spacing
+  1:6387  error    Strings must use singlequote                                     quotes
+  1:6403  error    A space is required after ','                                    comma-spacing
+  1:6404  error    Strings must use singlequote                                     quotes
+  1:6418  error    A space is required after ','                                    comma-spacing
+  1:6441  error    Infix operators must be spaced                                   space-infix-ops
+  1:6442  error    Missing space before keyword "function"                          space-before-keywords
+  1:6442  error    Missing function expression name                                 func-names
+  1:6450  error    Missing space before function parentheses                        space-before-function-paren
+  1:6451  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:6453  error    Missing space before opening brace                               space-before-blocks
+  1:6453  error    Requires a space after "{"                                       block-spacing
+  1:6454  error    Statement inside of curly braces should be on next line          brace-style
+  1:6482  error    Infix operators must be spaced                                   space-infix-ops
+  1:6510  error    Requires a space before "}"                                      block-spacing
+  1:6510  error    Missing semicolon                                                semi
+  1:6511  error    A space is required after ','                                    comma-spacing
+  1:6525  error    A space is required after ','                                    comma-spacing
+  1:6526  error    Strings must use singlequote                                     quotes
+  1:6538  error    A space is required after ','                                    comma-spacing
+  1:6539  error    Strings must use singlequote                                     quotes
+  1:6549  error    A space is required after ','                                    comma-spacing
+  1:6583  error    Infix operators must be spaced                                   space-infix-ops
+  1:6584  error    Missing function expression name                                 func-names
+  1:6584  error    Missing space before keyword "function"                          space-before-keywords
+  1:6592  error    Missing space before function parentheses                        space-before-function-paren
+  1:6593  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:6595  error    Missing space before opening brace                               space-before-blocks
+  1:6595  error    Requires a space after "{"                                       block-spacing
+  1:6596  error    Statement inside of curly braces should be on next line          brace-style
+  1:6624  error    Infix operators must be spaced                                   space-infix-ops
+  1:6659  error    Requires a space before "}"                                      block-spacing
+  1:6659  error    Missing semicolon                                                semi
+  1:6660  error    A space is required after ','                                    comma-spacing
+  1:6674  error    A space is required after ','                                    comma-spacing
+  1:6675  error    Strings must use singlequote                                     quotes
+  1:6698  error    A space is required after ','                                    comma-spacing
+  1:6699  error    Strings must use singlequote                                     quotes
+  1:6720  error    A space is required after ','                                    comma-spacing
+  1:6758  error    Infix operators must be spaced                                   space-infix-ops
+  1:6759  error    Missing space before keyword "function"                          space-before-keywords
+  1:6759  error    Missing function expression name                                 func-names
+  1:6767  error    Missing space before function parentheses                        space-before-function-paren
+  1:6768  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:6770  error    Requires a space after "{"                                       block-spacing
+  1:6770  error    Missing space before opening brace                               space-before-blocks
+  1:6771  error    Statement inside of curly braces should be on next line          brace-style
+  1:6799  error    Infix operators must be spaced                                   space-infix-ops
+  1:6829  error    Requires a space before "}"                                      block-spacing
+  1:6829  error    Missing semicolon                                                semi
+  1:6830  error    A space is required after ','                                    comma-spacing
+  1:6844  error    A space is required after ','                                    comma-spacing
+  1:6845  error    Strings must use singlequote                                     quotes
+  1:6872  error    A space is required after ','                                    comma-spacing
+  1:6873  error    Strings must use singlequote                                     quotes
+  1:6895  error    A space is required after ','                                    comma-spacing
+  1:6933  error    Infix operators must be spaced                                   space-infix-ops
+  1:6934  error    Missing function expression name                                 func-names
+  1:6934  error    Missing space before keyword "function"                          space-before-keywords
+  1:6942  error    Missing space before function parentheses                        space-before-function-paren
+  1:6943  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:6945  error    Missing space before opening brace                               space-before-blocks
+  1:6945  error    Requires a space after "{"                                       block-spacing
+  1:6946  error    Statement inside of curly braces should be on next line          brace-style
+  1:6979  error    Infix operators must be spaced                                   space-infix-ops
+  1:7014  error    Requires a space before "}"                                      block-spacing
+  1:7014  error    Missing semicolon                                                semi
+  1:7015  error    A space is required after ','                                    comma-spacing
+  1:7029  error    A space is required after ','                                    comma-spacing
+  1:7030  error    Strings must use singlequote                                     quotes
+  1:7057  error    A space is required after ','                                    comma-spacing
+  1:7058  error    Strings must use singlequote                                     quotes
+  1:7083  error    A space is required after ','                                    comma-spacing
+  1:7084  warning  Identifier name 't' is too short. (< 2)                          id-length
+  1:7093  error    Infix operators must be spaced                                   space-infix-ops
+  1:7095  error    Missing semicolon                                                semi
+  1:7095  error    Requires a space before "}"                                      block-spacing
+  2:1     error    Expected space or tab after // in comment                        spaced-comment
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\routes.js
+   1:8   error  "React" is defined but never used                  no-unused-vars
+  15:5   error  Expected blank line after variable declarations    newline-after-var
+  15:29  error  Expected return with your callback function        callback-return
+  28:5   error  Expected blank line after variable declarations    newline-after-var
+  32:59  error  '?' should be placed at the beginning of the line  operator-linebreak
+  33:72  error  ':' should be placed at the beginning of the line  operator-linebreak
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\server.js
+   4:8   error    "React" is defined but never used                no-unused-vars
+   9:1   error    Expected space or tab after // in comment        spaced-comment
+  11:1   error    Expected space or tab after // in comment        spaced-comment
+  15:21  warning  Unexpected use of process.env                    no-process-env
+  22:19  warning  There should be no space after '{'               object-curly-spacing
+  22:66  warning  There should be no space before '}'              object-curly-spacing
+  28:45  error    Unexpected trailing comma                        comma-dangle
+  31:28  warning  There should be no space after '{'               object-curly-spacing
+  31:53  warning  There should be no space before '}'              object-curly-spacing
+  36:5   error    Expected blank line after variable declarations  newline-after-var
+  37:33  error    Unexpected string concatenation                  prefer-template
+  39:5   error    Expected return with your callback function      callback-return
+  45:15  error    Unexpected string concatenation                  prefer-template
+
+C:\Users\Don\Documents\GitHub\FJCC-Core-Report\src\utils\DOMUtils.js
+   1:8   error  Expected a function expression             func-style
+   1:8   error  Missing JSDoc comment                      require-jsdoc
+   1:33  error  Missing space before function parentheses  space-before-function-paren
+   5:22  error  Unexpected string concatenation            prefer-template
+   9:8   error  Expected a function expression             func-style
+   9:8   error  Missing JSDoc comment                      require-jsdoc
+   9:36  error  Missing space before function parentheses  space-before-function-paren
+  13:22  error  Unexpected string concatenation            prefer-template
+
+✖ 1982 problems (1707 errors, 275 warnings)
+

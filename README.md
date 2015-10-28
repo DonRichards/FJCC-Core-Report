@@ -38,9 +38,27 @@
 │   ├── /copy.js
 │   ├── /deploy.js
 │   ├── /serve.js   
-│   └── /start.js 
+│   └── /start.js
+│── .babelrc
+│── .csscomb.json
+│── .csslintrc
+│── .editorconfig
+│── .flowconfig
+│── .gitattributes
+│── .gitignore
+│── .jscsrc
+│── .travis.yml
+│── CHANGELOG.md
+│── citizenUsers.sh
+│── config.yml
+│── googleImport.js
+│── LICENSE.txt
+│── loufreyinstitute.json
+│── nodemon.json
 │── package.json
+│── README.md
 └── preprocessor.js
+
 ```
 
 ### How to Test
@@ -50,10 +68,14 @@ Run unit tests powered by [Jest](https://facebook.github.io/jest/) with the foll
 
 ```shell
 $ npm test
-```
-
+``` 
 Test any javascript module by creating a `__tests__/` directory where
 the file is. Append `-test.js` to the filename and [Jest](https://facebook.github.io/jest/) will do the rest.
+
+### How to manually pull data
+> ./citizenUsers pull
+
+> node googleImport.js
 
 #Analytics
 

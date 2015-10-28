@@ -11,7 +11,9 @@ const bundler = webpack(webpackConfig);
 export default task('start', async () => {
   await require('./build')();
   await require('./serve')();
-
+  /*
+   * @component browserSync
+   */
   browserSync({
     proxy: {
 

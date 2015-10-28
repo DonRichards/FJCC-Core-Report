@@ -1,5 +1,7 @@
 'use strict';
-
+/*
+ * @_temporalUndefined
+ */
 let _temporalUndefined = {};
 let raw = _temporalUndefined;
 let VIEW_ID = _temporalUndefined;
@@ -10,21 +12,30 @@ function _temporalAssertDefined(val, name, undef) {
   return true;
 }
 
+/*
+ *
+ */
 let google = require('googleapis');
 let key = require('./loufreyinstitute.json');
 let MongoClient = require('mongodb').MongoClient;
 let assert = require('assert');
 let ObjectId = require('mongodb').ObjectId;
 let url = 'mongodb://127.0.0.1:27017/gatc';
-
-  MongoClient.connect('mongodb://127.0.0.1:27017/citizenTest', function(err, db) {
+/*
+ * @MongoClient
+ */
+MongoClient.connect('mongodb://127.0.0.1:27017/citizenTest', function(err, db) {
   console.log("Database is Connected");
   if (err) throw err;
   //db.collection('users').remove();
 
+  /*
+   * @jwtClient
+   */
   raw = String.raw;
   VIEW_ID = 'ga:108646183';
-  let jwtClient = new google.auth.JWT(key.client_email, null, key.private_key, ['https://www.googleapis.com/auth/analytics.readonly'], null);
+  let jwtClient = new google.auth.JWT(key.client_email, null, key.private_key,
+   ['https://www.googleapis.com/auth/analytics.readonly'], null);
 
   jwtClient.authorize(function(err, tokens) {
     if (err) {
@@ -32,11 +43,18 @@ let url = 'mongodb://127.0.0.1:27017/gatc';
       return;
     }
     let analytics = google.analytics('v3');
+
+    /*
+     * @contructor
+     */
     queryData(analytics, "365daysAgo", 1);
     queryData(analytics, "180daysAgo", 1);
     queryData(analytics, "30daysAgo", 1);
   }); // jwtClient
 
+  /*
+   * @queryData
+   */
   let queryData = function(analytics, days, y) {
     analytics.data.ga.get({
       auth: jwtClient,
@@ -53,6 +71,9 @@ let url = 'mongodb://127.0.0.1:27017/gatc';
       if (err) {
         console.log(err);
         } // if
+        /*
+         * @forEach.rows
+         */
         response.rows.forEach((rows) => {
           var setModifier ={ $set: {}, $unset:{"password": 1} };
           setModifier.$set[days] = {
@@ -72,6 +93,10 @@ let url = 'mongodb://127.0.0.1:27017/gatc';
             }); // db.collection
           }); //response.rows.forEach
 
+      process.stdout.write('.');
+      /*
+       * @queryDataRecursion
+       */
       if ((response.rows.length - y) >= 999) {
         queryData(analytics, days, y + 1000);
       } else {
