@@ -37,8 +37,8 @@
 │   ├── /config.js
 │   ├── /copy.js
 │   ├── /deploy.js
-│   ├── /serve.js   
-│   └── /start.js         # 
+│   ├── /serve.js         # Set Enviroment to Server & initialize
+│   └── /start.js         # BrowserSync, Webpack, build, start server
 │── .babelrc              # Possibly not needed
 │── .csscomb.json         # Config
 │── .csslintrc            # Config
