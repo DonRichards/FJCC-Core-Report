@@ -1,3 +1,6 @@
+# editorconfig.org
+# https://github.com/sindresorhus/editorconfig-sublime#readme
+
 root = true
 
 [*]

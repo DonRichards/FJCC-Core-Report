@@ -38,26 +38,26 @@
 │   ├── /copy.js
 │   ├── /deploy.js
 │   ├── /serve.js   
-│   └── /start.js
-│── .babelrc
-│── .csscomb.json
-│── .csslintrc
-│── .editorconfig
-│── .flowconfig
-│── .gitattributes
-│── .gitignore
-│── .jscsrc
-│── .travis.yml
-│── CHANGELOG.md
-│── citizenUsers.sh
-│── config.yml
-│── googleImport.js
-│── LICENSE.txt
-│── loufreyinstitute.json
-│── nodemon.json
-│── package.json
-│── README.md
-└── preprocessor.js
+│   └── /start.js         # 
+│── .babelrc              # Possibly not needed
+│── .csscomb.json         # Config
+│── .csslintrc            # Config
+│── .editorconfig         # Sublime Config
+│── .flowconfig           # Specify order of operations for compiling
+│── .gitattributes        # Git config
+│── .gitignore            # Git config
+│── .jscsrc               # JSCS process config
+│── .travis.yml           # Travis CL environment setup for testing
+│── CHANGELOG.md          # Notable Changes 
+│── citizenUsers.sh       # Imports/Snapshot of FloridaCitizen user data to local
+│── config.yml            # FloridaCitizen database Config 
+│── googleImport.js       # Import GATC into User dataTable 30,180,365 days 
+│── LICENSE.txt           # License
+│── loufreyinstitute.json # GATC service authentication file
+│── nodemon.json          # Nodemon environment setup
+│── package.json          # Package file
+│── README.md             # READ ME 
+└── preprocessor.js       # Babel processing for Biuld
 
 ```
 
