@@ -13,10 +13,10 @@ function _temporalAssertDefined(val, name, undef) {
 }
 
 /*
- *
+ * Importing into the LocalHost Mongodb
  */
 let google = require('googleapis');
-let key = require('./loufreyinstitute.json');
+let key = require('./authentication.json');
 let MongoClient = require('mongodb').MongoClient;
 let assert = require('assert');
 let ObjectId = require('mongodb').ObjectId;
@@ -24,7 +24,7 @@ let url = 'mongodb://127.0.0.1:27017/gatc';
 /*
  * @MongoClient
  */
-MongoClient.connect('mongodb://127.0.0.1:27017/citizenTest', function(err, db) {
+MongoClient.connect('mongodb://127.0.0.1:27017/citizen', function(err, db) {
   console.log("Database is Connected");
   if (err) throw err;
   //db.collection('users').remove();

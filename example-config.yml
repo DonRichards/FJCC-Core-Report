@@ -1,0 +1,13 @@
+local:
+  db: 'magrathea'
+  host:
+  	port: 27017
+
+remote:
+  db: 'towels'
+  host:
+    url: '132.170.212.41'
+    port: 27017
+  access:
+    username: 'arthur_dent'
+    password: 'trillian'
