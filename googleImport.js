@@ -18,16 +18,20 @@ function _temporalAssertDefined(val, name, undef) {
 let google = require('googleapis');
 let key = require('./authentication.json');
 let MongoClient = require('mongodb').MongoClient;
-let assert = require('assert');
+//let assert = require('assert');
 let ObjectId = require('mongodb').ObjectId;
-let url = 'mongodb://127.0.0.1:27017/gatc';
+
 /*
  * @MongoClient
  */
 MongoClient.connect('mongodb://127.0.0.1:27017/citizen', function(err, db) {
-  console.log("Database is Connected");
   if (err) throw err;
-  //db.collection('users').remove();
+  /**
+   * [password HASH removal]
+   * @type {Object}
+   */
+  console.log("Database connected, cleaning up Users data");
+  db.collection('users').update({ password : { $exists: true } }, { $unset:{ "password": 1 } } , { multi: true });
 
   /*
    * @jwtClient
@@ -71,11 +75,15 @@ MongoClient.connect('mongodb://127.0.0.1:27017/citizen', function(err, db) {
       if (err) {
         console.log(err);
         } // if
+
+
+        //generator(response.rows.length);
+
         /*
          * @forEach.rows
          */
         response.rows.forEach((rows) => {
-          var setModifier ={ $set: {}, $unset:{"password": 1} };
+          var setModifier ={ $set: {} };
           setModifier.$set[days] = {
                   "sessions": rows[1],
                   "sessionDuration": rows[2],
@@ -92,7 +100,6 @@ MongoClient.connect('mongodb://127.0.0.1:27017/citizen', function(err, db) {
               assert.equal(err, null);
             }); // db.collection
           }); //response.rows.forEach
-
       process.stdout.write('.');
       /*
        * @queryDataRecursion
@@ -100,9 +107,29 @@ MongoClient.connect('mongodb://127.0.0.1:27017/citizen', function(err, db) {
       if ((response.rows.length - y) >= 999) {
         queryData(analytics, days, y + 1000);
       } else {
-        process.exit(0);
+        it.next();
+        //console.log(days, response.rows.length, y);
+        //let message = progress().next;
+        //process.exit(0);
       }
     }
     ); // analytics.data.ga.get
   }; // queryData
 }); // Mongo
+
+function *progress () {
+    console.log('\t 1st Import Complete');
+  yield 1;
+    console.log('\t 2nd Import Complete');
+  yield 2;
+    console.log('\t Final Import Complete');
+  return exitApp();
+}
+
+
+function exitApp(callback) {
+    setTimeout(() => callback(process.exit(0) ), 15);
+}
+
+var it = progress();
+
