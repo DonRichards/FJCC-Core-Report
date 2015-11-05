@@ -1,21 +1,50 @@
 {
-  "author": {
-    "name": "Don Richards",
-    "email": "don@loufreyinstitute.org"
+  "name": "FJCC",
+  "description": "Core Reporting UI",
+  "version": "0.1.0",
+  "keywords": [
+    "FJCC",
+    "Core Reporting",
+    "Google Analytics"
+  ],
+  "maintainers": [
+    {
+      "name": "Don Richards",
+      "email": "don@loufreyinstitute.org",
+      "web": "LouFreyInstitute.org"
+    }
+  ],
+  "bugs": {
+    "web": "https://github.com/DonRichards/FJCC-Core-Report/issues"
   },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@gist.github.com:1ea00aebe098bed74b2b.git"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:DonRichards/FJCC-Core-Report.git"
+    }
+  ],
   "private": true,
   "engines": {
     "node": ">=4.1 <5",
     "npm": ">=3.1 <4"
   },
-  "repository" :"gist:1ea00aebe098bed74b2b",
-  "repository": "npm/DonRichards/FJCC-Core-Report.git",
+  "repository": "gist:1ea00aebe098bed74b2b",
   "dependencies": {
-    "private" : "git+ssh://git@gist.github.com:1ea00aebe098bed74b2b.git",
     "babel-core": "5.8.x",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.1",
+    "chalk": "^1.1.1",
     "classnames": "2.1.5",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^1.0.5",
+    "cookie-parser": "^1.4.0",
     "eventemitter3": "1.1.1",
     "express": "4.13.x",
+    "express-session": "^1.12.1",
     "fastclick": "1.0.6",
     "fbjs": "0.3.1",
     "flux": "2.1.1",
@@ -24,8 +53,17 @@
     "googleapis": "^2.1.5",
     "history": "1.11.1",
     "jade": "1.11.0",
+    "jsonwebtoken": "^5.4.1",
     "mongodb": "^2.0.46",
+    "mongoose": "^4.2.4",
+    "morgan": "^1.6.1",
     "normalize.css": "3.0.3",
+    "passport": "^0.3.0",
+    "passport-facebook": "^2.0.0",
+    "passport-google-oauth-jwt": "^0.2.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^3.1.0",
+    "passport-twitter": "^1.0.3",
     "react": "0.14.0-rc1",
     "react-dom": "0.14.0-rc1",
     "react-routing": "0.0.4",
