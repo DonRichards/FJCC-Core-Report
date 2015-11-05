@@ -2,15 +2,15 @@
 /*
  * @_temporalUndefined
  */
-let _temporalUndefined = {};
-let raw = _temporalUndefined;
-let VIEW_ID = _temporalUndefined;
-function _temporalAssertDefined(val, name, undef) {
-  if (val === undef) {
-    throw new ReferenceError(name + ' is not defined - temporal dead zone');
-  }
-  return true;
-}
+// let _temporalUndefined = {};
+// let raw = _temporalUndefined;
+// let VIEW_ID = _temporalUndefined;
+// function _temporalAssertDefined(val, name, undef) {
+//   if (val === undef) {
+//     throw new ReferenceError(name + ' is not defined - temporal dead zone');
+//   }
+//   return true;
+// }
 
 /*
  * Importing into the LocalHost Mongodb
@@ -18,8 +18,8 @@ function _temporalAssertDefined(val, name, undef) {
 let google = require('googleapis');
 let key = require('./authentication.json');
 let MongoClient = require('mongodb').MongoClient;
-//let assert = require('assert');
-let ObjectId = require('mongodb').ObjectId;
+let assert = require('assert');
+// let ObjectId = require('mongodb').ObjectId;
 
 /*
  * @MongoClient
@@ -36,8 +36,8 @@ MongoClient.connect('mongodb://127.0.0.1:27017/citizen', function(err, db) {
   /*
    * @jwtClient
    */
-  raw = String.raw;
-  VIEW_ID = 'ga:108646183';
+  // raw = String.raw;
+  let VIEW_ID = 'ga:108646183';
   let jwtClient = new google.auth.JWT(key.client_email, null, key.private_key,
    ['https://www.googleapis.com/auth/analytics.readonly'], null);
 
@@ -62,7 +62,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017/citizen', function(err, db) {
   let queryData = function(analytics, days, y) {
     analytics.data.ga.get({
       auth: jwtClient,
-      ids: _temporalAssertDefined(VIEW_ID, 'VIEW_ID', _temporalUndefined) && VIEW_ID,
+      ids: VIEW_ID,
       metrics: 'ga:sessions, ga:sessionDuration, ga:pageviews, ga:timeOnPage, ga:totalEvents, ga:uniqueEvents, ga:sessionsPerUser, ga:hits',
       dimensions: 'ga:dimension1',
       'start-date': days,
