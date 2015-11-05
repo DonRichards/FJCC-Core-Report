@@ -1,3 +1,6 @@
+/**
+ * @clean [Cleaning up tmp files]
+ */
 import del from 'del';
 import task from './lib/task';
 import fs from './lib/fs';
