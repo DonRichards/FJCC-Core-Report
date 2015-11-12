@@ -1,14 +1,45 @@
-var gapiPromise = (function(){
-  var deferred = $.Deferred();
-  window.onLoadCallback = function(){
-    deferred.resolve(gapi);
-  };
-  return deferred.promise()
-}());
-
+(function(w,d,s,g,js,fs){
+  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
+  js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
+  js.src='https://apis.google.com/js/platform.js';
+  fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
+}(window,document,'script'));
 
 gapi.analytics.ready(function() {
-  gapiPromise.analytics.auth.authorize({
+  gapi.analytics.auth.authorize({
+    container: 'embed-api-auth-container',
+    clientid: '89679198396.apps.googleusercontent.com'
+  });
+  var viewSelector = new gapi.analytics.ViewSelector({
+    container: 'view-selector-container'
+  });
+
+  viewSelector.execute();
+  var dataChart = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      metrics: 'ga:sessions',
+      dimensions: 'ga:date',
+      'start-date': '30daysAgo',
+      'end-date': 'yesterday'
+    },
+    chart: {
+      container: 'chart-container',
+      type: 'LINE',
+      options: {
+        width: '100%'
+      }
+    }
+  });
+  viewSelector.on('change', function(ids) {
+    dataChart.set({query: {ids: ids}}).execute();
+  });
+
+});
+
+//(function(){ gapi.client.setApiKey('AIzaSyDGJD_ZRDV75wouHg-cd-roV8n7q_XOROI'); })();
+/*
+gapi.analytics.ready(function() {
+  gapi.analytics.auth.authorize({
     container: 'embed-api-auth-container',
     clientid: '89679198396.apps.googleusercontent.com'
   });
@@ -220,3 +251,5 @@ gapi.analytics.ready(function() {
   Chart.defaults.global.maintainAspectRatio = false;
 
 });
+
+*/

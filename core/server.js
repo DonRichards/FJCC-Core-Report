@@ -52,13 +52,13 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  __webpack_require__(47);
+  __webpack_require__(63);
   
-  var _path = __webpack_require__(7);
+  var _path = __webpack_require__(21);
   
   var _path2 = _interopRequireDefault(_path);
   
-  var _express = __webpack_require__(6);
+  var _express = __webpack_require__(13);
   
   var _express2 = _interopRequireDefault(_express);
   
@@ -66,24 +66,102 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactDomServer = __webpack_require__(57);
+  var _reactDomServer = __webpack_require__(82);
   
   var _reactDomServer2 = _interopRequireDefault(_reactDomServer);
   
-  var _routes = __webpack_require__(30);
+  var _routes = __webpack_require__(46);
   
   var _routes2 = _interopRequireDefault(_routes);
   
-  var _componentsHtml = __webpack_require__(20);
+  var _componentsHtml = __webpack_require__(35);
   
   var _componentsHtml2 = _interopRequireDefault(_componentsHtml);
   
+  var _ControllersServerConfig = __webpack_require__(26);
+  
+  var _ControllersServerConfig2 = _interopRequireDefault(_ControllersServerConfig);
+  
   var server = global.server = (0, _express2['default'])();
+  var port = process.env.PORT || 3000;
+  server.set('port', port);
   
-  server.set('port', process.env.PORT || 5000);
-  server.use(_express2['default']['static'](_path2['default'].join(__dirname, 'public')));
-  server.use('/api/content', __webpack_require__(11));
+  // const cookieParser = require('cookie-parser');
+  // const compress = require('compression');
+  var favicon = __webpack_require__(22);
+  var session = __webpack_require__(15);
+  var bodyParser = __webpack_require__(10);
+  var logger = __webpack_require__(20);
+  var errorHandler = __webpack_require__(12);
+  var lusca = __webpack_require__(17);
+  var methodOverride = __webpack_require__(18);
+  var _ = __webpack_require__(5);
+  var flash = __webpack_require__(14);
   
+  var mongoose = __webpack_require__(19);
+  var passport = __webpack_require__(6);
+  var expressValidator = __webpack_require__(16);
+  // const sass = require('node-sass-middleware');
+  // import authController from './controllers/auth';
+  var secrets = __webpack_require__(8);
+  
+  /**
+   * Connect to MongoDB.
+   */
+  mongoose.connect(secrets.db);
+  mongoose.connection.on('error', function () {
+    console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
+    process.exit(1);
+  });
+  
+  //
+  // Register Node.js middleware
+  // -----------------------------------------------------------------------------
+  (0, _ControllersServerConfig2['default'])(server);
+  
+  //
+  // Register API middleware
+  // -----------------------------------------------------------------------------
+  
+  /**
+   * Controllers (route handlers).
+   */
+  var userController = __webpack_require__(41);
+  
+  /**
+   * API keys and Passport configuration.
+   * authController(server);
+   */
+  var passportConf = __webpack_require__(40);
+  
+  server.use('/api/content', __webpack_require__(27));
+  
+  server.get('/login', userController.getLogin);
+  server.post('/login', userController.postLogin);
+  server.get('/logout', userController.logout);
+  server.get('/forgot', userController.getForgot);
+  server.post('/forgot', userController.postForgot);
+  server.get('/reset/:token', userController.getReset);
+  server.post('/reset/:token', userController.postReset);
+  server.get('/signup', userController.getSignup);
+  server.post('/signup', userController.postSignup);
+  server.get('/contact', contactController.getContact);
+  server.post('/contact', contactController.postContact);
+  server.get('/account', passportConf.isAuthenticated, userController.getAccount);
+  server.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
+  server.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
+  server.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
+  server.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
+  
+  server.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
+  
+  server.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), function (req, res) {
+    res.redirect(req.session.returnTo || '/');
+  });
+  
+  //
+  // Register server-side rendering middleware
+  // -----------------------------------------------------------------------------
   server.get('*', function callee$0$0(req, res, next) {
     return regeneratorRuntime.async(function callee$0$0$(context$1$0) {
       var _this = this;
@@ -149,12 +227,12 @@ module.exports =
     }, null, _this2, [[0, 5]]);
   });
   
-  server.listen(server.get('port'), function () {
+  //
+  // Launch the server
+  // -----------------------------------------------------------------------------
+  server.listen(port, function () {
     /* eslint-disable no-console */
-    console.log('The server is running at http://localhost:' + server.get('port'));
-    if (process.send) {
-      process.send('online');
-    }
+    console.log('The server is running at http://localhost:' + port + '/');
   });
 
 /***/ },
@@ -187,7 +265,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _fbjsLibInvariant = __webpack_require__(51);
+  var _fbjsLibInvariant = __webpack_require__(71);
   
   var _fbjsLibInvariant2 = _interopRequireDefault(_fbjsLibInvariant);
   
@@ -347,6 +425,18 @@ module.exports =
 
 /***/ },
 /* 5 */
+/***/ function(module, exports) {
+
+  module.exports = require("lodash");
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+  module.exports = require("passport");
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -354,6 +444,8 @@ module.exports =
   Object.defineProperty(exports, '__esModule', {
     value: true
   });
+  
+  var _this = this;
   
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
   
@@ -373,7 +465,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _coreLocation = __webpack_require__(27);
+  var _coreLocation = __webpack_require__(43);
   
   var _coreLocation2 = _interopRequireDefault(_coreLocation);
   
@@ -399,24 +491,29 @@ module.exports =
       value: function render() {
         var _props = this.props;
         var to = _props.to;
-        var children = _props.children;
+        var query = _props.query;
   
-        var props = _objectWithoutProperties(_props, ['to', 'children']);
+        var props = _objectWithoutProperties(_props, ['to', 'query']);
   
-        return _react2['default'].createElement(
-          'a',
-          _extends({ onClick: Link.handleClick.bind(this) }, props),
-          children
-        );
+        return _react2['default'].createElement('a', _extends({ href: _coreLocation2['default'].createHref(to, query), onClick: Link.handleClick.bind(this) }, props));
       }
     }], [{
+      key: 'propTypes',
+      value: {
+        to: _react.PropTypes.string.isRequired,
+        query: _react.PropTypes.object,
+        state: _react.PropTypes.object,
+        onClick: _react.PropTypes.func
+      },
+      enumerable: true
+    }, {
       key: 'handleClick',
-      value: function handleClick(event) {
+      value: function value(event) {
         var allowTransition = true;
         var clickResult = undefined;
   
-        if (this.props && this.props.onClick) {
-          clickResult = this.props.onClick(event);
+        if (_this.props && _this.props.onClick) {
+          clickResult = _this.props.onClick(event);
         }
   
         if (isModifiedEvent(event) || !isLeftClickEvent(event)) {
@@ -431,16 +528,8 @@ module.exports =
   
         if (allowTransition) {
           var link = event.currentTarget;
-          _coreLocation2['default'].pushState(this.props && this.props.state || null, this.props && this.props.to || link.pathname + link.search);
+          _coreLocation2['default'].pushState(_this.props && _this.props.state || null, _this.props && _this.props.to || link.pathname + link.search);
         }
-      }
-    }, {
-      key: 'propTypes',
-      value: {
-        to: _react.PropTypes.string.isRequired,
-        children: _react.PropTypes.element.isRequired,
-        state: _react.PropTypes.object,
-        onClick: _react.PropTypes.func
       },
       enumerable: true
     }]);
@@ -452,19 +541,210 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 6 */
+/* 8 */
+/***/ function(module, exports) {
+
+  /**
+   * IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT
+   *
+   * You should never commit this file to a public repository on GitHub!
+   * All public code on GitHub can be searched, that means anyone can see your
+   * uploaded secrets.js file.
+   *
+   * I did it for your convenience using "throw away" API keys and passwords so
+   * that all features could work out of the box.
+   *
+   * Use config vars (environment variables) below for production API keys
+   * and passwords. Each PaaS (e.g. Heroku, Nodejitsu, OpenShift, Azure) has a way
+   * for you to set it up from the dashboard.
+   *
+   * Another added benefit of this approach is that you can use two different
+   * sets of keys for local development and production mode without making any
+   * changes to the code.
+   * IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT
+   */
+  
+  'use strict';
+  
+  module.exports = {
+  
+    db: process.env.MONGODB || process.env.MONGOLAB_URI || 'mongodb://localhost:27017/secrettest',
+  
+    sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
+  
+    mailgun: {
+      user: process.env.MAILGUN_USER || 'postmaster@sandbox697fcddc09814c6b83718b9fd5d4e5dc.mailgun.org',
+      password: process.env.MAILGUN_PASSWORD || '29eldds1uri6'
+    },
+  
+    mandrill: {
+      user: process.env.MANDRILL_USER || 'hackathonstarterdemo',
+      password: process.env.MANDRILL_PASSWORD || 'E1K950_ydLR4mHw12a0ldA'
+    },
+  
+    sendgrid: {
+      user: process.env.SENDGRID_USER || 'hslogin',
+      password: process.env.SENDGRID_PASSWORD || 'hspassword00'
+    },
+  
+    nyt: {
+      key: process.env.NYT_KEY || '9548be6f3a64163d23e1539f067fcabd:5:68537648'
+    },
+  
+    google: {
+      clientID: process.env.GOOGLE_ID || '828110519058.apps.googleusercontent.com',
+      clientSecret: process.env.GOOGLE_SECRET || 'JdZsIaWhUFIchmC1a_IZzOHb',
+      callbackURL: '/auth/google/callback',
+      passReqToCallback: true
+    }
+  };
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  var bcrypt = __webpack_require__(64);
+  var crypto = __webpack_require__(11);
+  var mongoose = __webpack_require__(19);
+  
+  var userSchema = new mongoose.Schema({
+    email: { type: String, unique: true, lowercase: true },
+    password: String,
+    google: String,
+    tokens: Array,
+  
+    profile: {
+      name: { type: String, 'default': '' },
+      gender: { type: String, 'default': '' },
+      location: { type: String, 'default': '' },
+      website: { type: String, 'default': '' },
+      picture: { type: String, 'default': '' }
+    },
+  
+    resetPasswordToken: String,
+    resetPasswordExpires: Date
+  });
+  
+  /**
+   * Password hash middleware.
+   */
+  userSchema.pre('save', function (next) {
+    var user = this;
+    if (!user.isModified('password')) return next();
+    bcrypt.genSalt(10, function (err, salt) {
+      if (err) return next(err);
+      bcrypt.hash(user.password, salt, null, function (err, hash) {
+        if (err) return next(err);
+        user.password = hash;
+        next();
+      });
+    });
+  });
+  
+  /**
+   * Helper method for validating user's password.
+   */
+  userSchema.methods.comparePassword = function (candidatePassword, cb) {
+    bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
+      if (err) return cb(err);
+      cb(null, isMatch);
+    });
+  };
+  
+  /**
+   * Helper method for getting user's gravatar.
+   */
+  userSchema.methods.gravatar = function (size) {
+    if (!size) size = 200;
+    if (!this.email) return 'https://gravatar.com/avatar/?s=' + size + '&d=retro';
+    var md5 = crypto.createHash('md5').update(this.email).digest('hex');
+    return 'https://gravatar.com/avatar/' + md5 + '?s=' + size + '&d=retro';
+  };
+  
+  module.exports = mongoose.model('User', userSchema);
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+  module.exports = require("body-parser");
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+  module.exports = require("crypto");
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+  module.exports = require("errorhandler");
+
+/***/ },
+/* 13 */
 /***/ function(module, exports) {
 
   module.exports = require("express");
 
 /***/ },
-/* 7 */
+/* 14 */
+/***/ function(module, exports) {
+
+  module.exports = require("express-flash");
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+  module.exports = require("express-session");
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+  module.exports = require("express-validator");
+
+/***/ },
+/* 17 */
+/***/ function(module, exports) {
+
+  module.exports = require("lusca");
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+  module.exports = require("method-override");
+
+/***/ },
+/* 19 */
+/***/ function(module, exports) {
+
+  module.exports = require("mongoose");
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+  module.exports = require("morgan");
+
+/***/ },
+/* 21 */
 /***/ function(module, exports) {
 
   module.exports = require("path");
 
 /***/ },
-/* 8 */
+/* 22 */
+/***/ function(module, exports) {
+
+  module.exports = require("serve-favicon");
+
+/***/ },
+/* 23 */
 /***/ function(module, exports) {
 
   /**
@@ -509,7 +789,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 9 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -529,11 +809,11 @@ module.exports =
   
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
   
-  var _pathToRegexp = __webpack_require__(44);
+  var _pathToRegexp = __webpack_require__(59);
   
   var _pathToRegexp2 = _interopRequireDefault(_pathToRegexp);
   
-  var _Match = __webpack_require__(8);
+  var _Match = __webpack_require__(23);
   
   var _Match2 = _interopRequireDefault(_Match);
   
@@ -561,7 +841,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 10 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -583,7 +863,7 @@ module.exports =
   
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
   
-  var _Route = __webpack_require__(9);
+  var _Route = __webpack_require__(24);
   
   var _Route2 = _interopRequireDefault(_Route);
   
@@ -888,11 +1168,74 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 11 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
+  'use strict';
   
+  var MongoStore = __webpack_require__(67)(session);
+  var cookieParser = __webpack_require__(68);
+  var compress = __webpack_require__(66);
+  var favicon = __webpack_require__(22);
+  var session = __webpack_require__(15);
+  var bodyParser = __webpack_require__(10);
+  var logger = __webpack_require__(20);
+  var errorHandler = __webpack_require__(12);
+  var lusca = __webpack_require__(17);
+  var methodOverride = __webpack_require__(18);
+  //  const _ = require('lodash');
+  var flash = __webpack_require__(14);
+  var passport = __webpack_require__(6);
+  var expressValidator = __webpack_require__(16);
+  var sass = __webpack_require__(78);
+  var secrets = __webpack_require__(8);
+  var mongoose = __webpack_require__(19);
+  
+  module.exports = function (server) {
+    server.use(compress());
+    server.use(sass({
+      src: path.join(__dirname, 'public'),
+      dest: path.join(__dirname, 'public'),
+      debug: true,
+      outputStyle: 'expanded'
+    }));
+  
+    server.use(logger('dev'));
+    server.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
+    server.use(bodyParser.json());
+    server.use(bodyParser.urlencoded({ extended: true }));
+    server.use(expressValidator());
+    server.use(methodOverride());
+    server.use(cookieParser());
+    server.use(session({
+      resave: true,
+      saveUninitialized: true,
+      secret: secrets.sessionSecret,
+      store: new MongoStore({ url: secrets.db, autoReconnect: true })
+    }));
+  
+    server.use(passport.initialize());
+    server.use(passport.session());
+    server.use(flash());
+    server.use(lusca({
+      csrf: true,
+      xframe: 'SAMEORIGIN',
+      xssProtection: true
+    }));
+  
+    server.use(function (req, res, next) {
+      res.locals.user = req.user;
+      next();
+    });
+  
+    server.use(express['static'](path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+    server.use(errorHandler());
+  };
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
   'use strict';
   
   Object.defineProperty(exports, '__esModule', {
@@ -903,19 +1246,19 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _path = __webpack_require__(7);
+  var _path = __webpack_require__(21);
   
-  var _express = __webpack_require__(6);
+  var _express = __webpack_require__(13);
   
-  var _jade = __webpack_require__(56);
+  var _jade = __webpack_require__(77);
   
   var _jade2 = _interopRequireDefault(_jade);
   
-  var _frontMatter = __webpack_require__(52);
+  var _frontMatter = __webpack_require__(72);
   
   var _frontMatter2 = _interopRequireDefault(_frontMatter);
   
-  var _utilsFs = __webpack_require__(31);
+  var _utilsFs = __webpack_require__(47);
   
   var _utilsFs2 = _interopRequireDefault(_utilsFs);
   
@@ -1005,7 +1348,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 12 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1028,11 +1371,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _AppCss = __webpack_require__(32);
+  var _AppCss = __webpack_require__(48);
   
   var _AppCss2 = _interopRequireDefault(_AppCss);
   
-  var _decoratorsWithContext = __webpack_require__(28);
+  var _decoratorsWithContext = __webpack_require__(44);
   
   var _decoratorsWithContext2 = _interopRequireDefault(_decoratorsWithContext);
   
@@ -1040,15 +1383,15 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _Header = __webpack_require__(18);
+  var _Header = __webpack_require__(34);
   
   var _Header2 = _interopRequireDefault(_Header);
   
-  var _Feedback = __webpack_require__(16);
+  var _Feedback = __webpack_require__(32);
   
   var _Feedback2 = _interopRequireDefault(_Feedback);
   
-  var _Footer = __webpack_require__(17);
+  var _Footer = __webpack_require__(33);
   
   var _Footer2 = _interopRequireDefault(_Footer);
   
@@ -1105,7 +1448,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 13 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1128,13 +1471,17 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _ContactPageCss = __webpack_require__(33);
+  var _ContactPageCss = __webpack_require__(49);
   
   var _ContactPageCss2 = _interopRequireDefault(_ContactPageCss);
   
   var _decoratorsWithStyles = __webpack_require__(2);
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
+  
+  /**
+   * @class [Contact Page]
+   */
   
   var ContactPage = (function (_Component) {
     _inherits(ContactPage, _Component);
@@ -1149,6 +1496,7 @@ module.exports =
       key: 'render',
       value: function render() {
         var title = 'Contact Us';
+  
         this.context.onSetTitle(title);
         return _react2['default'].createElement(
           'div',
@@ -1186,11 +1534,9 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 14 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-  
   'use strict';
   
   Object.defineProperty(exports, '__esModule', {
@@ -1211,7 +1557,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _ContentPageCss = __webpack_require__(34);
+  var _ContentPageCss = __webpack_require__(50);
   
   var _ContentPageCss2 = _interopRequireDefault(_ContentPageCss);
   
@@ -1273,7 +1619,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 15 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1302,7 +1648,7 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _ErrorPageCss = __webpack_require__(35);
+  var _ErrorPageCss = __webpack_require__(51);
   
   var _ErrorPageCss2 = _interopRequireDefault(_ErrorPageCss);
   
@@ -1353,11 +1699,9 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 16 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
-  /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-  
   'use strict';
   
   Object.defineProperty(exports, '__esModule', {
@@ -1378,7 +1722,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _FeedbackCss = __webpack_require__(36);
+  var _FeedbackCss = __webpack_require__(52);
   
   var _FeedbackCss2 = _interopRequireDefault(_FeedbackCss);
   
@@ -1433,7 +1777,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 17 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1458,11 +1802,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _FooterCss = __webpack_require__(37);
+  var _FooterCss = __webpack_require__(53);
   
   var _FooterCss2 = _interopRequireDefault(_FooterCss);
   
-  var _decoratorsWithViewport = __webpack_require__(29);
+  var _decoratorsWithViewport = __webpack_require__(45);
   
   var _decoratorsWithViewport2 = _interopRequireDefault(_decoratorsWithViewport);
   
@@ -1470,7 +1814,7 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _Link = __webpack_require__(5);
+  var _Link = __webpack_require__(7);
   
   var _Link2 = _interopRequireDefault(_Link);
   
@@ -1558,7 +1902,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 18 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -1583,7 +1927,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _HeaderCss = __webpack_require__(38);
+  var _HeaderCss = __webpack_require__(54);
   
   var _HeaderCss2 = _interopRequireDefault(_HeaderCss);
   
@@ -1591,11 +1935,11 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _Link = __webpack_require__(5);
+  var _Link = __webpack_require__(7);
   
   var _Link2 = _interopRequireDefault(_Link);
   
-  var _Navigation = __webpack_require__(22);
+  var _Navigation = __webpack_require__(37);
   
   var _Navigation2 = _interopRequireDefault(_Navigation);
   
@@ -1620,7 +1964,7 @@ module.exports =
             _react2['default'].createElement(
               'a',
               { className: 'Header-brand', href: '/', onClick: _Link2['default'].handleClick },
-              _react2['default'].createElement('img', { className: 'Header-brandImg', src: __webpack_require__(46), width: '38', height: '38', alt: 'React' }),
+              _react2['default'].createElement('img', { className: 'Header-brandImg', src: __webpack_require__(61), width: '38', height: '38', alt: 'React' }),
               _react2['default'].createElement(
                 'span',
                 { className: 'Header-brandTxt' },
@@ -1652,7 +1996,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 19 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1675,92 +2019,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _HomePageCss = __webpack_require__(39);
-  
-  var _HomePageCss2 = _interopRequireDefault(_HomePageCss);
-  
-  var _decoratorsWithStyles = __webpack_require__(2);
-  
-  var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
-  
-  var HomePage = (function (_Component) {
-    _inherits(HomePage, _Component);
-  
-    function HomePage() {
-      _classCallCheck(this, _HomePage);
-  
-      _get(Object.getPrototypeOf(_HomePage.prototype), 'constructor', this).apply(this, arguments);
-    }
-  
-    _createClass(HomePage, [{
-      key: 'render',
-      value: function render() {
-        var title = 'FJCC Core Report Generator';
-        this.context.onSetTitle(title);
-        return _react2['default'].createElement(
-          'div',
-          { className: 'HomePage' },
-          _react2['default'].createElement('div', { id: 'embed-api-auth-container' }),
-          _react2['default'].createElement('div', { id: 'view-selector-container' }),
-          _react2['default'].createElement('div', { id: 'active-users-container' }),
-          _react2['default'].createElement('div', { id: 'chart-1-container' }),
-          _react2['default'].createElement('div', { id: 'legend-1-container' }),
-          _react2['default'].createElement('div', { id: 'chart-2-container' }),
-          _react2['default'].createElement('div', { id: 'legend-2-container' }),
-          _react2['default'].createElement('div', { id: 'chart-3-container' }),
-          _react2['default'].createElement('div', { id: 'legend-3-container' }),
-          _react2['default'].createElement('div', { id: 'chart-4-container' }),
-          _react2['default'].createElement('div', { id: 'legend-4-container' }),
-          _react2['default'].createElement(
-            'div',
-            null,
-            _react2['default'].createElement('script', { src: '/javascripts/view-selector2.js' }),
-            _react2['default'].createElement('script', { src: '/javascripts/date-range-selector.js' }),
-            _react2['default'].createElement('script', { src: '/javascripts/active-users.js' })
-          )
-        );
-      }
-    }], [{
-      key: 'contextTypes',
-      value: {
-        onSetTitle: _react.PropTypes.func.isRequired
-      },
-      enumerable: true
-    }]);
-  
-    var _HomePage = HomePage;
-    HomePage = (0, _decoratorsWithStyles2['default'])(_HomePageCss2['default'])(HomePage) || HomePage;
-    return HomePage;
-  })(_react.Component);
-  
-  exports['default'] = HomePage;
-  module.exports = exports['default'];
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-  
-  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-  
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-  
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-  
-  var _react = __webpack_require__(1);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _config = __webpack_require__(25);
+  //import { googleAnalyticsId } from '../../config';
   
   var Html = (function (_Component) {
     _inherits(Html, _Component);
@@ -1772,13 +2031,19 @@ module.exports =
     }
   
     _createClass(Html, [{
-      key: 'trackingCode',
-      value: function trackingCode() {
-        return { __html: '(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=' + 'function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;' + 'e=o.createElement(i);r=o.getElementsByTagName(i)[0];' + 'e.src=\'https://www.google-analytics.com/analytics.js\';' + 'r.parentNode.insertBefore(e,r)}(window,document,\'script\',\'ga\'));' + ('ga(\'create\',\'' + _config.googleAnalyticsId + '\',\'auto\');ga(\'send\',\'pageview\');')
-        };
-      }
-    }, {
       key: 'render',
+  
+      // trackingCode() {
+      //   return ({__html:
+      //     `(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=` +
+      //     `function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;` +
+      //     `e=o.createElement(i);r=o.getElementsByTagName(i)[0];` +
+      //     `e.src='https://www.google-analytics.com/analytics.js';` +
+      //     `r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));` +
+      //     `ga('create','${googleAnalyticsId}','auto');ga('send','pageview');`,
+      //   });
+      // }
+      //<script dangerouslySetInnerHTML={this.trackingCode()} />
       value: function render() {
         return _react2['default'].createElement(
           'html',
@@ -1802,8 +2067,7 @@ module.exports =
             'body',
             null,
             _react2['default'].createElement('div', { id: 'app', dangerouslySetInnerHTML: { __html: this.props.body } }),
-            _react2['default'].createElement('script', { src: '/app.js' }),
-            _react2['default'].createElement('script', { dangerouslySetInnerHTML: this.trackingCode() })
+            _react2['default'].createElement('script', { src: '/app.js' })
           )
         );
       }
@@ -1832,7 +2096,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 21 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1855,7 +2119,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _LoginPageCss = __webpack_require__(40);
+  var _LoginPageCss = __webpack_require__(55);
   
   var _LoginPageCss2 = _interopRequireDefault(_LoginPageCss);
   
@@ -1887,6 +2151,16 @@ module.exports =
               'h1',
               null,
               title
+            ),
+            _react2['default'].createElement(
+              'a',
+              { href: '/auth/google' },
+              'Sign In with Google'
+            ),
+            _react2['default'].createElement(
+              'p',
+              null,
+              '...'
             )
           )
         );
@@ -1908,7 +2182,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 22 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1931,11 +2205,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _classnames = __webpack_require__(48);
+  var _classnames = __webpack_require__(65);
   
   var _classnames2 = _interopRequireDefault(_classnames);
   
-  var _NavigationCss = __webpack_require__(41);
+  var _NavigationCss = __webpack_require__(56);
   
   var _NavigationCss2 = _interopRequireDefault(_NavigationCss);
   
@@ -1943,7 +2217,7 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _Link = __webpack_require__(5);
+  var _Link = __webpack_require__(7);
   
   var _Link2 = _interopRequireDefault(_Link);
   
@@ -1984,18 +2258,8 @@ module.exports =
           ),
           _react2['default'].createElement(
             'a',
-            { className: 'Navigation-link', href: '/login', onClick: _Link2['default'].handleClick },
-            'Log in'
-          ),
-          _react2['default'].createElement(
-            'span',
-            { className: 'Navigation-spacer' },
-            'or'
-          ),
-          _react2['default'].createElement(
-            'a',
-            { className: 'Navigation-link Navigation-link--highlight', href: '/register', onClick: _Link2['default'].handleClick },
-            'Sign up'
+            { href: '/auth/google', className: 'Navigation-link' },
+            'Google '
           )
         );
       }
@@ -2013,10 +2277,14 @@ module.exports =
   })(_react.Component);
   
   exports['default'] = Navigation;
+  
+  // <span className="Navigation-spacer">or</span>
+  // <a className="Navigation-link Navigation-link--highlight" href="/register" onClick={Link.handleClick}>Sign up</a>
+  // <a className="Navigation-link" href="/login" onClick={Link.handleClick}>Log in</a>
   module.exports = exports['default'];
 
 /***/ },
-/* 23 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2043,7 +2311,7 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _NotFoundPageCss = __webpack_require__(42);
+  var _NotFoundPageCss = __webpack_require__(57);
   
   var _NotFoundPageCss2 = _interopRequireDefault(_NotFoundPageCss);
   
@@ -2095,7 +2363,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 24 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2122,7 +2390,7 @@ module.exports =
   
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
   
-  var _RegisterPageCss = __webpack_require__(43);
+  var _RegisterPageCss = __webpack_require__(58);
   
   var _RegisterPageCss2 = _interopRequireDefault(_RegisterPageCss);
   
@@ -2176,21 +2444,485 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 25 */
-/***/ function(module, exports) {
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
 
   'use strict';
   
-  Object.defineProperty(exports, '__esModule', {
-    value: true
+  var _ = __webpack_require__(5);
+  var passport = __webpack_require__(6);
+  var LocalStrategy = __webpack_require__(81).Strategy;
+  var GoogleStrategy = __webpack_require__(80).OAuth2Strategy;
+  // let OAuthStrategy = require('passport-oauth').OAuthStrategy;
+  // let OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
+  
+  var secrets = __webpack_require__(8);
+  var User = __webpack_require__(9);
+  
+  passport.serializeUser(function (user, done) {
+    done(null, user.id);
   });
-  exports['default'] = {
-    googleAnalyticsId: 'UA-XXXXX-X'
+  
+  passport.deserializeUser(function (id, done) {
+    User.findById(id, function (err, user) {
+      done(err, user);
+    });
+  });
+  
+  /**
+   * Sign in using Email and Password.
+   */
+  passport.use(new LocalStrategy({ usernameField: 'email' }, function (email, password, done) {
+    email = email.toLowerCase();
+    User.findOne({ email: email }, function (err, user) {
+      if (!user) return done(null, false, { message: 'Email ' + email + ' not found' });
+      user.comparePassword(password, function (err, isMatch) {
+        if (isMatch) {
+          return done(null, user);
+        } else {
+          return done(null, false, { message: 'Invalid email or password.' });
+        }
+      });
+    });
+  }));
+  
+  /**
+   * OAuth Strategy Overview
+   *
+   * - User is already logged in.
+   *   - Check if there is an existing account with a provider id.
+   *     - If there is, return an error message. (Account merging not supported)
+   *     - Else link new OAuth account with currently logged-in user.
+   * - User is not logged in.
+   *   - Check if it's a returning user.
+   *     - If returning user, sign in and we are done.
+   *     - Else check if there is an existing account with user's email.
+   *       - If there is, return an error message.
+   *       - Else create a new account.
+   */
+  
+  /**
+   * Sign in with Google.
+   */
+  passport.use(new GoogleStrategy(secrets.google, function (req, accessToken, refreshToken, profile, done) {
+    if (req.user) {
+      User.findOne({ google: profile.id }, function (err, existingUser) {
+        if (existingUser) {
+          req.flash('errors', { msg: 'There is already a Google account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+          done(err);
+        } else {
+          User.findById(req.user.id, function (err, user) {
+            user.google = profile.id;
+            user.tokens.push({ kind: 'google', accessToken: accessToken });
+            user.profile.name = user.profile.name || profile.displayName;
+            user.profile.gender = user.profile.gender || profile._json.gender;
+            user.profile.picture = user.profile.picture || profile._json.image.url;
+            user.save(function (err) {
+              req.flash('info', { msg: 'Google account has been linked.' });
+              done(err, user);
+            });
+          });
+        }
+      });
+    } else {
+      User.findOne({ google: profile.id }, function (err, existingUser) {
+        if (existingUser) return done(null, existingUser);
+        User.findOne({ email: profile.emails[0].value }, function (err, existingEmailUser) {
+          if (existingEmailUser) {
+            req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' });
+            done(err);
+          } else {
+            (function () {
+              var user = new User();
+              user.email = profile.emails[0].value;
+              user.google = profile.id;
+              user.tokens.push({ kind: 'google', accessToken: accessToken });
+              user.profile.name = profile.displayName;
+              user.profile.gender = profile._json.gender;
+              user.profile.picture = profile._json.image.url;
+              user.save(function (err) {
+                done(err, user);
+              });
+            })();
+          }
+        });
+      });
+    }
+  }));
+  
+  /**
+   * Login Required middleware.
+   */
+  exports.isAuthenticated = function (req, res, next) {
+    if (req.isAuthenticated()) return next();
+    res.redirect('/login');
   };
-  module.exports = exports['default'];
+  
+  /**
+   * Authorization Required middleware.
+   */
+  exports.isAuthorized = function (req, res, next) {
+    var provider = req.path.split('/').slice(-1)[0];
+  
+    if (_.find(req.user.tokens, { kind: provider })) {
+      next();
+    } else {
+      res.redirect('/auth/' + provider);
+    }
+  };
 
 /***/ },
-/* 26 */
+/* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  var _ = __webpack_require__(5);
+  var async = __webpack_require__(62);
+  var crypto = __webpack_require__(11);
+  var nodemailer = __webpack_require__(79);
+  var passport = __webpack_require__(6);
+  var User = __webpack_require__(9);
+  var secrets = __webpack_require__(8);
+  
+  /**
+   * GET /login
+   * Login page.
+   */
+  exports.getLogin = function (req, res) {
+    if (req.user) return res.redirect('/');
+    res.render('account/login', {
+      title: 'Login'
+    });
+  };
+  
+  /**
+   * POST /login
+   * Sign in using email and password.
+   */
+  exports.postLogin = function (req, res, next) {
+    req.assert('email', 'Email is not valid').isEmail();
+    req.assert('password', 'Password cannot be blank').notEmpty();
+  
+    var errors = req.validationErrors();
+  
+    if (errors) {
+      req.flash('errors', errors);
+      return res.redirect('/login');
+    }
+  
+    passport.authenticate('local', function (err, user, info) {
+      if (err) return next(err);
+      if (!user) {
+        req.flash('errors', { msg: info.message });
+        return res.redirect('/login');
+      }
+      req.logIn(user, function (err) {
+        if (err) return next(err);
+        req.flash('success', { msg: 'Success! You are logged in.' });
+        res.redirect(req.session.returnTo || '/');
+      });
+    })(req, res, next);
+  };
+  
+  /**
+   * GET /logout
+   * Log out.
+   */
+  exports.logout = function (req, res) {
+    req.logout();
+    res.redirect('/');
+  };
+  
+  /**
+   * GET /signup
+   * Signup page.
+   */
+  exports.getSignup = function (req, res) {
+    if (req.user) return res.redirect('/');
+    res.render('account/signup', {
+      title: 'Create Account'
+    });
+  };
+  
+  /**
+   * POST /signup
+   * Create a new local account.
+   */
+  exports.postSignup = function (req, res, next) {
+    req.assert('email', 'Email is not valid').isEmail();
+    req.assert('password', 'Password must be at least 4 characters long').len(4);
+    req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
+  
+    var errors = req.validationErrors();
+  
+    if (errors) {
+      req.flash('errors', errors);
+      return res.redirect('/signup');
+    }
+  
+    var user = new User({
+      email: req.body.email,
+      password: req.body.password
+    });
+  
+    User.findOne({ email: req.body.email }, function (err, existingUser) {
+      if (existingUser) {
+        req.flash('errors', { msg: 'Account with that email address already exists.' });
+        return res.redirect('/signup');
+      }
+      user.save(function (err) {
+        if (err) return next(err);
+        req.logIn(user, function (err) {
+          if (err) return next(err);
+          res.redirect('/');
+        });
+      });
+    });
+  };
+  
+  /**
+   * GET /account
+   * Profile page.
+   */
+  exports.getAccount = function (req, res) {
+    res.render('account/profile', {
+      title: 'Account Management'
+    });
+  };
+  
+  /**
+   * POST /account/profile
+   * Update profile information.
+   */
+  exports.postUpdateProfile = function (req, res, next) {
+    User.findById(req.user.id, function (err, user) {
+      if (err) return next(err);
+      user.email = req.body.email || '';
+      user.profile.name = req.body.name || '';
+      user.profile.gender = req.body.gender || '';
+      user.profile.location = req.body.location || '';
+      user.profile.website = req.body.website || '';
+  
+      user.save(function (err) {
+        if (err) return next(err);
+        req.flash('success', { msg: 'Profile information updated.' });
+        res.redirect('/account');
+      });
+    });
+  };
+  
+  /**
+   * POST /account/password
+   * Update current password.
+   */
+  exports.postUpdatePassword = function (req, res, next) {
+    req.assert('password', 'Password must be at least 4 characters long').len(4);
+    req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
+  
+    var errors = req.validationErrors();
+  
+    if (errors) {
+      req.flash('errors', errors);
+      return res.redirect('/account');
+    }
+  
+    User.findById(req.user.id, function (err, user) {
+      if (err) return next(err);
+  
+      user.password = req.body.password;
+  
+      user.save(function (err) {
+        if (err) return next(err);
+        req.flash('success', { msg: 'Password has been changed.' });
+        res.redirect('/account');
+      });
+    });
+  };
+  
+  /**
+   * POST /account/delete
+   * Delete user account.
+   */
+  exports.postDeleteAccount = function (req, res, next) {
+    User.remove({ _id: req.user.id }, function (err) {
+      if (err) return next(err);
+      req.logout();
+      req.flash('info', { msg: 'Your account has been deleted.' });
+      res.redirect('/');
+    });
+  };
+  
+  /**
+   * GET /account/unlink/:provider
+   * Unlink OAuth provider.
+   */
+  exports.getOauthUnlink = function (req, res, next) {
+    var provider = req.params.provider;
+    User.findById(req.user.id, function (err, user) {
+      if (err) return next(err);
+  
+      user[provider] = undefined;
+      user.tokens = _.reject(user.tokens, function (token) {
+        return token.kind === provider;
+      });
+  
+      user.save(function (err) {
+        if (err) return next(err);
+        req.flash('info', { msg: provider + ' account has been unlinked.' });
+        res.redirect('/account');
+      });
+    });
+  };
+  
+  /**
+   * GET /reset/:token
+   * Reset Password page.
+   */
+  exports.getReset = function (req, res) {
+    if (req.isAuthenticated()) {
+      return res.redirect('/');
+    }
+    User.findOne({ resetPasswordToken: req.params.token }).where('resetPasswordExpires').gt(Date.now()).exec(function (err, user) {
+      if (!user) {
+        req.flash('errors', { msg: 'Password reset token is invalid or has expired.' });
+        return res.redirect('/forgot');
+      }
+      res.render('account/reset', {
+        title: 'Password Reset'
+      });
+    });
+  };
+  
+  /**
+   * POST /reset/:token
+   * Process the reset password request.
+   */
+  exports.postReset = function (req, res, next) {
+    req.assert('password', 'Password must be at least 4 characters long.').len(4);
+    req.assert('confirm', 'Passwords must match.').equals(req.body.password);
+  
+    var errors = req.validationErrors();
+  
+    if (errors) {
+      req.flash('errors', errors);
+      return res.redirect('back');
+    }
+  
+    async.waterfall([function (done) {
+      User.findOne({ resetPasswordToken: req.params.token }).where('resetPasswordExpires').gt(Date.now()).exec(function (err, user) {
+        if (!user) {
+          req.flash('errors', { msg: 'Password reset token is invalid or has expired.' });
+          return res.redirect('back');
+        }
+  
+        user.password = req.body.password;
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpires = undefined;
+  
+        user.save(function (err) {
+          if (err) return next(err);
+          req.logIn(user, function (err) {
+            done(err, user);
+          });
+        });
+      });
+    }, function (user, done) {
+      var transporter = nodemailer.createTransport({
+        service: 'SendGrid',
+        auth: {
+          user: secrets.sendgrid.user,
+          pass: secrets.sendgrid.password
+        }
+      });
+      var mailOptions = {
+        to: user.email,
+        from: 'hackathon@starter.com',
+        subject: 'Your Hackathon Starter password has been changed',
+        text: 'Hello,\n\n' + 'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
+      };
+      transporter.sendMail(mailOptions, function (err) {
+        req.flash('success', { msg: 'Success! Your password has been changed.' });
+        done(err);
+      });
+    }], function (err) {
+      if (err) return next(err);
+      res.redirect('/');
+    });
+  };
+  
+  /**
+   * GET /forgot
+   * Forgot Password page.
+   */
+  exports.getForgot = function (req, res) {
+    if (req.isAuthenticated()) {
+      return res.redirect('/');
+    }
+    res.render('account/forgot', {
+      title: 'Forgot Password'
+    });
+  };
+  
+  /**
+   * POST /forgot
+   * Create a random token, then the send user an email with a reset link.
+   */
+  exports.postForgot = function (req, res, next) {
+    req.assert('email', 'Please enter a valid email address.').isEmail();
+  
+    var errors = req.validationErrors();
+  
+    if (errors) {
+      req.flash('errors', errors);
+      return res.redirect('/forgot');
+    }
+  
+    async.waterfall([function (done) {
+      crypto.randomBytes(16, function (err, buf) {
+        var token = buf.toString('hex');
+        done(err, token);
+      });
+    }, function (token, done) {
+      User.findOne({ email: req.body.email.toLowerCase() }, function (err, user) {
+        if (!user) {
+          req.flash('errors', { msg: 'No account with that email address exists.' });
+          return res.redirect('/forgot');
+        }
+  
+        user.resetPasswordToken = token;
+        user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+  
+        user.save(function (err) {
+          done(err, token, user);
+        });
+      });
+    }, function (token, user, done) {
+      var transporter = nodemailer.createTransport({
+        service: 'SendGrid',
+        auth: {
+          user: secrets.sendgrid.user,
+          pass: secrets.sendgrid.password
+        }
+      });
+      var mailOptions = {
+        to: user.email,
+        from: 'hackathon@starter.com',
+        subject: 'Reset your password on Hackathon Starter',
+        text: 'You are receiving this email because you (or someone else) have requested the reset of the password for your account.\n\n' + 'Please click on the following link, or paste this into your browser to complete the process:\n\n' + 'http://' + req.headers.host + '/reset/' + token + '\n\n' + 'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+      };
+      transporter.sendMail(mailOptions, function (err) {
+        req.flash('info', { msg: 'An e-mail has been sent to ' + user.email + ' with further instructions.' });
+        done(err, 'done');
+      });
+    }], function (err) {
+      if (err) return next(err);
+      res.redirect('/forgot');
+    });
+  };
+
+/***/ },
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2201,18 +2933,30 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _superagent = __webpack_require__(58);
+  var _superagent = __webpack_require__(83);
   
   var _superagent2 = _interopRequireDefault(_superagent);
   
   var _fbjsLibExecutionEnvironment = __webpack_require__(4);
   
+  /**
+   * [getUrl description]
+   * @param  {[type]} path [description]
+   * @return {[type]}      [description]
+   */
   function getUrl(path) {
     if (path.startsWith('http') || _fbjsLibExecutionEnvironment.canUseDOM) {
       return path;
     }
+    var HOSTENV = undefined;
   
-    return process.env.WEBSITE_HOSTNAME ? 'http://' + process.env.WEBSITE_HOSTNAME + path : 'http://127.0.0.1:' + global.server.get('port') + path;
+    if (process.env.WEBSITE_HOSTNAME) {
+      HOSTENV = 'http://' + process.env.WEBSITE_HOSTNAME + path;
+    } else {
+      HOSTENV = 'http://127.0.0.1:' + global.server.get('port') + path;
+    }
+  
+    return HOSTENV;
   }
   
   var HttpClient = {
@@ -2239,7 +2983,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 27 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2252,21 +2996,25 @@ module.exports =
   
   var _fbjsLibExecutionEnvironment = __webpack_require__(4);
   
-  var _historyLibCreateBrowserHistory = __webpack_require__(54);
+  var _historyLibCreateBrowserHistory = __webpack_require__(74);
   
   var _historyLibCreateBrowserHistory2 = _interopRequireDefault(_historyLibCreateBrowserHistory);
   
-  var _historyLibUseQueries = __webpack_require__(55);
+  var _historyLibCreateMemoryHistory = __webpack_require__(75);
+  
+  var _historyLibCreateMemoryHistory2 = _interopRequireDefault(_historyLibCreateMemoryHistory);
+  
+  var _historyLibUseQueries = __webpack_require__(76);
   
   var _historyLibUseQueries2 = _interopRequireDefault(_historyLibUseQueries);
   
-  var location = _fbjsLibExecutionEnvironment.canUseDOM ? (0, _historyLibUseQueries2['default'])(_historyLibCreateBrowserHistory2['default'])() : {};
+  var location = (0, _historyLibUseQueries2['default'])(_fbjsLibExecutionEnvironment.canUseDOM ? _historyLibCreateBrowserHistory2['default'] : _historyLibCreateMemoryHistory2['default'])();
   
   exports['default'] = location;
   module.exports = exports['default'];
 
 /***/ },
-/* 28 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2291,7 +3039,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _fbjsLibEmptyFunction = __webpack_require__(50);
+  var _fbjsLibEmptyFunction = __webpack_require__(70);
   
   var _fbjsLibEmptyFunction2 = _interopRequireDefault(_fbjsLibEmptyFunction);
   
@@ -2356,7 +3104,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 29 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2381,7 +3129,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _eventemitter3 = __webpack_require__(49);
+  var _eventemitter3 = __webpack_require__(69);
   
   var _eventemitter32 = _interopRequireDefault(_eventemitter3);
   
@@ -2453,7 +3201,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 30 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2470,43 +3218,39 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactRoutingSrcRouter = __webpack_require__(10);
+  var _reactRoutingSrcRouter = __webpack_require__(25);
   
   var _reactRoutingSrcRouter2 = _interopRequireDefault(_reactRoutingSrcRouter);
   
-  var _coreHttpClient = __webpack_require__(26);
+  var _coreHttpClient = __webpack_require__(42);
   
   var _coreHttpClient2 = _interopRequireDefault(_coreHttpClient);
   
-  var _componentsApp = __webpack_require__(12);
+  var _componentsApp = __webpack_require__(28);
   
   var _componentsApp2 = _interopRequireDefault(_componentsApp);
   
-  var _componentsHomePage = __webpack_require__(19);
-  
-  var _componentsHomePage2 = _interopRequireDefault(_componentsHomePage);
-  
-  var _componentsContentPage = __webpack_require__(14);
+  var _componentsContentPage = __webpack_require__(30);
   
   var _componentsContentPage2 = _interopRequireDefault(_componentsContentPage);
   
-  var _componentsContactPage = __webpack_require__(13);
+  var _componentsContactPage = __webpack_require__(29);
   
   var _componentsContactPage2 = _interopRequireDefault(_componentsContactPage);
   
-  var _componentsLoginPage = __webpack_require__(21);
+  var _componentsLoginPage = __webpack_require__(36);
   
   var _componentsLoginPage2 = _interopRequireDefault(_componentsLoginPage);
   
-  var _componentsRegisterPage = __webpack_require__(24);
+  var _componentsRegisterPage = __webpack_require__(39);
   
   var _componentsRegisterPage2 = _interopRequireDefault(_componentsRegisterPage);
   
-  var _componentsNotFoundPage = __webpack_require__(23);
+  var _componentsNotFoundPage = __webpack_require__(38);
   
   var _componentsNotFoundPage2 = _interopRequireDefault(_componentsNotFoundPage);
   
-  var _componentsErrorPage = __webpack_require__(15);
+  var _componentsErrorPage = __webpack_require__(31);
   
   var _componentsErrorPage2 = _interopRequireDefault(_componentsErrorPage);
   
@@ -2528,19 +3272,6 @@ module.exports =
             ));
   
           case 4:
-          case 'end':
-            return context$2$0.stop();
-        }
-      }, null, _this);
-    });
-  
-    on('/', function callee$1$0() {
-      return regeneratorRuntime.async(function callee$1$0$(context$2$0) {
-        while (1) switch (context$2$0.prev = context$2$0.next) {
-          case 0:
-            return context$2$0.abrupt('return', _react2['default'].createElement(_componentsHomePage2['default'], null));
-  
-          case 1:
           case 'end':
             return context$2$0.stop();
         }
@@ -2622,7 +3353,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 31 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2633,7 +3364,7 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _fs = __webpack_require__(53);
+  var _fs = __webpack_require__(73);
   
   var _fs2 = _interopRequireDefault(_fs);
   
@@ -2659,7 +3390,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 32 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2673,7 +3404,7 @@ module.exports =
 
 
 /***/ },
-/* 33 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2687,7 +3418,7 @@ module.exports =
 
 
 /***/ },
-/* 34 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2701,7 +3432,7 @@ module.exports =
 
 
 /***/ },
-/* 35 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2715,7 +3446,7 @@ module.exports =
 
 
 /***/ },
-/* 36 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2729,7 +3460,7 @@ module.exports =
 
 
 /***/ },
-/* 37 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2743,7 +3474,7 @@ module.exports =
 
 
 /***/ },
-/* 38 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2757,21 +3488,7 @@ module.exports =
 
 
 /***/ },
-/* 39 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(3)();
-  // imports
-  
-  
-  // module
-  exports.push([module.id, ":root {\n\n  /*\n   * Colors\n   * ======================================================================== */ /* #222 */   /* #404040 */ /* #555 */ /* #777 */ /* #eee */\n\n  /*\n   * Typography\n   * ======================================================================== */\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */  /* Extra small screen / phone */  /* Small screen / tablet */  /* Medium screen / desktop */ /* Large screen / wide desktop */\n\n  /*\n   * Animations\n   * ======================================================================== */\n\n}\n\n.HomePage-container {\n  margin: 0 auto;\n  padding: 0 0 40px;\n  max-width: 1000px;\n}\n", ""]);
-  
-  // exports
-
-
-/***/ },
-/* 40 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2785,7 +3502,7 @@ module.exports =
 
 
 /***/ },
-/* 41 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2799,7 +3516,7 @@ module.exports =
 
 
 /***/ },
-/* 42 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2813,7 +3530,7 @@ module.exports =
 
 
 /***/ },
-/* 43 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(3)();
@@ -2827,10 +3544,10 @@ module.exports =
 
 
 /***/ },
-/* 44 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
-  var isarray = __webpack_require__(45)
+  var isarray = __webpack_require__(60)
   
   /**
    * Expose `pathToRegexp`.
@@ -3223,7 +3940,7 @@ module.exports =
 
 
 /***/ },
-/* 45 */
+/* 60 */
 /***/ function(module, exports) {
 
   module.exports = Array.isArray || function (arr) {
@@ -3232,79 +3949,139 @@ module.exports =
 
 
 /***/ },
-/* 46 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "db63f1b28ca4ca7edfb3f2466c367eb5.gif"
 
 /***/ },
-/* 47 */
+/* 62 */
+/***/ function(module, exports) {
+
+  module.exports = require("async");
+
+/***/ },
+/* 63 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-core/polyfill");
 
 /***/ },
-/* 48 */
+/* 64 */
+/***/ function(module, exports) {
+
+  module.exports = require("bcrypt-nodejs");
+
+/***/ },
+/* 65 */
 /***/ function(module, exports) {
 
   module.exports = require("classnames");
 
 /***/ },
-/* 49 */
+/* 66 */
+/***/ function(module, exports) {
+
+  module.exports = require("compression");
+
+/***/ },
+/* 67 */
+/***/ function(module, exports) {
+
+  module.exports = require("connect-mongo");
+
+/***/ },
+/* 68 */
+/***/ function(module, exports) {
+
+  module.exports = require("cookie-parser");
+
+/***/ },
+/* 69 */
 /***/ function(module, exports) {
 
   module.exports = require("eventemitter3");
 
 /***/ },
-/* 50 */
+/* 70 */
 /***/ function(module, exports) {
 
   module.exports = require("fbjs/lib/emptyFunction");
 
 /***/ },
-/* 51 */
+/* 71 */
 /***/ function(module, exports) {
 
   module.exports = require("fbjs/lib/invariant");
 
 /***/ },
-/* 52 */
+/* 72 */
 /***/ function(module, exports) {
 
   module.exports = require("front-matter");
 
 /***/ },
-/* 53 */
+/* 73 */
 /***/ function(module, exports) {
 
   module.exports = require("fs");
 
 /***/ },
-/* 54 */
+/* 74 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
-/* 55 */
+/* 75 */
+/***/ function(module, exports) {
+
+  module.exports = require("history/lib/createMemoryHistory");
+
+/***/ },
+/* 76 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/useQueries");
 
 /***/ },
-/* 56 */
+/* 77 */
 /***/ function(module, exports) {
 
   module.exports = require("jade");
 
 /***/ },
-/* 57 */
+/* 78 */
+/***/ function(module, exports) {
+
+  module.exports = require("node-sass-middleware");
+
+/***/ },
+/* 79 */
+/***/ function(module, exports) {
+
+  module.exports = require("nodemailer");
+
+/***/ },
+/* 80 */
+/***/ function(module, exports) {
+
+  module.exports = require("passport-google-oauth");
+
+/***/ },
+/* 81 */
+/***/ function(module, exports) {
+
+  module.exports = require("passport-local");
+
+/***/ },
+/* 82 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom/server");
 
 /***/ },
-/* 58 */
+/* 83 */
 /***/ function(module, exports) {
 
   module.exports = require("superagent");
