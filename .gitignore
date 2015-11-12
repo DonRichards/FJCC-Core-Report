@@ -6,3 +6,5 @@ npm-debug.log
 config.yml
 loufreyinstitute.json
 authentication.json
+core/public/*.json
+core/public/*.hot-update.js
