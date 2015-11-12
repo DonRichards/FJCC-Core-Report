@@ -2,7 +2,7 @@ import React from 'react';
 import Router from 'react-routing/src/Router';
 import http from './core/HttpClient';
 import App from './components/App';
-import HomePage from './components/HomePage';
+
 import ContentPage from './components/ContentPage';
 import ContactPage from './components/ContactPage';
 import LoginPage from './components/LoginPage';
@@ -15,8 +15,6 @@ const router = new Router(on => {
     const component = await next();
     return component && <App context={state.context}>{component}</App>;
   });
-
-  on('/', async () => <HomePage />);
 
   on('/contact', async () => <ContactPage />);
 
