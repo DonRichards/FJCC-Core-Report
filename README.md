@@ -1,5 +1,5 @@
 ## FJCC Core Reporting
-  # Kinda WORKING!
+  # Kinda NOT WORKING!
 
 > Purpose of this product is to have qualified quantifiable data showing that site engagement(S/T) over time(KPI) teacher assessment scores were positively impacted
 
