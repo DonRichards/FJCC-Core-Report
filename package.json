@@ -5,7 +5,7 @@
   "keywords":[ "core","reporting"],
   "license": "MIT",
   "bugs":"https://github.com/DonRichards/FJCC-Core-Report/issues",
-  "homepage":"http://127.0.0.1/",
+  "homepage":"http://127.0.0.1",
   "contributors":{
     "name": "Don Richards",
     "email": "don@loufreyinstitute.org"
