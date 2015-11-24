@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Report.css';
+import styles from './Report.scss';
 import withStyles from '../../decorators/withStyles';
 
 @withStyles(styles)

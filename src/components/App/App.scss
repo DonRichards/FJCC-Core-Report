@@ -1,11 +1,16 @@
 @import '../../../node_modules/normalize.css/normalize.css';
-@import '../variables.css';
+
+@import '../variables.scss';
+
+/*
+ * Base styles
+ * ========================================================================== */
 
 html {
   color: #222;
   font-weight: 100;
   font-size: 1em; /* ~16px; */
-  font-family: var(--font-family-base);
+  font-family: $font-family-base;
   line-height: 1.375; /* ~22px */
 }
 
@@ -19,6 +24,10 @@ html {
   text-shadow: none;
 }
 
+/*
+ * A better looking default horizontal rule
+ */
+
 hr {
   display: block;
   height: 1px;
@@ -27,6 +36,7 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+
 
 audio,
 canvas,
@@ -37,15 +47,27 @@ video {
   vertical-align: middle;
 }
 
+/*
+ * Remove default fieldset styles.
+ */
+
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
 textarea {
   resize: vertical;
 }
+
+/*
+ * Browser upgrade prompt
+ * ========================================================================== */
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -92,38 +114,31 @@ textarea {
   a[href^="javascript:"]:after {
     content: "";
   }
-
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
-
   /*
    * Printing Tables:
    * http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-
   thead {
     display: table-header-group;
   }
-
   tr,
   img {
     page-break-inside: avoid;
   }
-
   img {
     max-width: 100% !important;
   }
-
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3;
   }
-
   h2,
   h3 {
     page-break-after: avoid;

@@ -1,20 +1,16 @@
 import React, { PropTypes, Component } from 'react';
-import styles from './ContactPage.css';
+import styles from './ContactPage.scss';
 import withStyles from '../../decorators/withStyles';
 
 @withStyles(styles)
-/**
- * @class [Contact Page]
- */
 class ContactPage extends Component {
 
   static contextTypes = {
-    onSetTitle: PropTypes.func.isRequired
+    onSetTitle: PropTypes.func.isRequired,
   };
 
-  render () {
+  render() {
     const title = 'Contact Us';
-
     this.context.onSetTitle(title);
     return (
       <div className="ContactPage">

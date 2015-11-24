@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+
+import React, { PropTypes, Component } from 'react'; // eslint-disable-line no-unused-vars
 import emptyFunction from 'fbjs/lib/emptyFunction';
 
 function withContext(ComposedComponent) {
@@ -31,7 +32,7 @@ function withContext(ComposedComponent) {
     }
 
     render() {
-      const { context, ...other } = this.props;
+      const { context, ...other } = this.props; // eslint-disable-line no-unused-vars
       return <ComposedComponent {...other} />;
     }
 

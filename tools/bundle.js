@@ -1,25 +1,34 @@
+
 import webpack from 'webpack';
-import task from './lib/task';
-import config from './config';
-export default task('bundle', async () => new Promise((resolve, reject) => {
-  const bundler = webpack(config);
-  let bundlerRunCount = 0;
+import webpackConfig from './webpack.config';
 
-  function bundle(err, stats) {
-    if (err) {
-      return reject(err);
+/**
+ * Bundles JavaScript, CSS and images into one or more packages
+ * ready to be used in a browser.
+ */
+function bundle() {
+  return new Promise((resolve, reject) => {
+    const bundler = webpack(webpackConfig);
+    let bundlerRunCount = 0;
+
+    function onComplete(err, stats) {
+      if (err) {
+        return reject(err);
+      }
+
+      console.log(stats.toString(webpackConfig[0].stats));
+
+      if (++bundlerRunCount === (global.WATCH ? webpackConfig.length : 1)) {
+        return resolve();
+      }
     }
 
-    console.log(stats.toString(config[0].stats));
-
-    if (++bundlerRunCount === (global.WATCH ? config.length : 1)) {
-      return resolve();
+    if (global.WATCH) {
+      bundler.watch(200, onComplete);
+    } else {
+      bundler.run(onComplete);
     }
-  }
+  });
+}
 
-  if (global.WATCH) {
-    bundler.watch(200, bundle);
-  } else {
-    bundler.run(bundle);
-  }
-}));
+export default bundle;

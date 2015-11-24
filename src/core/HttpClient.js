@@ -1,23 +1,15 @@
+
 import request from 'superagent';
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
-/**
- * [getUrl description]
- * @param  {[type]} path [description]
- * @return {[type]}      [description]
- */
-function getUrl (path) {
+
+function getUrl(path) {
   if (path.startsWith('http') || canUseDOM) {
     return path;
   }
-  let HOSTENV;
 
-  if (process.env.WEBSITE_HOSTNAME) {
-    HOSTENV = `http://${process.env.WEBSITE_HOSTNAME}${path}`;
-  } else {
-    HOSTENV = `http://127.0.0.1:${global.server.get('port')}${path}`;
-  }
-
-  return HOSTENV;
+  return process.env.WEBSITE_HOSTNAME ?
+    `http://${process.env.WEBSITE_HOSTNAME}${path}` :
+    `http://127.0.0.1:${global.server.get('port')}${path}`;
 }
 
 const HttpClient = {
@@ -37,7 +29,7 @@ const HttpClient = {
           resolve(res.body);
         }
       });
-  })
+  }),
 
 };
 

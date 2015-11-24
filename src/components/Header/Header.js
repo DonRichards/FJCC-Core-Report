@@ -1,9 +1,10 @@
+
 import React, { Component } from 'react';
-import styles from './Header.css';
+import styles from './Header.scss';
 import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 import Navigation from '../Navigation';
-
+// <img className="Header-brandImg" src={require('./logo-small.png')} width="38" height="38" alt="React" />
 @withStyles(styles)
 class Header extends Component {
 
@@ -12,18 +13,19 @@ class Header extends Component {
       <div className="Header">
         <div className="Header-container">
           <a className="Header-brand" href="/" onClick={Link.handleClick}>
-            <img className="Header-brandImg" src={require('./loading.gif')} width="38" height="38" alt="React" />
-            <span className="Header-brandTxt">FJCC Core Reporting</span>
+
+            <span className="Header-brandTxt">FJCC</span>
           </a>
           <Navigation className="Header-nav" />
           <div className="Header-banner">
-            <h1 className="Header-bannerTitle"></h1>
-            <p className="Header-bannerDesc">Merging Clients info & Google Analytics</p>
+            <h1 className="Header-bannerTitle">React</h1>
+            <p className="Header-bannerDesc">Complex web apps made easy</p>
           </div>
         </div>
       </div>
     );
   }
+
 }
 
 export default Header;

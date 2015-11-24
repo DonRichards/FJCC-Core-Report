@@ -1,20 +1,26 @@
+
 import path from 'path';
 import replace from 'replace';
-import task from './lib/task';
-import copy from './lib/copy';
+import Promise from 'bluebird';
 import watch from './lib/watch';
 
-export default task('copy', async () => {
+/**
+ * Copies static files such as robots.txt, favicon.ico to the
+ * output (build) folder.
+ */
+async function copy() {
+  const ncp = Promise.promisify(require('ncp'));
+
   await Promise.all([
-    copy('src/public', 'core/public'),
-    copy('src/content', 'core/content'),
-    copy('package.json', 'core/package.json'),
+    ncp('src/public', 'build/public'),
+    ncp('src/content', 'build/content'),
+    ncp('package.json', 'build/package.json'),
   ]);
 
   replace({
     regex: '"start".*',
     replacement: '"start": "node server.js"',
-    paths: ['core/package.json'],
+    paths: ['build/package.json'],
     recursive: false,
     silent: false,
   });
@@ -23,7 +29,9 @@ export default task('copy', async () => {
     const watcher = await watch('src/content/**/*.*');
     watcher.on('changed', async (file) => {
       const relPath = file.substr(path.join(__dirname, '../src/content/').length);
-      await copy(`src/content/${relPath}`, `core/content/${relPath}`);
+      await ncp(`src/content/${relPath}`, `build/content/${relPath}`);
     });
   }
-});
+}
+
+export default copy;

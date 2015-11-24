@@ -1,3 +1,4 @@
+
 .Navigation-link {
   display: inline-block;
   padding: 3px 8px;
@@ -8,11 +9,11 @@
 .Navigation-link,
 .Navigation-link:active,
 .Navigation-link:visited {
-  color: rgba(255, 255, 255, 255);
+  color: rgba(255, 255, 255, .6);
 }
 
 .Navigation-link:hover {
-  color: rgba(55, 55, 55, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
 .Navigation-link--highlight {
@@ -28,5 +29,5 @@
 }
 
 .Navigation-spacer {
-  color: rgba(0, 0, 0, 255);
+  color: rgba(255, 255, 255, .3);
 }

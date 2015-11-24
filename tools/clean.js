@@ -1,10 +1,12 @@
-/**
- * @clean [Cleaning up tmp files]
- */
 import del from 'del';
-import task from './lib/task';
 import fs from './lib/fs';
-export default task('clean', async () => {
-  await del(['.tmp', 'build/*', '!build/.git'], {dot: true});
+
+/**
+ * Cleans up the output (build) directory.
+ */
+async function clean() {
+  await del(['.tmp', 'build/*', '!build/.git'], { dot: true });
   await fs.makeDir('build/public');
-});
+}
+
+export default clean;
