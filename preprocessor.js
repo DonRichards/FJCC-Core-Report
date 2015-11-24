@@ -1,8 +1,5 @@
 'use strict';
-/**
- * [babel Processor]
- * @type {[type]}
- */
+
 var babel = require('babel-core');
 
 module.exports = {
